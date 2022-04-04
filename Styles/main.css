@@ -41,9 +41,16 @@ body{
     grid-template-columns: repeat(2, 1fr);
     column-gap: 2.4rem;
 }
-.title{
+.header{
     font-size: 4.4rem;
     margin-bottom: 3.2rem;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+}
+.title{
+    font-family: 'Inter', sans-serif;
+    font-size: 3rem;
+    margin-bottom: 2.4rem;
     font-weight: 500;
 }
 .paragraph{
@@ -72,15 +79,23 @@ body{
 /* ------ Components ------ */
 .nav{
     padding: 2.4rem 0rem;
+    font-size: 1.6rem;
 }
 .nav, .nav ul{
     display: flex;
     justify-content: space-between;
 }
+.nav ul :last-child{
+    font-size: 2.6rem;
+}
 .nav li{
     padding: 0 1.6rem;
     display: grid;
     place-content: center;
+}
+nav li svg{
+    width: 28px;
+    height: 28px;
 }
 
 /* ------ Hero Section ------ */
@@ -95,12 +110,32 @@ body{
     margin-top: 8rem;
 }
 .img-container{
-    border:  solid 1px var(--main-white);
+    border:  solid 1px var(--main-gray);
     margin-top: 2.4rem ;
-    transform: rotate(180deg);
 }
 .img-container img{
     width: 100%;
     height: 100%;
-    transform: translate(-35px, -35px);
+    transform: translate(35px, 35px);
 }
+
+/* -------- Parners Section -------- */
+/*.partners{
+    height: 100vh;
+    background: var(--main-white);
+    color: var(--main-dark);
+}
+
+.partner-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    column-gap: 2.4rem;
+    row-gap: 2.4rem; 
+}
+.partner-list li img {
+    max-height: 4rem;
+    filter: brightness(0);
+    opacity: 50%;
+}*/

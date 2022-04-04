@@ -1,19 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./Styles/main.css">
-    <title>Resturant Website</title>
-</head>
+    <?php include('./Components/head.php'); ?> 
 <body>
     <section class="hero ">
         <?php include('./Components/navigation.php'); ?> 
         <div class="content grid-2 container">
             <div class="hero-text">
-                <h1 class="title">Quality food, locally sourced, and baeutifly cooked</h1>
+                <h1 class="header">Quality food, locally sourced, and baeutifly cooked</h1>
                 <p class="paragraph">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam vitae obcaecati placeat at voluptate, molestias non dolorum perspiciatis beatae.</p>
                 <div class="btns-container">
                     <a class="btn" href="">Order Dilivery</a>
@@ -27,6 +20,25 @@
             </div>
         </div>
     </section>
+
+
+    <!-- <section class="partners">
+    <div id="partners" class="container">
+            <h2 class="title">Join our world-class partners</h2>
+
+            <ul class="partner-list">
+                <li><img src="./Assets/Partners/Daco_4302912.png" alt="TechCrunch"></li>
+                <li> <img src="./Assets/Partners/PngItem_981502.png" alt="Business Insider"> </li>
+                <li><img src="./Assets/Partners/Daco_6044851.png" alt="The New Yourk Times"></li>
+                <li> <img src="./Assets/Partners/Daco_4638935.png" alt="Forbs"></li>
+                <li><img src="./Assets/Partners/PngItem_245292.png" alt="USA Today Network"></li>
+            </ul>
+        </div>
+    </section> -->
+
+
+
+
 
 
     <?php include('./Components/scripts.php'); ?> 
