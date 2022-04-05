@@ -7,7 +7,7 @@
         <div class="content grid-2 container">
             <div class="hero-text">
                 <h1 class="header">Quality food, locally sourced, and baeutifly cooked</h1>
-                <p class="paragraph">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam vitae obcaecati placeat at voluptate, molestias non dolorum perspiciatis beatae.</p>
+                <p class="paragraph">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam vitae obcaecati placeat at voluptate, molestias non dolorum.</p>
                 <div class="btns-container">
                     <a class="btn" href="">Order Dilivery</a>
                     <a class="btn" href="">Book a table</a>
@@ -36,7 +36,80 @@
         </div>
     </section> -->
 
+    <!-- <section class="about">
+        <div class="grid-2 container">
+            <div class="about-text">
+                <h2 class="title">About Us</h2>
+                <p class="dark-paragraph">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident ducimus minus velit aliquam ea eveniet, expedita recusandae molestiae esse at.
+                </p>
+                <p class="dark-paragraph">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident ducimus minus velit aliquam ea eveniet, expedita recusandae molestiae esse at.
+                </p>
+            </div>
+            <div class="about-gallery">
+                <img src="./Assets/resto-pic.jpg" alt="">
+                <img class="img-2" src="./Assets/kitchen.jpg" alt="">
+            </div>
+        </div>
+    </section> -->
 
+    <section class="menu">
+        <div class="container">
+            <h2 class="title">Our Menu</h2>
+            <div class="dark-paragraph">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ducimus totam possimus numquam ab quam quisquam mollitia est dolorem iusto reiciendis!
+            </div>
+            <div class="fillters btns-container">
+                <a class="btn-mid" href="">all</a>
+                <a class="btn-mid" href="">Breakfast</a>
+                <a class="btn-mid" href="">Dinner</a>
+                <a class="btn-mid" href="">beuverage</a>
+             <a class="btn-mid" href="">desserts</a>
+            </div>
+            <div class="dishes grid-3">
+                <div class="dish">
+                    <img src="./Assets/dish-1.jpg" alt="">
+                    <div class="dish-info">
+                    <div class="dish-title">
+                        <span>Red Steak</span>
+                        <span>
+                            &#9734; 5
+                        </span>
+                    </div>
+                    <div class="dish-discription">Lorem ipsum dolor sit amet consectetur adipisicing elit. </div>
+                    <div class="dish-price">$20.00</div>
+                    </div>
+                </div>
+                <div class="dish">
+                    <img src="./Assets/dish-2.jpg" alt="">
+                    <div class="dish-info">
+                    <div class="dish-title">
+                        <span>Red Steak</span>
+                        <span>
+                            &#9734; 5
+                        </span>
+                    </div>
+                    <div class="dish-discription">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+                    <div class="dish-price">$20.00</div>
+                    </div>
+                </div>
+                <div class="dish">
+                    <img src="./Assets/dish-3.jpg" alt="">
+                    <div class="dish-info">
+                    <div class="dish-title">
+                        <span>Red Steak</span>
+                        <span>
+                            &#9734; 5
+                        </span>
+                    </div>
+                    <div class="dish-discription">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+                    <div class="dish-price">$20.00</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
 
 

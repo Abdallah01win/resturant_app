@@ -27,6 +27,7 @@ body{
     font-size: 2rem;
     font-weight: 300;
     letter-spacing: 1.2px;
+    background: #fafafa;
 }
 
 /* ------ Utility Classes ------ */
@@ -34,46 +35,61 @@ body{
 
 
 .container{
-    margin: 0 10%;
+    margin: 0 8%;
 }
 .grid-2{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     column-gap: 2.4rem;
 }
+.grid-3{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 3.2rem;
+    row-gap: 3.2rem;
+}
 .header{
-    font-size: 4.4rem;
+    font-size: 5.2rem;
     margin-bottom: 3.2rem;
-    font-weight: 600;
-    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    font-family: 'Josefin Sans', sans-serif;
 }
 .title{
-    font-family: 'Inter', sans-serif;
-    font-size: 3rem;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 3.6rem;
     margin-bottom: 2.4rem;
-    font-weight: 500;
+    font-weight: 700;
 }
 .paragraph{
     font-size: 2.2rem;
     line-height: 1.5;
-    font-weight: 300;
+    font-weight: 400;
     margin-bottom: 2.4rem;
     color: var(--main-gray);
+}
+.dark-paragraph{
+    color: var(--main-dark);
+    font-weight: 400;
+    font-size: 2rem;
+    margin-bottom: 2.4rem;
+    line-height: 1.5;
 }
 .btns-container{
     display: flex;
     column-gap: 2.4rem;
-}
-.btns-container :first-child{
-    background: var(--main-green);
-    border: none;
-    color: var(--main-dark);
 }
 .btn{
     text-transform: uppercase;
     padding: 1.2rem 2.4rem;
     border: solid 1px var(--main-white);
     font-weight: 400;
+}
+.btn-mid{
+    text-transform: uppercase;
+    padding: 0.8rem 1.6rem;
+    border: solid 1px #050505;
+    font-weight: 400;
+    font-size: 1.6rem;
 }
 
 /* ------ Components ------ */
@@ -112,14 +128,19 @@ nav li svg{
 .img-container{
     border:  solid 1px var(--main-gray);
     margin-top: 2.4rem ;
+    transition: all 200ms ease-in;
 }
 .img-container img{
     width: 100%;
     height: 100%;
     transform: translate(35px, 35px);
 }
-
-/* -------- Parners Section -------- */
+.hero .btns-container :first-child{
+    background: var(--main-green);
+    border: none;
+    color: var(--main-dark);
+}
+/* -------- Partners Section -------- */
 /*.partners{
     height: 100vh;
     background: var(--main-white);
@@ -139,3 +160,62 @@ nav li svg{
     filter: brightness(0);
     opacity: 50%;
 }*/
+
+/*---------- About section ---------*/
+/* .about{
+    margin: 8rem 0rem;
+}
+.about-gallery{
+    display: flex;
+    column-gap: 3.2rem;
+    overflow: hidden;
+}
+.about-gallery img{
+    height: 100%;
+    width: 45%;
+} */
+
+/* ------ Menu Section -------- */
+
+.menu{
+    margin: 8rem 0rem;
+}
+.menu .dark-paragraph{
+    width: 65%;
+}
+.dishes{
+    margin-top: 4.4rem;
+}
+.dish{
+    background: white;
+    font-weight: 700;
+    color: #050505;
+    border: solid 1px #050505;
+}
+.dish img{
+    width: 100%;
+    height: 55%;
+}
+.dish-info{
+    padding: 2.4rem;
+    position: relative;
+}
+.dish-title{
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 2.4rem;
+    margin-bottom: 1.2rem;
+}
+.dish-title span {
+    display: flex;
+    align-items: center;
+}
+.dish-discription{
+    font-weight: 400;
+}
+.dish-price{
+    color: #2ce72c;
+    font-size: 2.4rem;
+    margin-top: 2rem;
+}
