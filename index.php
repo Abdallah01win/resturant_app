@@ -114,6 +114,7 @@
 
 
 
+    <?php include('./Components/footer.php'); ?> 
     <?php include('./Components/scripts.php'); ?> 
 </body>
 </html>
