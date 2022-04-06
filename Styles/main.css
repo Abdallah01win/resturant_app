@@ -201,6 +201,7 @@ nav li svg{
     position: relative;
 }
 .dish-title{
+    text-transform: capitalize;
     display: flex;
     justify-content: space-between;
     font-family: 'Josefin Sans', sans-serif;
@@ -224,7 +225,7 @@ nav li svg{
 /* ------- Footer -------- */
 footer{
     background: #050505;
-    padding: 6.4rem 0rem;
+    padding: 6.2rem 0rem 4.4rem 0rem;
     color: var(--main-white);
 }
 footer .logo{

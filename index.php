@@ -1,3 +1,31 @@
+<?php 
+    $dishes = [
+        [
+            'name' => 'red steak1',
+            'ratting' => 5,
+            'img_url' => './Assets/dish-1.jpg',
+            'discription' => 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem.',
+            'price' => 20.00
+
+        ],
+        [
+            'name' => 'red steak2',
+            "ratting" => 4,
+            'img_url' => './Assets/dish-2.jpg',
+            'discription' => "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem.",
+            "price" => 30.00
+
+        ],
+        [
+            'name' => 'red steak3',
+            "ratting" => 4.5,
+            'img_url' => './Assets/dish-3.jpg',
+            'discription' => "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem.",
+            "price" => 45.00
+
+        ]
+    ]
+?>
 <!DOCTYPE html>
 <html lang="en">
     <?php include('./Components/head.php'); ?> 
@@ -68,45 +96,25 @@
              <a class="btn-mid" href="">desserts</a>
             </div>
             <div class="dishes grid-3">
-                <div class="dish">
-                    <img src="./Assets/dish-1.jpg" alt="">
+                <?php foreach ($dishes as $dish): ?>
+                    <div class="dish">
+                    <img src=<?php echo $dish['img_url']?> alt="">
                     <div class="dish-info">
                     <div class="dish-title">
-                        <span>Red Steak</span>
                         <span>
-                            &#9734; 5
+                            <?php echo $dish['name']?>
+                        </span>
+                        <span>
+                            &#9734; <?php echo $dish['ratting']?>
                         </span>
                     </div>
-                    <div class="dish-discription">Lorem ipsum dolor sit amet consectetur adipisicing elit. </div>
-                    <div class="dish-price">$20.00</div>
+                    <div class="dish-discription">
+                        <?php echo $dish['discription']?></div>
+                    <div class="dish-price">$<?php echo $dish['price']?>
+                    </div>
                     </div>
                 </div>
-                <div class="dish">
-                    <img src="./Assets/dish-2.jpg" alt="">
-                    <div class="dish-info">
-                    <div class="dish-title">
-                        <span>Red Steak</span>
-                        <span>
-                            &#9734; 5
-                        </span>
-                    </div>
-                    <div class="dish-discription">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
-                    <div class="dish-price">$20.00</div>
-                    </div>
-                </div>
-                <div class="dish">
-                    <img src="./Assets/dish-3.jpg" alt="">
-                    <div class="dish-info">
-                    <div class="dish-title">
-                        <span>Red Steak</span>
-                        <span>
-                            &#9734; 5
-                        </span>
-                    </div>
-                    <div class="dish-discription">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
-                    <div class="dish-price">$20.00</div>
-                    </div>
-                </div>
+                <?php endforeach; ?>
             </div>
         </div>
     </section>
