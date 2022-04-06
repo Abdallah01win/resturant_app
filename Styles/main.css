@@ -35,8 +35,6 @@ p{
 
 /* ------ Utility Classes ------ */
 
-
-
 .container{
     margin: 0 8%;
 }
@@ -50,6 +48,12 @@ p{
     grid-template-columns: repeat(3, 1fr);
     column-gap: 3.2rem;
     row-gap: 3.2rem;
+}
+.logo{
+    color: var(--main-green);
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 3.6rem;
+    font-weight: 800;
 }
 .header{
     font-size: 5.2rem;
@@ -109,7 +113,7 @@ p{
     display: grid;
     place-content: center;
 }
-nav li svg{
+nav li img{
     width: 28px;
     height: 28px;
 }
@@ -189,12 +193,12 @@ nav li svg{
 .dish{
     background: white;
     font-weight: 700;
-    color: #050505;
-    border: solid 1px #050505;
+    color: var(--main-dark);
+    border: solid 1px var(--main-dark);
 }
 .dish img{
     width: 100%;
-    height: 55%;
+    height: 50%;
 }
 .dish-info{
     padding: 2.4rem;
@@ -229,11 +233,7 @@ footer{
     color: var(--main-white);
 }
 footer .logo{
-    color: #2ce72c;
-    font-family: 'Josefin Sans', sans-serif;
-    font-size: 3.6rem;
     margin-bottom: 3.2rem;
-    font-weight: 800;
 }
 .sm-links{
     display: flex;

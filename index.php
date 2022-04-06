@@ -1,4 +1,6 @@
-<?php 
+
+
+ <?php /*
     $dishes = [
         [
             'name' => 'red steak1',
@@ -24,11 +26,17 @@
             "price" => 45.00
 
         ]
-    ]
-?>
+    ]*/
+?> 
 <!DOCTYPE html>
 <html lang="en">
     <?php include('./Components/head.php'); ?> 
+    <?php 
+    $sql = 'SELECT * FROM dishes';
+    $result = mysqli_query($conn, $sql);
+    $dishes = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+?>
 <body>
     <section class="hero ">
         <?php include('./Components/navigation.php'); ?> 
@@ -98,7 +106,7 @@
             <div class="dishes grid-3">
                 <?php foreach ($dishes as $dish): ?>
                     <div class="dish">
-                    <img src=<?php echo $dish['img_url']?> alt="">
+                    <img src=<?php echo '.' . $dish['img_link']?> alt="">
                     <div class="dish-info">
                     <div class="dish-title">
                         <span>
@@ -110,7 +118,7 @@
                     </div>
                     <div class="dish-discription">
                         <?php echo $dish['discription']?></div>
-                    <div class="dish-price">$<?php echo $dish['price']?>
+                    <div class="dish-price"><?php echo '$' . $dish['price'] . '.00'?>
                     </div>
                     </div>
                 </div>
