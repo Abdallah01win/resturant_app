@@ -88,6 +88,12 @@ p{
     border: solid 1px var(--main-white);
     font-weight: 400;
 }
+.btn-dark{
+    text-transform: uppercase;
+    padding: 1.2rem 2.4rem;
+    border: solid 1px #050505;
+    font-weight: 400;
+}
 .btn-mid{
     text-transform: uppercase;
     padding: 0.8rem 1.6rem;
@@ -100,8 +106,10 @@ p{
 .nav{
     padding: 2.4rem 0rem;
     font-size: 1.6rem;
+    background: #050505;
+    color: #f1f3ef;
 }
-.nav, .nav ul{
+.nav .container, .nav ul{
     display: flex;
     justify-content: space-between;
 }
@@ -112,6 +120,7 @@ p{
     padding: 0 1.6rem;
     display: grid;
     place-content: center;
+    cursor: pointer;
 }
 nav li img{
     width: 28px;
@@ -224,7 +233,10 @@ nav li img{
     font-size: 2.4rem;
     margin-top: 2rem;
 }
-
+.menu .btns-container:last-of-type {
+    justify-content: center;
+    margin-top: 4.4rem;
+}
 
 /* ------- Footer -------- */
 footer{

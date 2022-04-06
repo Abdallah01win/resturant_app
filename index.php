@@ -1,6 +1,4 @@
-
-
- <?php /*
+<?php /*
     $dishes = [
         [
             'name' => 'red steak1',
@@ -27,19 +25,20 @@
 
         ]
     ]*/
-?> 
+?>
 <!DOCTYPE html>
 <html lang="en">
-    <?php include('./Components/head.php'); ?> 
-    <?php 
-    $sql = 'SELECT * FROM dishes';
-    $result = mysqli_query($conn, $sql);
-    $dishes = mysqli_fetch_all($result, MYSQLI_ASSOC);
+<?php include('./Components/head.php'); ?>
+<?php
+$sql = 'SELECT * FROM dishes';
+$result = mysqli_query($conn, $sql);
+$dishes = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
 ?>
+
 <body>
     <section class="hero ">
-        <?php include('./Components/navigation.php'); ?> 
+        <?php include('./Components/navigation.php'); ?>
         <div class="content grid-2 container">
             <div class="hero-text">
                 <h1 class="header">Quality food, locally sourced, and baeutifly cooked</h1>
@@ -96,33 +95,29 @@
             <div class="dark-paragraph">
                 Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ducimus totam possimus numquam ab quam quisquam mollitia est dolorem iusto reiciendis!
             </div>
-            <div class="fillters btns-container">
-                <a class="btn-mid" href="">all</a>
-                <a class="btn-mid" href="">Breakfast</a>
-                <a class="btn-mid" href="">Dinner</a>
-                <a class="btn-mid" href="">beuverage</a>
-             <a class="btn-mid" href="">desserts</a>
-            </div>
             <div class="dishes grid-3">
-                <?php foreach ($dishes as $dish): ?>
+                <?php for ($i = 0; $i < 6; $i++) { ?>
                     <div class="dish">
-                    <img src=<?php echo '.' . $dish['img_link']?> alt="">
-                    <div class="dish-info">
-                    <div class="dish-title">
-                        <span>
-                            <?php echo $dish['name']?>
-                        </span>
-                        <span>
-                            &#9734; <?php echo $dish['ratting']?>
-                        </span>
+                        <img src=<?php echo '.' . $dishes[$i]['img_link'] ?> alt="">
+                        <div class="dish-info">
+                            <div class="dish-title">
+                                <span>
+                                    <?php echo $dishes[$i]['name'] ?>
+                                </span>
+                                <span>
+                                    &#9734; <?php echo $dishes[$i]['ratting'] ?>
+                                </span>
+                            </div>
+                            <div class="dish-discription">
+                                <?php echo $dishes[$i]['discription'] ?></div>
+                            <div class="dish-price"><?php echo '$' . $dishes[$i]['price'] . '.00' ?>
+                            </div>
+                        </div>
                     </div>
-                    <div class="dish-discription">
-                        <?php echo $dish['discription']?></div>
-                    <div class="dish-price"><?php echo '$' . $dish['price'] . '.00'?>
-                    </div>
-                    </div>
-                </div>
-                <?php endforeach; ?>
+                <?php } ?>
+            </div>
+            <div class="btns-container">
+                <?php echo '<a href="menu.php" class="btn-dark">Vuew full menu</a>' ?>
             </div>
         </div>
     </section>
@@ -130,7 +125,8 @@
 
 
 
-    <?php include('./Components/footer.php'); ?> 
-    <?php include('./Components/scripts.php'); ?> 
+    <?php include('./Components/footer.php'); ?>
+    <?php include('./Components/scripts.php'); ?>
 </body>
+
 </html>
