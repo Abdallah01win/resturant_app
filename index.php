@@ -19,7 +19,7 @@
         [
             'name' => 'red steak3',
             "ratting" => 4.5,
-            'img_url' => './Assets/dish-3.jpg',
+            'img_url' => './Assets/dishes/seafood_paella.jpg',
             'discription' => "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem.",
             "price" => 45.00
 
