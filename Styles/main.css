@@ -89,15 +89,16 @@ p{
     font-weight: 400;
 }
 .btn-dark{
+    background: none;
     text-transform: uppercase;
     padding: 1.2rem 2.4rem;
-    border: solid 1px #050505;
+    border: solid 1px var(--main-dark);
     font-weight: 400;
 }
 .btn-mid{
     text-transform: uppercase;
     padding: 0.8rem 1.6rem;
-    border: solid 1px #050505;
+    border: solid 1px var(--main-dark);
     font-weight: 400;
     font-size: 1.6rem;
 }
@@ -106,7 +107,7 @@ p{
 .nav{
     padding: 2.4rem 0rem;
     font-size: 1.6rem;
-    background: #050505;
+    background: var(--main-dark);
     color: #f1f3ef;
 }
 .nav .container, .nav ul{
@@ -120,7 +121,10 @@ p{
     padding: 0 1.6rem;
     display: grid;
     place-content: center;
+}
+.nav li:hover, footer .pages li:hover{
     cursor: pointer;
+    color: var(--main-green);
 }
 nav li img{
     width: 28px;
@@ -204,6 +208,7 @@ nav li img{
     font-weight: 700;
     color: var(--main-dark);
     border: solid 1px var(--main-dark);
+    /* try display: table and table sell to fix height issue*/
 }
 .dish img{
     width: 100%;
@@ -229,7 +234,7 @@ nav li img{
     font-weight: 400;
 }
 .dish-price{
-    color: #2ce72c;
+    color: var(--main-green);
     font-size: 2.4rem;
     margin-top: 2rem;
 }
@@ -240,7 +245,7 @@ nav li img{
 
 /* ------- Footer -------- */
 footer{
-    background: #050505;
+    background: var(--main-dark);
     padding: 6.2rem 0rem 4.4rem 0rem;
     color: var(--main-white);
 }
@@ -266,4 +271,76 @@ footer .element-title{
 }
 .elements-list li{
     margin-bottom: 1.2rem;
+}
+
+
+/*--------- form styles -------*/
+.popup{
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    background-color: rgba(5, 5, 5, .65);
+    display: flex;
+    align-items: center;
+
+    /*visibility: hidden;
+    opacity: 0;
+    pointer-events: none;*/
+}
+.form{
+    background: white;
+    width: 55rem;
+    padding: 4.4rem;
+    margin: 0 auto;
+    font-weight: 500;
+    position: relative;
+}
+.close-form{
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 2.2rem 2.2rem 0rem 0rem;
+    cursor: pointer;
+}
+.close-form img{
+    width: 32px;
+    height: 32px;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    row-gap: 2.4rem;
+}
+.form .logo, .form .title{
+    text-align: center;
+    font-size: 2.6rem;
+}
+.form .title{
+    font-size: 3.4rem;
+    margin-top: 2.4rem;
+}
+.form input{
+    border: solid 1px var(--main-dark);
+    background: white;
+    height: 3.6rem;
+    outline: none;
+    font-size: 1.8rem;
+    padding: 0rem 1.2rem ;
+}
+.form .btns-container .btn-mid{
+    background: none;
+    margin-top: 0.8rem;
+    width: 50%;
+    text-align: center;
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+}
+.form-input{
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.2rem;
 }

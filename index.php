@@ -117,13 +117,76 @@ $dishes = mysqli_fetch_all($result, MYSQLI_ASSOC);
                 <?php } ?>
             </div>
             <div class="btns-container">
-                <?php echo '<a href="menu.php" class="btn-dark">Vuew full menu</a>' ?>
+                <?php echo '<a href="menu.php" class="btn-dark">View full menu</a>' ?>
             </div>
         </div>
     </section>
-
-
-
+    <div class="popup">
+        <div class="sign-up-form form">
+            <div class="close-form">
+                <img src="./Assets/icons/close.svg" alt="">
+            </div>
+            <div class="logo">Malibu's</div>
+            <h3 class="title">Sign Up Now</h3>
+            <form action="">
+                <div class="form-input">
+                    <label for="name">
+                        User Name
+                    </label>
+                    <input type="text" name="name" id="name" required>
+                </div>
+                <div class="form-input">
+                    <label for="email">
+                        Email Adress
+                    </label>
+                    <input type="email" name="name" id="sign-up-email" required>
+                </div>
+                <div class="form-input">
+                    <label for="password">
+                        Password
+                    </label>
+                    <input type="password" name="password" id="password" required>
+                </div>
+                <div class="btns-container">
+                    <button type="submit" class="btn-mid">Sign up</button>
+                    <button class="btn-mid">Login</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="popup">
+        <div class="login-form form">
+            <div class="close-form">
+                <img src="./Assets/icons/close.svg" alt="">
+            </div>
+            <div class="logo">Malibu's</div>
+            <h3 class="title">Login Now</h3>
+            <form action="">
+                <div class="form-input">
+                    <label for="email">
+                        Email Adress
+                    </label>
+                    <input type="email" name="name" id="login-email" required>
+                </div>
+                <div class="form-input">
+                    <label for="password">
+                        Password
+                    </label>
+                    <input type="password" name="password" id="password" required>
+                </div>
+                <div class="form-input">
+                    <label for="c-password">
+                        Confirm Password
+                    </label>
+                    <input type="password" name="c-password" id="c-password" required>
+                </div>
+                <div class="btns-container">
+                    <button type="submit" class="btn-mid">Login</button>
+                    <button class="btn-mid">Sign up</button>
+                </div>
+            </form>
+        </div>
+    </div>
 
     <?php include('./Components/footer.php'); ?>
     <?php include('./Components/scripts.php'); ?>
