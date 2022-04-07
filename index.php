@@ -30,6 +30,7 @@
 <html lang="en">
 <?php include('./Components/head.php'); ?>
 <?php
+/* Get data from dishes table */
 $sql = 'SELECT * FROM dishes';
 $result = mysqli_query($conn, $sql);
 $dishes = mysqli_fetch_all($result, MYSQLI_ASSOC);
@@ -45,7 +46,7 @@ $dishes = mysqli_fetch_all($result, MYSQLI_ASSOC);
                 <p class="paragraph">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam vitae obcaecati placeat at voluptate, molestias non dolorum.</p>
                 <div class="btns-container">
                     <?php echo ' <a class="btn" href="menu.php" id="order-btn">Order Dilivery</a>'?>
-                   <?php echo '<a class="btn" href="admin.php" id="book-btn">Book a table</a>'?>
+                   <?php echo '<a class="btn" href="menu.php" id="book-btn">Book a table</a>'?>
                    <!-- <a class="btn" href="" id="order-btn">Order Dilivery</a>
                    <a class="btn" href="" id="book-btn">Book a table</a> -->
                 </div>
@@ -123,75 +124,10 @@ $dishes = mysqli_fetch_all($result, MYSQLI_ASSOC);
             </div>
         </div>
     </section>
-    <div class="popup hide-popup" id="signup-popup">
-        <div class="sign-up-form form">
-            <div class="close-form">
-                <img src="./Assets/icons/close.svg" alt="">
-            </div>
-            <div class="logo">Malibu's</div>
-            <h3 class="title">Sign Up Now</h3>
-            <form action="">
-                <div class="form-input">
-                    <label for="name">
-                        User Name
-                    </label>
-                    <input type="text" name="name" id="name" required>
-                </div>
-                <div class="form-input">
-                    <label for="email">
-                        Email Adress
-                    </label>
-                    <input type="email" name="name" id="sign-up-email" required>
-                </div>
-                <div class="form-input">
-                    <label for="password">
-                        Password
-                    </label>
-                    <input type="password" name="password" id="password" required>
-                </div>
-                <div class="btns-container">
-                    <button type="submit" class="btn-mid">Sign up</button>
-                    <button class="btn-mid form-toggle">Login</button>
-                </div>
-            </form>
-        </div>
-    </div>
-    <div class="popup hide-popup" id="login-popup">
-        <div class="login-form form">
-            <div class="close-form">
-                <img src="./Assets/icons/close.svg" alt="">
-            </div>
-            <div class="logo">Malibu's</div>
-            <h3 class="title">Login Now</h3>
-            <form action="">
-                <div class="form-input">
-                    <label for="email">
-                        Email Adress
-                    </label>
-                    <input type="email" name="name" id="login-email" required>
-                </div>
-                <div class="form-input">
-                    <label for="password">
-                        Password
-                    </label>
-                    <input type="password" name="password" id="login-password" required>
-                </div>
-                <div class="form-input">
-                    <label for="c-password">
-                        Confirm Password
-                    </label>
-                    <input type="password" name="c-password" id="c-password" required>
-                </div>
-                <div class="btns-container">
-                    <button type="submit" class="btn-mid">Login</button>
-                    <button class="btn-mid form-toggle">Sign up</button>
-                </div>
-            </form>
-        </div>
-    </div>
-
-    <?php include('./Components/footer.php'); ?>
-    <?php include('./Components/scripts.php'); ?>
+    <?php include('Components/sign_up_popup.php');?>
+    <?php include('Components/login_popup.php');?>
+    <?php include('Components/footer.php'); ?>
+    <?php include('Components/scripts.php'); ?>
 </body>
 
 </html>

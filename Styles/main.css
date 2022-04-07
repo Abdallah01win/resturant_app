@@ -122,6 +122,9 @@ p{
     display: grid;
     place-content: center;
 }
+.nav li, footer .pages li{
+    transition: all 200ms ease-in;
+}
 .nav li:hover, footer .pages li:hover{
     cursor: pointer;
     color: var(--main-green);
@@ -282,7 +285,7 @@ footer .element-title{
     top: 0;
     left: 0;
     z-index: 5;
-    background-color: rgba(5, 5, 5, .65);
+    background-color: rgba(5, 5, 5, .7);
     display: flex;
     align-items: center;
 }

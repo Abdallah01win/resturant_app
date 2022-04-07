@@ -7,6 +7,7 @@ const formToggle = document.getElementsByClassName('form-toggle')
 const formClose = document.getElementsByClassName('close-form')
 
 let isLoggedIn = false;
+/* Use cookies to tell js that a user is logged in or not*/ 
 
 function togglePopup(btn, popup){
     btn.addEventListener('click', (e)=>{

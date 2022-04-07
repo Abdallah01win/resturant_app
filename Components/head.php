@@ -1,5 +1,6 @@
 <?php 
     include('app/config/database.php');
+    include('app/config/functions.php');
 ?>
 <head>
     <meta charset="UTF-8">
