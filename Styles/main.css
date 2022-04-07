@@ -285,10 +285,11 @@ footer .element-title{
     background-color: rgba(5, 5, 5, .65);
     display: flex;
     align-items: center;
-
-    /*visibility: hidden;
+}
+.hide-popup{
+    visibility: hidden;
     opacity: 0;
-    pointer-events: none;*/
+    pointer-events: none;
 }
 .form{
     background: white;

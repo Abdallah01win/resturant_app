@@ -44,8 +44,10 @@ $dishes = mysqli_fetch_all($result, MYSQLI_ASSOC);
                 <h1 class="header">Quality food, locally sourced, and baeutifly cooked</h1>
                 <p class="paragraph">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam vitae obcaecati placeat at voluptate, molestias non dolorum.</p>
                 <div class="btns-container">
-                    <a class="btn" href="">Order Dilivery</a>
-                    <a class="btn" href="">Book a table</a>
+                    <?php echo ' <a class="btn" href="menu.php" id="order-btn">Order Dilivery</a>'?>
+                   <?php echo '<a class="btn" href="admin.php" id="book-btn">Book a table</a>'?>
+                   <!-- <a class="btn" href="" id="order-btn">Order Dilivery</a>
+                   <a class="btn" href="" id="book-btn">Book a table</a> -->
                 </div>
             </div>
             <div class="hero-img">
@@ -117,11 +119,11 @@ $dishes = mysqli_fetch_all($result, MYSQLI_ASSOC);
                 <?php } ?>
             </div>
             <div class="btns-container">
-                <?php echo '<a href="menu.php" class="btn-dark">View full menu</a>' ?>
+                <?php echo '<a href="menu.php" class="btn-dark" id="full-menu">View full menu</a>' ?>
             </div>
         </div>
     </section>
-    <div class="popup">
+    <div class="popup hide-popup" id="signup-popup">
         <div class="sign-up-form form">
             <div class="close-form">
                 <img src="./Assets/icons/close.svg" alt="">
@@ -149,12 +151,12 @@ $dishes = mysqli_fetch_all($result, MYSQLI_ASSOC);
                 </div>
                 <div class="btns-container">
                     <button type="submit" class="btn-mid">Sign up</button>
-                    <button class="btn-mid">Login</button>
+                    <button class="btn-mid form-toggle">Login</button>
                 </div>
             </form>
         </div>
     </div>
-    <div class="popup">
+    <div class="popup hide-popup" id="login-popup">
         <div class="login-form form">
             <div class="close-form">
                 <img src="./Assets/icons/close.svg" alt="">
@@ -172,7 +174,7 @@ $dishes = mysqli_fetch_all($result, MYSQLI_ASSOC);
                     <label for="password">
                         Password
                     </label>
-                    <input type="password" name="password" id="password" required>
+                    <input type="password" name="password" id="login-password" required>
                 </div>
                 <div class="form-input">
                     <label for="c-password">
@@ -182,7 +184,7 @@ $dishes = mysqli_fetch_all($result, MYSQLI_ASSOC);
                 </div>
                 <div class="btns-container">
                     <button type="submit" class="btn-mid">Login</button>
-                    <button class="btn-mid">Sign up</button>
+                    <button class="btn-mid form-toggle">Sign up</button>
                 </div>
             </form>
         </div>
