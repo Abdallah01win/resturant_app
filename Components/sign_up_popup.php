@@ -5,7 +5,7 @@
             </div>
             <div class="logo">Malibu's</div>
             <h3 class="title">Sign Up Now</h3>
-            <form action="<?php echo htmlspecialchars('menu.php');?>" method="POST">
+            <form action="<?php echo htmlspecialchars('/app/routes/sign_up.php');?>" method="POST">
                 <div class="form-input">
                     <label for="name">
                         User Name

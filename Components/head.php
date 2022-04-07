@@ -1,6 +1,7 @@
 <?php 
     include('app/config/database.php');
     include('app/config/functions.php');
+    session_start();
 ?>
 <head>
     <meta charset="UTF-8">

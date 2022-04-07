@@ -1,31 +1,4 @@
-<?php /*
-    $dishes = [
-        [
-            'name' => 'red steak1',
-            'ratting' => 5,
-            'img_url' => './Assets/dish-1.jpg',
-            'discription' => 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem.',
-            'price' => 20.00
 
-        ],
-        [
-            'name' => 'red steak2',
-            "ratting" => 4,
-            'img_url' => './Assets/dish-2.jpg',
-            'discription' => "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem.",
-            "price" => 30.00
-
-        ],
-        [
-            'name' => 'red steak3',
-            "ratting" => 4.5,
-            'img_url' => './Assets/dishes/seafood_paella.jpg',
-            'discription' => "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem.",
-            "price" => 45.00
-
-        ]
-    ]*/
-?>
 <!DOCTYPE html>
 <html lang="en">
 <?php include('./Components/head.php'); ?>
@@ -34,8 +7,8 @@
 $sql = 'SELECT * FROM dishes';
 $result = mysqli_query($conn, $sql);
 $dishes = mysqli_fetch_all($result, MYSQLI_ASSOC);
-
 ?>
+
 
 <body>
     <section class="hero ">

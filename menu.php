@@ -3,56 +3,17 @@
 <?php include('Components/head.php'); ?>
 <!-- include the functions filr here or in the head itself -->
 <?php
+
+if (!isset($_SESSION["userid"])) {
+    header('location: index.php?error=backfrommenuepage');
+    exit();
+}
+
+
 $sql = 'SELECT * FROM dishes';
 $result = mysqli_query($conn, $sql);
 $dishes = mysqli_fetch_all($result, MYSQLI_ASSOC);
-
-if (isset($_POST["login_submit"])) {
-    echo ('from loggin form');
-    $email = $_POST["login-email"];
-    $password = $_POST["password"];
-    $c_password = $_POST["c-password"];
-
-    if (emptyInputLogin($email, $password, $c_password) !== false) {
-        header('location: index.php?error=emptyinput');
-        exit();
-    };
-    if (pwdMatch($password, $c_password) !== false) {
-        header('location: index.php?error=passwordsdontmatch');
-        exit();
-    };
-} else if (isset($_POST["sign_up_submit"])) {
-    $user_name = $_POST["name"];
-    $sign_up_email = $_POST["sign-up-email"];
-    $password = $_POST["password"];
-    echo ('from sign up form');
-
-    if (emptyInputSignup($user_name, $sign_up_email, $password) !== false) {
-        header('location: index.php?error=emptyinput');
-        exit();
-    };
-    if (invalidUid($user_name) !== false) {
-        header('location: index.php?error=invaliduid');
-        exit();
-    };
-    if (invalidEmail($sign_up_email) !== false) {
-        header('location: index.php?error=invalidemail');
-        exit();
-    };
-    if (emailExists($conn, $sign_up_email) !== false) {
-        header('location: index.php?error=emailtaken');
-        exit();
-    };
-
-    createUser($conn, $user_name, $sign_up_email, $password);
-} else {
-    header('location: index.php');
-    exit();
-};
-
-
-
-?>
+;?>
 
 
 <body>

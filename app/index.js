@@ -22,7 +22,7 @@ function closePopup(btn, popup){
     })
 }
 
-if (!isLoggedIn) {   
+if (isLoggedIn === false) {   
     togglePopup(orderBtn, signUpPopup);
     togglePopup(bookBtn, signUpPopup);
     togglePopup(fullMenuBtn, signUpPopup);
