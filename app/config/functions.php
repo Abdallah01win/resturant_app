@@ -86,6 +86,20 @@ function createUser($conn, $user_name, $sign_up_email, $password)
     exit();
     /*Start session when the user is created in db and fetch id and set it to the session*/
 };
+function addDish($conn, $dish_img_link, $dish_name, $ratting, $discription, $dish_price, $dish_category)
+{
+    $sql = "INSERT INTO dishes (img_link, name, ratting, discription, price, category) VALUES (?, ?, ?, ?, ?, ?)";
+    $stmt = mysqli_stmt_init($conn);
+    if (!mysqli_stmt_prepare($stmt, $sql)) {
+        header('location: ../../admin.php?error=stmtfaild');
+        exit();
+    }
+    mysqli_stmt_bind_param($stmt, "ssisis", $dish_img_link, $dish_name, $ratting, $discription, $dish_price, $dish_category);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_close($stmt);
+    header('location: ../../admin.php');
+    exit();
+};
 
 function loginUser($conn, $email, $password)
 {
