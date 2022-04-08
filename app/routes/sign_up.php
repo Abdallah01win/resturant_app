@@ -1,8 +1,9 @@
 <?php
+include('../config/database.php');
+include('../config/functions.php');
 $user_name = $_POST["name"];
 $sign_up_email = $_POST["sign-up-email"];
 $password = $_POST["password"];
-echo ('from sign up form');
 
 if (emptyInputSignup($user_name, $sign_up_email, $password) !== false) {
     header('location: index.php?error=emptyinput');

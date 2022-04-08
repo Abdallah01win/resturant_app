@@ -6,8 +6,9 @@ const fullMenuBtn = document.getElementById('full-menu')
 const formToggle = document.getElementsByClassName('form-toggle')
 const formClose = document.getElementsByClassName('close-form')
 
-let isLoggedIn = false;
-/* Use cookies to tell js that a user is logged in or not*/ 
+function getCookie(name) {
+    return (document.cookie.match('(^|;) *'+name+'=([^;]*)')||[])[2];
+}
 
 function togglePopup(btn, popup){
     btn.addEventListener('click', (e)=>{
@@ -22,7 +23,7 @@ function closePopup(btn, popup){
     })
 }
 
-if (isLoggedIn === false) {   
+if (!getCookie('userId')) {
     togglePopup(orderBtn, signUpPopup);
     togglePopup(bookBtn, signUpPopup);
     togglePopup(fullMenuBtn, signUpPopup);

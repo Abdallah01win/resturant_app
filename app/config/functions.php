@@ -82,7 +82,8 @@ function createUser($conn, $user_name, $sign_up_email, $password)
     mysqli_stmt_bind_param($stmt, "sss", $user_name, $sign_up_email, $hashedpwd);
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
-
+    header('location: ../../menu.php');
+    exit();
     /*Start session when the user is created in db and fetch id and set it to the session*/
 };
 
@@ -102,19 +103,16 @@ function loginUser($conn, $email, $password)
             session_start();
             $_SESSION["userid"] = $userExists["id"];
             $_SESSION["username"] = $userExists["user_name"];
+            setcookie('userId', $userExists["id"], time()+86400 * 1, '/');
             if ($userExists['type'] === 1) {
                 $_SESSION["type"] = 1;
                 header('location: ../../admin.php');
                 exit();
-                //set a cookie to communicate with js
             } else {
-                session_start();
-                $_SESSION["userid"] = $userExists["id"];
-                $_SESSION["username"] = $userExists["user_name"];
+                $_SESSION["type"] = 0;
                 header('location: ../../menu.php');
                 exit();
-                //set a cookie to communicate with js
             }
         }
     }
-};;
+};
