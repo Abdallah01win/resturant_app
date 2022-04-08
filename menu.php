@@ -12,8 +12,7 @@ if (!isset($_SESSION["userid"])) {
 
 $sql = 'SELECT * FROM dishes';
 $result = mysqli_query($conn, $sql);
-$dishes = mysqli_fetch_all($result, MYSQLI_ASSOC);
-;?>
+$dishes = mysqli_fetch_all($result, MYSQLI_ASSOC);; ?>
 
 
 <body>
@@ -36,7 +35,13 @@ $dishes = mysqli_fetch_all($result, MYSQLI_ASSOC);
                             </div>
                             <div class="dish-discription">
                                 <?php echo $dish['discription'] ?></div>
-                            <div class="dish-price"><?php echo '$' . $dish['price'] . '.00' ?>
+                            <div class="dish-price">
+                                <span>
+                                    <?php echo '$' . $dish['price'] . '.00' ?>
+                                </span>
+                                <span>
+                                    <img src='Assets/icons/heart.svg' alt=''>
+                                </span>
                             </div>
                         </div>
                     </div>

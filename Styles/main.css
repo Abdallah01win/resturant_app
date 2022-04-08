@@ -102,6 +102,27 @@ p{
     font-weight: 400;
     font-size: 1.6rem;
 }
+.btn-sm{
+    text-transform: uppercase;
+    padding: 0.6rem 1.2rem;
+    border: solid 1px var(--main-dark);
+    font-weight: 400;
+    font-size: .8rem;
+}
+.btn-green{
+    background: var(--main-green);
+    font-weight: 500;
+    border: none;
+    color: var(--main-dark);
+    cursor: pointer;
+}
+.btn-red{
+    background: #fa2222;
+    font-weight: 500;
+    border: none;
+    color: var(--main-dark);
+    cursor: pointer;
+}
 
 /* ------ Components ------ */
 .nav{
@@ -237,9 +258,19 @@ nav li img{
     font-weight: 400;
 }
 .dish-price{
+    display: flex;
+    justify-content: space-between;
     color: var(--main-green);
     font-size: 2.4rem;
     margin-top: 2rem;
+}
+.dish-price span{
+    display: grid;
+    place-content: center;
+}
+.dish-price img{
+    width: 25px;
+    height: 25px;
 }
 .menu .btns-container:last-of-type {
     justify-content: center;
@@ -347,4 +378,41 @@ form{
     display: flex;
     flex-direction: column;
     row-gap: 1.2rem;
+}
+
+
+/*-------- admin page ----------*/
+.currect-meals{
+    margin-top: 6.4rem ;
+    margin-bottom: 6.4rem ;
+    row-gap: 3.2rem;
+    column-gap: 3.2rem;
+}
+
+.meal{
+    display: flex;
+    align-items: center;
+    column-gap: 1.6rem;
+    border: solid 1px var(--main-dark);
+    padding: 1.2rem 2.4rem;
+}
+.meal-img{
+    width: 10rem;
+    height: 10rem;
+    border-radius: 1000rem;
+}
+.meal-title{
+    font-weight: 500;
+    text-transform: capitalize;
+}
+.meal .dish-price{
+    margin: 0;
+}
+.meal-actions{
+    display: flex;
+    flex-direction: column;
+}
+.meal-actions img{
+    width: 28px;
+    height: 28px;
 }

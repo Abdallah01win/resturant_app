@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <?php include('./Components/head.php'); ?>
@@ -18,9 +17,9 @@ $dishes = mysqli_fetch_all($result, MYSQLI_ASSOC);
                 <h1 class="header">Quality food, locally sourced, and baeutifly cooked</h1>
                 <p class="paragraph">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam vitae obcaecati placeat at voluptate, molestias non dolorum.</p>
                 <div class="btns-container">
-                    <?php echo ' <a class="btn" href="menu.php" id="order-btn">Order Dilivery</a>'?>
-                   <?php echo '<a class="btn" href="menu.php" id="book-btn">Book a table</a>'?>
-                   <!-- <a class="btn" href="" id="order-btn">Order Dilivery</a>
+                    <?php echo ' <a class="btn" href="menu.php" id="order-btn">Order Dilivery</a>' ?>
+                    <?php echo '<a class="btn" href="menu.php" id="book-btn">Book a table</a>' ?>
+                    <!-- <a class="btn" href="" id="order-btn">Order Dilivery</a>
                    <a class="btn" href="" id="book-btn">Book a table</a> -->
                 </div>
             </div>
@@ -86,7 +85,13 @@ $dishes = mysqli_fetch_all($result, MYSQLI_ASSOC);
                             </div>
                             <div class="dish-discription">
                                 <?php echo $dishes[$i]['discription'] ?></div>
-                            <div class="dish-price"><?php echo '$' . $dishes[$i]['price'] . '.00' ?>
+                            <div class="dish-price">
+                                <span>
+                                    <?php echo '$' . $dishes[$i]['price'] . '.00' ?>
+                                </span>
+                                <span>
+                                    <img src='Assets/icons/heart.svg' alt=''>
+                                </span>
                             </div>
                         </div>
                     </div>
@@ -97,8 +102,8 @@ $dishes = mysqli_fetch_all($result, MYSQLI_ASSOC);
             </div>
         </div>
     </section>
-    <?php include('Components/sign_up_popup.php');?>
-    <?php include('Components/login_popup.php');?>
+    <?php include('Components/sign_up_popup.php'); ?>
+    <?php include('Components/login_popup.php'); ?>
     <?php include('Components/footer.php'); ?>
     <?php include('Components/scripts.php'); ?>
 </body>
