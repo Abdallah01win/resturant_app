@@ -104,6 +104,7 @@ $dishes = mysqli_fetch_all($result, MYSQLI_ASSOC);
     </section>
     <?php include('Components/sign_up_popup.php'); ?>
     <?php include('Components/login_popup.php'); ?>
+    <?php include('./Components/logout_alert.php'); ?>
     <?php include('Components/footer.php'); ?>
     <?php include('Components/scripts.php'); ?>
 </body>

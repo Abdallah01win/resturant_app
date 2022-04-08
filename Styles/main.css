@@ -89,6 +89,7 @@ p{
     font-weight: 400;
 }
 .btn-dark{
+    cursor: pointer;
     background: none;
     text-transform: uppercase;
     padding: 1.2rem 2.4rem;
@@ -153,6 +154,22 @@ p{
 nav li img{
     width: 28px;
     height: 28px;
+}
+
+
+.alert-title{
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 2.4rem;
+    margin: 2.4rem 0rem;
+    font-weight: 700;
+    text-align: center;
+}
+.alert .btns-container{
+    justify-content: center;
+}
+.alert .close-form:last-of-type{
+    position: initial;
+    margin: 0;
 }
 
 /* ------ Hero Section ------ */
@@ -307,7 +324,6 @@ footer .element-title{
     margin-bottom: 1.2rem;
 }
 
-
 /*--------- form styles -------*/
 .popup{
     height: 100vh;
@@ -416,3 +432,4 @@ form{
     width: 28px;
     height: 28px;
 }
+
