@@ -10,10 +10,22 @@ if (!isset($_SESSION["userid"])) {
 }
 
 
-$sql = 'SELECT * FROM dishes';
-$result = mysqli_query($conn, $sql);
-$dishes = mysqli_fetch_all($result, MYSQLI_ASSOC);; ?>
-
+if (!isset($_GET['category'])) {
+    $sql = "SELECT * FROM dishes";
+    $result = mysqli_query($conn, $sql);
+    $dishes = mysqli_fetch_all($result, MYSQLI_ASSOC);
+} else {
+    $category = $_GET['category'];
+    $sql = "SELECT * FROM dishes WHERE category = ?";
+    $stmt = mysqli_stmt_init($conn);
+    if (!mysqli_stmt_prepare($stmt, $sql)) {
+        header('location: menu.php?error=stmtfaild');
+        exit();
+    }
+    mysqli_stmt_bind_param($stmt, "s", $category);
+    mysqli_stmt_execute($stmt);
+    $dishes = mysqli_stmt_get_result($stmt);
+}; ?>
 
 <body>
     <?php include('Components/navigation.php'); ?>

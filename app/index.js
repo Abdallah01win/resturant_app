@@ -9,6 +9,23 @@ const adminLogout = document.getElementsByClassName('admin-logout')
 const logoutAlert = document.getElementById('logout-alert')
 const newDishPopup = document.getElementById('new-dish-popup')
 const logoutBtns = document.getElementsByClassName('logout');
+const filterBtns = document.getElementsByClassName('filter')
+
+
+
+
+let url = new URL(window.location.href);
+let strUrl = window.location.href;
+if (url.searchParams.get('category')) {
+    let category = url.searchParams.get('category');
+    for (const filter of filterBtns) {
+        if (category === filter.innerHTML){
+            filter.classList.add('active-filter')
+        } 
+    }
+} else if(!url.searchParams.get('category') && strUrl.includes('menu.php')){
+    filterBtns[0].classList.add('active-filter');
+}
 
 function getCookie(name) {
     return (document.cookie.match('(^|;) *' + name + '=([^;]*)') || [])[2];
@@ -63,3 +80,7 @@ if(logoutAlert){
 
 const addDishBtn = document.getElementById('add-btn');
 togglePopup(addDishBtn, newDishPopup);
+
+
+
+
