@@ -136,9 +136,9 @@ p{
     display: flex;
     justify-content: space-between;
 }
-.nav ul :last-child{
+/*.nav ul:last-child{
     font-size: 2.6rem;
-}
+}*/
 .nav li{
     padding: 0 1.6rem;
     display: grid;
@@ -147,7 +147,7 @@ p{
 .nav li, footer .pages li{
     transition: all 200ms ease-in;
 }
-.nav li:hover, footer .pages li:hover{
+.nav li a:hover, footer .pages li:hover{
     cursor: pointer;
     color: var(--main-green);
 }
@@ -159,6 +159,7 @@ nav li img{
 .active-filter{
     color: var(--main-white);
     background:var(--main-dark);
+    border: none;
 }
 .alert-title{
     font-family: 'Josefin Sans', sans-serif;

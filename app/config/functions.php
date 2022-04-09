@@ -100,6 +100,34 @@ function addDish($conn, $dish_img_link, $dish_name, $ratting, $discription, $dis
     header('location: ../../admin.php');
     exit();
 };
+function addDishToWhishlist($conn, $userId, $dishId)
+{
+    $sql = "SELECT * FROM whishlist WHERE dishId = ? AND userId = ?";
+    $stmt = mysqli_stmt_init($conn);
+    if (!mysqli_stmt_prepare($stmt, $sql)) {
+        header('location: index.php?error=stmtfaild');
+        exit();
+    }
+    mysqli_stmt_bind_param($stmt, "ii",$dishId, $userId) ;
+    mysqli_stmt_execute($stmt);
+    $querry_result = mysqli_stmt_get_result($stmt);
+    if (mysqli_num_rows($querry_result) === 1) {
+        header('location: ../../menu.php?error=dishalreadyinwhishlist');
+        exit();
+    } else {        
+        $sql2 = "INSERT INTO whishlist (userId, dishId) VALUES (?, ?)";
+        $stmt2 = mysqli_stmt_init($conn);
+        if (!mysqli_stmt_prepare($stmt2, $sql2)) {
+            header('location: ../../menu.php?error=stmtfaild');
+            exit();
+        }
+        mysqli_stmt_bind_param($stmt2, "ii", $userId, $dishId);
+        mysqli_stmt_execute($stmt2);
+        mysqli_stmt_close($stmt2);
+        header('location: ../../menu.php');
+        exit();
+    }
+};
 
 function loginUser($conn, $email, $password)
 {
@@ -117,7 +145,7 @@ function loginUser($conn, $email, $password)
             session_start();
             $_SESSION["userid"] = $userExists["id"];
             $_SESSION["username"] = $userExists["user_name"];
-            setcookie('userId', $userExists["id"], time()+86400 * 1, '/');
+            setcookie('userId', $userExists["id"], time() + 86400 * 1, '/');
             if ($userExists['type'] === 1) {
                 $_SESSION["type"] = 1;
                 header('location: ../../admin.php');
