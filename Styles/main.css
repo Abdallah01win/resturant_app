@@ -151,9 +151,13 @@ p{
     cursor: pointer;
     color: var(--main-green);
 }
+.nav .btn-green:hover{
+    color: var(--main-dark);
+}
 nav li img{
     width: 28px;
     height: 28px;
+    cursor: pointer;
 }
 
 .active-filter{
@@ -278,6 +282,7 @@ nav li img{
 .dish img{
     width: 100%;
     height: 50%;
+    cursor: pointer;
 }
 .dish-info{
     padding: 2.4rem;

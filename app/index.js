@@ -10,8 +10,7 @@ const logoutAlert = document.getElementById('logout-alert')
 const newDishPopup = document.getElementById('new-dish-popup')
 const logoutBtns = document.getElementsByClassName('logout');
 const filterBtns = document.getElementsByClassName('filter')
-
-
+const whishlistPopup = document.getElementById('whishlist-alert')
 
 
 let url = new URL(window.location.href);
@@ -72,6 +71,7 @@ if (signUpPopup) {
 
 if(logoutAlert){
     for (const close of formClose) {
+        closePopup(close, whishlistPopup);
         closePopup(close, logoutAlert);
         closePopup(close, newDishPopup);
     }
