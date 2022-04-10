@@ -8,6 +8,8 @@ if (!isset($_SESSION["userid"]) || !isset($_GET['dishId'])){
 } else{
     $userId = $_SESSION["userid"];
     $dishId = intval($_GET['dishId']);
-    deleteItemFromWl($conn, $userId, $dishId);
+    addToCart($conn, $userId, $dishId);
+    //chack if it's in the wishlist
+    // add it to cart
+    // delete from wishlist
 }
-// add deletion from whish mist functionality;

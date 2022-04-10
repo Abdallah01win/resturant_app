@@ -8,7 +8,7 @@
                 echo "<li>About</li>";
                 echo "<li><a href='menu.php'>Menu</a></li>";
                 echo "<li>Reviews</li>";
-                echo "<li><img src='Assets/icons/heart-white.svg' alt=''></li>";
+                echo "<li id='nav-wishlist'><img src='Assets/icons/heart-white.svg' alt=''></li>";
                 echo "<li><img src='Assets/icons/tote.svg' alt=''></li>";
                 echo "<li class='logout'><img src='Assets/icons/user.svg' alt=''></li>";
             } else if ($_SESSION["type"] === 1) {

@@ -1,4 +1,4 @@
-<div class="alert popup " id="whishlist-alert">
+<div class="alert popup hide-popup" id="whishlist-alert">
     <div class="login-form form">
         <div class="close-form">
             <img src="./Assets/icons/close.svg" alt="">
@@ -18,8 +18,11 @@
                 echo"<p>";
                     echo  '$' . $wld['price'] . '.00';
                 echo"</p>";
+                echo "<a href='app/routes/add_to_cart.php?dishId=" . $wld['id'] . "'" . ">";
+                echo "<img class='wl-action' src='Assets/icons/tote-dark.svg' alt=''>";
+                echo "</a>";
                 echo "<a href='app/routes/delete_from_wl.php?dishId=" . $wld['id'] . "'" . ">";
-                echo "<img class='remove-wl' src='Assets/icons/trash.svg' alt=''>";
+                echo "<img class='wl-action' src='Assets/icons/trash.svg' alt=''>";
                 echo "</a>";
             echo"</div>";
             }

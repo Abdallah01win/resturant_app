@@ -11,7 +11,7 @@ const newDishPopup = document.getElementById('new-dish-popup')
 const logoutBtns = document.getElementsByClassName('logout');
 const filterBtns = document.getElementsByClassName('filter')
 const whishlistPopup = document.getElementById('whishlist-alert')
-
+const navWishlistBtn = document.getElementById('nav-wishlist');
 
 let url = new URL(window.location.href);
 let strUrl = window.location.href;
@@ -57,6 +57,7 @@ if (!getCookie('userId')) {
     for (const btn of logoutBtns) {
         toggleAlert(btn, logoutAlert)
     }
+    togglePopup(navWishlistBtn, whishlistPopup);
 }
 if (signUpPopup) {
     for (const button of formToggle) {

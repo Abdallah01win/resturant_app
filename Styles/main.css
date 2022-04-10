@@ -500,7 +500,7 @@ form{
     place-content: center;
 }
 
-.remove-wl{
+.wl-action{
     width: 24px;
     cursor: pointer;
 }

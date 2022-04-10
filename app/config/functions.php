@@ -100,21 +100,71 @@ function addDish($conn, $dish_img_link, $dish_name, $ratting, $discription, $dis
     header('location: ../../admin.php');
     exit();
 };
-function addDishToWhishlist($conn, $userId, $dishId)
+
+function checkIfItemInDbtable($conn, $dbTable, $userId, $dishId)
 {
-    $sql = "SELECT * FROM whishlist WHERE dishId = ? AND userId = ?";
+
+    $sql = "SELECT * FROM " .$dbTable. " WHERE dishId = ? AND userId = ?";
     $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sql)) {
         header('location: index.php?error=stmtfaild');
         exit();
     }
-    mysqli_stmt_bind_param($stmt, "ii",$dishId, $userId) ;
+    mysqli_stmt_bind_param($stmt, "ii", $dishId, $userId);
     mysqli_stmt_execute($stmt);
     $querry_result = mysqli_stmt_get_result($stmt);
     if (mysqli_num_rows($querry_result) === 1) {
+        return true;
+    } else {
+        return false;
+    }
+};
+
+function deleteItemFromWl($conn, $userId, $dishId)
+{
+    $sql2 = "DELETE FROM whishlist WHERE userId = ? AND dishId = ?";
+    $stmt2 = mysqli_stmt_init($conn);
+    if (!mysqli_stmt_prepare($stmt2, $sql2)) {
+        header('location: ../../menu.php?error=stmtfaild');
+        exit();
+    }
+    mysqli_stmt_bind_param($stmt2, "ii", $userId, $dishId);
+    mysqli_stmt_execute($stmt2);
+    mysqli_stmt_close($stmt2);
+    header('location: ../../menu.php');
+    exit();
+};
+
+function addToCart($conn, $userId, $dishId)
+{
+    if (checkIfItemInDbtable($conn, 'cart', $userId, $dishId) === true) {
         header('location: ../../menu.php?error=dishalreadyinwhishlist');
         exit();
-    } else {        
+    } else {
+        $sql = "INSERT INTO cart (userId, dishId) VALUES (?, ?)";
+        $stmt = mysqli_stmt_init($conn);
+        if (!mysqli_stmt_prepare($stmt, $sql)) {
+            header('location: ../../menu.php?error=stmtfaild');
+            exit();
+        } else {
+            mysqli_stmt_bind_param($stmt, "ii", $userId, $dishId);
+            mysqli_stmt_execute($stmt);
+            mysqli_stmt_close($stmt);
+            if (checkIfItemInDbtable($conn, 'whishlist', $userId, $dishId) === true) {
+                deleteItemFromWl($conn, $userId, $dishId);
+            }
+            header('location: ../../menu.php');
+            exit();
+        }
+    }
+}
+
+function addDishToWhishlist($conn, $userId, $dishId)
+{
+    if (checkIfItemInDbtable($conn, 'whishlist', $userId, $dishId) === true) {
+        header('location: ../../menu.php?error=dishalreadyinwhishlist');
+        exit();
+    } else {
         $sql2 = "INSERT INTO whishlist (userId, dishId) VALUES (?, ?)";
         $stmt2 = mysqli_stmt_init($conn);
         if (!mysqli_stmt_prepare($stmt2, $sql2)) {
