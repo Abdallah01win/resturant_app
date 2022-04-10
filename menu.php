@@ -7,8 +7,7 @@ if (!isset($_SESSION["userid"])) {
     header('location: index.php?error=backfrommenuepage');
     exit();
 }
-
-
+$userId = $_SESSION["userid"];
 if (!isset($_GET['category'])) {
     $sql = "SELECT * FROM dishes";
     $result = mysqli_query($conn, $sql);
@@ -24,37 +23,10 @@ if (!isset($_GET['category'])) {
     mysqli_stmt_bind_param($stmt, "s", $category);
     mysqli_stmt_execute($stmt);
     $dishes = mysqli_stmt_get_result($stmt);
-};
-$sql2 = "SELECT * FROM whishlist WHERE userId = ?";
-$stmt2 = mysqli_stmt_init($conn);
-if (!mysqli_stmt_prepare($stmt2, $sql2)) {
-    header('location: menu.php?error=stmtfaild');
-    exit();
-}
-mysqli_stmt_bind_param($stmt2, "i", $_SESSION["userid"]);
-mysqli_stmt_execute($stmt2);
-$dishes_in_whishlist = array_map(function ($params) {
-    return $params['dishId'];
-}, mysqli_fetch_all(mysqli_stmt_get_result($stmt2), MYSQLI_ASSOC));
-
-; 
-$whishlist_dishes = [];
-for ($i=0; $i < count($dishes_in_whishlist) ; $i++) { 
-    $sql = "SELECT * FROM dishes WHERE id = ?";
-    $stmt = mysqli_stmt_init($conn);
-    if (!mysqli_stmt_prepare($stmt, $sql)) {
-        header('location: menu.php?error=stmtfaild');
-        exit();
-    }
-    mysqli_stmt_bind_param($stmt, "i", $dishes_in_whishlist[$i]);
-    mysqli_stmt_execute($stmt);
-    $temp_dishes = mysqli_fetch_all(mysqli_stmt_get_result($stmt),MYSQLI_ASSOC);
-    array_push($whishlist_dishes, $temp_dishes);
-}
-
-?>
+};; ?>
 
 <body>
+    <?php include('./Components/whishlist_popup.php'); ?>
     <?php include('Components/navigation.php'); ?>
     <section class="menu">
         <div class="container">
@@ -78,7 +50,7 @@ for ($i=0; $i < count($dishes_in_whishlist) ; $i++) {
                                 <span>
                                     <?php echo '$' . $dish['price'] . '.00' ?>
                                 </span>
-                                <?php if (in_array($dish['id'], $dishes_in_whishlist)) {
+                                <?php if (in_array($dish['id'], $whishlist_dishes)) {
                                     echo "<img src='Assets/icons/heart-filled.svg' alt=''>";
                                 } else {
                                     echo "<a href='app/routes/add_to_whishlist.php?dishId=" . $dish['id'] . "'" . ">";
@@ -92,7 +64,6 @@ for ($i=0; $i < count($dishes_in_whishlist) ; $i++) {
             </div>
         </div>
     </section>
-    <?php include('./Components/whishlist_popup.php'); ?>
     <?php include('./Components/logout_alert.php'); ?>
     <?php include('./Components/footer.php'); ?>
     <?php include('./Components/scripts.php'); ?>

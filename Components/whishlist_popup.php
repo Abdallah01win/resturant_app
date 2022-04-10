@@ -1,3 +1,6 @@
+<?php
+$whishlist_dishes = getDishesFromDbTables($conn, 'whishlist', $userId)
+;?>
 <div class="alert popup hide-popup" id="whishlist-alert">
     <div class="login-form form">
         <div class="close-form">
@@ -9,9 +12,9 @@
         <?php for ($x=0; $x < count($whishlist_dishes); $x++) { 
             foreach ($whishlist_dishes[$x] as $wld ){
             echo "<div class='whishlist-item'>";
-                echo "<img class='item-img'";
+                /*echo "<img class='item-img'";
                 echo "src='." . $wld['img_link'] . "'";
-                echo  ">";
+                echo  ">";*/
                 echo"<p class='item-title'>";
                     echo $wld['name'] ;
                 echo"</p>";

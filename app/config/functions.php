@@ -104,7 +104,7 @@ function addDish($conn, $dish_img_link, $dish_name, $ratting, $discription, $dis
 function checkIfItemInDbtable($conn, $dbTable, $userId, $dishId)
 {
 
-    $sql = "SELECT * FROM " .$dbTable. " WHERE dishId = ? AND userId = ?";
+    $sql = "SELECT * FROM " . $dbTable . " WHERE dishId = ? AND userId = ?";
     $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sql)) {
         header('location: index.php?error=stmtfaild');
@@ -208,3 +208,35 @@ function loginUser($conn, $email, $password)
         }
     }
 };
+
+function getDishesFromDbTables($conn, $dbTable, $userId)
+{
+    // Select The loggedin user's dishes from passedin table
+    $sql = "SELECT * FROM " .$dbTable. " WHERE userId = ?";
+    $stmt = mysqli_stmt_init($conn);
+    if (!mysqli_stmt_prepare($stmt, $sql)) {
+        header('location: index.php?error=stmtfaild');
+        exit();
+    }
+    mysqli_stmt_bind_param($stmt, "i", $userId);
+    mysqli_stmt_execute($stmt);
+    $dishes_in_table = array_map(function ($params) {
+        return $params['dishId'];
+    }, mysqli_fetch_all(mysqli_stmt_get_result($stmt), MYSQLI_ASSOC));
+
+    // Fetch the selected dishes's data from Dishes table
+    $dishes = [];
+    for ($i = 0; $i < count($dishes_in_table); $i++) {
+        $sql2 = "SELECT * FROM dishes WHERE id = ?";
+        $stmt2 = mysqli_stmt_init($conn);
+        if (!mysqli_stmt_prepare($stmt2, $sql2)) {
+            header('location: index.php?error=stmtfaild');
+            exit();
+        }
+        mysqli_stmt_bind_param($stmt2, "i", $dishes_in_table[$i]);
+        mysqli_stmt_execute($stmt2);
+        $temp_dishes = mysqli_fetch_all(mysqli_stmt_get_result($stmt2), MYSQLI_ASSOC);
+        array_push($dishes, $temp_dishes);
+    };
+    return $dishes;
+}

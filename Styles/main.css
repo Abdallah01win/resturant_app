@@ -476,6 +476,8 @@ form{
 
 /*---------- whish list popup ---------*/
 .whishlist{
+    overflow-x: auto;
+    height: 360px;
 }
 .whishlist-item{
     display: flex;
@@ -484,6 +486,8 @@ form{
     column-gap: 2.2rem;
     border-bottom: solid 1px var(--main-dark);
     padding: 0.8rem 0rem;
+}
+.whishlist-item:not(:last-of-type){
     margin-bottom: 0.8rem;
 }
 .item-img{
