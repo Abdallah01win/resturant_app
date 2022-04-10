@@ -81,7 +81,7 @@ for ($i=0; $i < count($dishes_in_whishlist) ; $i++) {
                                 <?php if (in_array($dish['id'], $dishes_in_whishlist)) {
                                     echo "<img src='Assets/icons/heart-filled.svg' alt=''>";
                                 } else {
-                                    echo "<a href='app/routes/whishlist.php?dishId=" . $dish['id'] . "'" . ">";
+                                    echo "<a href='app/routes/add_to_whishlist.php?dishId=" . $dish['id'] . "'" . ">";
                                     echo "<img src='Assets/icons/heart.svg' alt=''>";
                                     echo "</a>";
                                 }; ?>

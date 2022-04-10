@@ -4,38 +4,28 @@
             <img src="./Assets/icons/close.svg" alt="">
         </div>
         <div class="logo">Malibu's</div>
-        <h3 class="alert-title">Your Whishlist</h3>
-       
+        <h3 class="alert-title">Your Wishlist</h3>
+        <div class="whishlist">
         <?php for ($x=0; $x < count($whishlist_dishes); $x++) { 
             foreach ($whishlist_dishes[$x] as $wld ){
-            echo "<div class='wishlist-item'>";
-                echo"<p>";
+            echo "<div class='whishlist-item'>";
+                echo "<img class='item-img'";
+                echo "src='." . $wld['img_link'] . "'";
+                echo  ">";
+                echo"<p class='item-title'>";
                     echo $wld['name'] ;
                 echo"</p>";
                 echo"<p>";
-                    echo $wld['price'];
+                    echo  '$' . $wld['price'] . '.00';
                 echo"</p>";
-                echo"<p>";
-                    echo $wld['ratting'];
-                echo"</p>";
+                echo "<a href='app/routes/delete_from_wl.php?dishId=" . $wld['id'] . "'" . ">";
+                echo "<img class='remove-wl' src='Assets/icons/trash.svg' alt=''>";
+                echo "</a>";
             echo"</div>";
             }
         } ;?>
-
-        
-<!-- example -->
-<?php 
-for ($i=0; $i <count($whishlist_dishes) ; $i++) { 
-    foreach($whishlist_dishes[$i] as $wld){
-        echo $wld['name'];
-        echo $wld['price'];
-        echo $wld['ratting'];
-    }
-} ;?>
-        <div class="btns-container">
-
-            <!-- <a class="btn-dark" href='app/routes/log_out.php'>Log Out</a>
-            <div class="btn btn-green close-form">cancel</div> -->
         </div>
     </div>
+    
+   
 </div>
