@@ -12,23 +12,25 @@ $dishes = mysqli_fetch_all($result, MYSQLI_ASSOC);; ?>
 
 <body>
     <?php include('Components/navigation.php'); ?>
-    <section class="currect-meals container grid-2">
+    <section class="currect-meals container">
         <?php foreach ($dishes as $dish) : ?>
             <div class="meal">
                 <img class="meal-img" src=<?php echo '.' . $dish['img_link'] ?> alt="">
-                <div class="meal-info">
+                <!-- /<div class="meal-info"> -->
                     <div class="meal-title">
                         <?php echo $dish['name'] ?>
                     </div>
-                    <div>
-                        &#9734; <?php echo $dish['ratting'] ?>
+                    <div class="meal-ratting">
+                        <?php
+                        echo"<img src='Assets/icons/star.svg'>";
+                        echo $dish['ratting'] ?>
                     </div>
-                    <div class="category">
-                        <?php echo $dish['category'] ?>
-                    </div>
+                    <!-- <div class="category">
+                        <?php //echo $dish['category'] ?>
+                    </div> -->
                     <div class="dish-price"><?php echo '$' . $dish['price'] . '.00' ?>
                     </div>
-                </div>
+                <!-- </div> -->
                 <ul class="meal-actions">
                 <li><img src='Assets/icons/pencil.svg' alt=''></li>
                 <li><img src='Assets/icons/trash.svg' alt=''></li>

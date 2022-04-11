@@ -188,7 +188,7 @@ nav li img{
     position: fixed;
     bottom: 0;
     right: 0;
-    margin: 0rem 3.2rem 3.2rem 0rem;
+    margin: 0rem 2.8rem 3.2rem 0rem;
     border-radius: 1000rem;
     background: var(--main-green);
     display: grid;
@@ -446,28 +446,41 @@ form{
     display: flex;
     align-items: center;
     column-gap: 1.6rem;
-    border: solid 1px var(--main-dark);
     padding: 1.2rem 2.4rem;
 }
+.currect-meals .meal:nth-child(odd){
+    background: #f3f5ef;
+}
 .meal-img{
-    width: 10rem;
-    height: 10rem;
+    width: 50px;
+    height: 50px;
     border-radius: 1000rem;
 }
 .meal-title{
     font-weight: 500;
     text-transform: capitalize;
+    margin-right: auto;
+}
+.meal-ratting{
+    display: flex;
+    align-items: center;
+    column-gap: 1.6rem;
+    font-size: 2.4rem;
+    font-weight: 500;
 }
 .meal .dish-price{
     margin: 0;
+    margin-left: 2.4rem;
+    font-weight: 700;
 }
 .meal-actions{
     display: flex;
-    flex-direction: column;
+    column-gap: 1.6rem;
+    margin-left: 2.4rem;
 }
-.meal-actions img{
-    width: 28px;
-    height: 28px;
+.meal-actions img, img{
+    width: 24px;
+    height: 24px;
 }
 
 
