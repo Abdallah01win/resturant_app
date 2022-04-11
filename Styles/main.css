@@ -175,7 +175,7 @@ nav li img{
 .alert .btns-container{
     justify-content: center;
 }
-.alert .close-form:last-of-type, #new-dish-popup .close-form:last-of-type{
+.btn.close-form , .btn-mid.close-form{
     position: initial;
     margin: 0;
 }
@@ -434,20 +434,20 @@ form{
 
 
 /*-------- admin page ----------*/
-.currect-meals{
+.table{
     margin-top: 6.4rem ;
-    margin-bottom: 6.4rem ;
+    margin-bottom: 8rem ;
     row-gap: 3.2rem;
     column-gap: 3.2rem;
 }
 
-.meal{
+.table-row{
     display: flex;
     align-items: center;
     column-gap: 1.6rem;
     padding: 1.2rem 2.4rem;
 }
-.currect-meals .meal:nth-child(even){
+.table .table-row:nth-child(even){
     background: #f3f5ef;
 }
 .meal-img{
@@ -467,7 +467,7 @@ form{
     font-size: 2.4rem;
     font-weight: 500;
 }
-.meal .dish-price{
+.table-row .dish-price{
     margin: 0;
     margin-left: 2.4rem;
     font-weight: 700;

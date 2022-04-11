@@ -23,7 +23,12 @@ if (!isset($_GET['category'])) {
     mysqli_stmt_bind_param($stmt, "s", $category);
     mysqli_stmt_execute($stmt);
     $dishes = mysqli_stmt_get_result($stmt);
-};; ?>
+};
+
+$wlids = getIdsinDbTable($conn, 'whishlist', $userId);
+
+
+;?>
 
 <body>
     <?php include('./Components/whishlist_popup.php'); ?>
@@ -50,7 +55,9 @@ if (!isset($_GET['category'])) {
                                 <span>
                                     <?php echo '$' . $dish['price'] . '.00' ?>
                                 </span>
-                                <?php if (in_array($dish['id'], $whishlist_dishes)) {
+                                
+                                <?php                                
+                                if (in_array($dish['id'], $wlids)) {
                                     echo "<img src='Assets/icons/heart-filled.svg' alt=''>";
                                 } else {
                                     echo "<a href='app/routes/add_to_whishlist.php?dishId=" . $dish['id'] . "'" . ">";

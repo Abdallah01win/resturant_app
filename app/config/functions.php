@@ -222,10 +222,7 @@ function loginUser($conn, $email, $password)
         }
     }
 };
-
-function getDishesFromDbTables($conn, $dbTable, $userId)
-{
-    // Select The loggedin user's dishes from passedin table
+function getIdsinDbTable($conn, $dbTable, $userId){
     $sql = "SELECT * FROM " .$dbTable. " WHERE userId = ?";
     $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sql)) {
@@ -237,6 +234,13 @@ function getDishesFromDbTables($conn, $dbTable, $userId)
     $dishes_in_table = array_map(function ($params) {
         return $params['dishId'];
     }, mysqli_fetch_all(mysqli_stmt_get_result($stmt), MYSQLI_ASSOC));
+    return $dishes_in_table;
+}
+
+function getDishesFromDbTables($conn, $dbTable, $userId)
+{
+    // Select The loggedin user's dishes' Ids from passedin table
+    $dishes_in_table = getIdsinDbTable($conn, $dbTable, $userId);
 
     // Fetch the selected dishes's data from Dishes table
     $dishes = [];
@@ -254,3 +258,5 @@ function getDishesFromDbTables($conn, $dbTable, $userId)
     };
     return $dishes;
 }
+
+

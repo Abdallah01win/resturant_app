@@ -57,7 +57,7 @@ if (!getCookie('userId')) {
     for (const btn of logoutBtns) {
         toggleAlert(btn, logoutAlert)
     }
-    //togglePopup(navWishlistBtn, whishlistPopup);
+    togglePopup(navWishlistBtn, whishlistPopup);
 }
 if (signUpPopup) {
     for (const button of formToggle) {

@@ -14,10 +14,8 @@
             } else if ($_SESSION["type"] === 1) {
                 echo "<li><a href='index.php'>Home</a></li>";
                 echo "<li><a href='menu.php'>Menu</a></li>";
-                echo "<li><a href=''>Reviews</a></li>";
                 echo "<li><a href=''>Orders</a></li>";
                 echo "<li><a href=''>Deliveries</a></li>";
-                echo "<li><a href=''>Users</a></li>";
                 echo "<li><a class='logout btn-mid btn-green' style='font-size: 1.6rem;'>Log Out</a></li> ";
             }
             ;?>
