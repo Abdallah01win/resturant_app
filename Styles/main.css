@@ -196,8 +196,8 @@ nav li img{
     padding: 1rem;
 }
 .options-btn img{
-    width:38px;
-    height:38px;
+    width:34px;
+    height:34px;
 }
 
 /* ------ Hero Section ------ */
@@ -286,7 +286,6 @@ nav li img{
 }
 .dish-info{
     padding: 2.4rem;
-    position: relative;
 }
 .dish-title{
     text-transform: capitalize;
@@ -448,7 +447,7 @@ form{
     column-gap: 1.6rem;
     padding: 1.2rem 2.4rem;
 }
-.currect-meals .meal:nth-child(odd){
+.currect-meals .meal:nth-child(even){
     background: #f3f5ef;
 }
 .meal-img{
