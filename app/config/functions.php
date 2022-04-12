@@ -120,21 +120,22 @@ function checkIfItemInDbtable($conn, $dbTable, $userId, $dishId)
     }
 };
 
-function deleteItemFromWl($conn, $userId, $dishId)
+
+function deleteItemFromDbTable($conn, $dbTable, $userId, $dishId, $redirect)
 {
-    $sql2 = "DELETE FROM whishlist WHERE userId = ? AND dishId = ?";
+    $sql2 = "DELETE FROM " .$dbTable. " WHERE userId = ? AND dishId = ?";
     $stmt2 = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt2, $sql2)) {
-        header('location: ../../menu.php?error=stmtfaild');
+        header('location: ../../cart.php?error=stmtfaild');
         exit();
     }
     mysqli_stmt_bind_param($stmt2, "ii", $userId, $dishId);
     mysqli_stmt_execute($stmt2);
     mysqli_stmt_close($stmt2);
-    header('location: ../../menu.php');
+    header("location: ../../" .$redirect.".php");
     exit();
 };
-function deleteItemFromDbTable($conn, $dishId)
+function deleteItemFromDishes($conn, $dishId)
 {
     $sql2 = "DELETE FROM dishes WHERE id = ?";
     $stmt2 = mysqli_stmt_init($conn);
@@ -165,7 +166,7 @@ function addToCart($conn, $userId, $dishId)
             mysqli_stmt_execute($stmt);
             mysqli_stmt_close($stmt);
             if (checkIfItemInDbtable($conn, 'whishlist', $userId, $dishId) === true) {
-                deleteItemFromWl($conn, $userId, $dishId);
+                deleteItemFromDbTable($conn, 'whishlist', $userId, $dishId, 'menu');
             }
             header('location: ../../menu.php');
             exit();

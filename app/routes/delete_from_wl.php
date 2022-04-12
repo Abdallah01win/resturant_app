@@ -8,5 +8,5 @@ if (!isset($_SESSION["userid"]) || !isset($_GET['dishId'])){
 } else{
     $userId = $_SESSION["userid"];
     $dishId = intval($_GET['dishId']);
-    deleteItemFromWl($conn, $userId, $dishId);
+    deleteItemFromDbTable($conn, 'whishlist', $userId, $dishId, 'menu');
 }

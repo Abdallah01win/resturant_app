@@ -437,7 +437,6 @@ form{
 .table{
     margin-top: 6.4rem ;
     margin-bottom: 8rem ;
-    row-gap: 3.2rem;
     column-gap: 3.2rem;
 }
 
@@ -519,4 +518,21 @@ form{
 .wl-action{
     width: 24px;
     cursor: pointer;
+}
+
+/*--------- cart page -------*/
+
+form.table{
+    row-gap: 0rem;
+}
+form.table input{
+    border: solid 1px var(--main-dark);
+    padding: 0.2rem 0.8rem;
+    font-size: 2rem;
+    font-weight: 500;
+    width: 6rem;
+    margin-left: .8rem;
+}
+form.table .dish-price{
+    width: 10rem;
 }

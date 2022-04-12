@@ -3,10 +3,10 @@ include('../config/database.php');
 include('../config/functions.php');
 session_start();
 
-if (!isset($_SESSION["userid"]) || $_SESSION["type"] !== 1 || !isset($_GET['dishId'])){
+if (!isset($_SESSION["userid"]) || !isset($_GET['dishId'])){
     exit();
 } else{
     $userId = $_SESSION["userid"];
     $dishId = intval($_GET['dishId']);
-    deleteItemFromDishes($conn, $dishId);
+    deleteItemFromDbTable($conn, 'cart', $userId, $dishId, 'cart');
 }
