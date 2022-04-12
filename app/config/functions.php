@@ -120,10 +120,9 @@ function checkIfItemInDbtable($conn, $dbTable, $userId, $dishId)
     }
 };
 
-
 function deleteItemFromDbTable($conn, $dbTable, $userId, $dishId, $redirect)
 {
-    $sql2 = "DELETE FROM " .$dbTable. " WHERE userId = ? AND dishId = ?";
+    $sql2 = "DELETE FROM " . $dbTable . " WHERE userId = ? AND dishId = ?";
     $stmt2 = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt2, $sql2)) {
         header('location: ../../cart.php?error=stmtfaild');
@@ -132,7 +131,7 @@ function deleteItemFromDbTable($conn, $dbTable, $userId, $dishId, $redirect)
     mysqli_stmt_bind_param($stmt2, "ii", $userId, $dishId);
     mysqli_stmt_execute($stmt2);
     mysqli_stmt_close($stmt2);
-    header("location: ../../" .$redirect.".php");
+    header("location: ../../" . $redirect . ".php");
     exit();
 };
 function deleteItemFromDishes($conn, $dishId)
@@ -168,7 +167,7 @@ function addToCart($conn, $userId, $dishId)
             if (checkIfItemInDbtable($conn, 'whishlist', $userId, $dishId) === true) {
                 deleteItemFromDbTable($conn, 'whishlist', $userId, $dishId, 'menu');
             }
-            header('location: ../../menu.php');
+            header("location: ../../menu.php");
             exit();
         }
     }
@@ -223,8 +222,9 @@ function loginUser($conn, $email, $password)
         }
     }
 };
-function getIdsinDbTable($conn, $dbTable, $userId){
-    $sql = "SELECT * FROM " .$dbTable. " WHERE userId = ?";
+function getIdsinDbTable($conn, $dbTable, $userId)
+{
+    $sql = "SELECT * FROM " . $dbTable . " WHERE userId = ?";
     $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sql)) {
         header('location: index.php?error=stmtfaild');
@@ -259,5 +259,3 @@ function getDishesFromDbTables($conn, $dbTable, $userId)
     };
     return $dishes;
 }
-
-

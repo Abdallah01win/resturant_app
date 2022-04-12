@@ -3,7 +3,7 @@
 <?php include('./Components/head.php'); ?>
 <?php
 /* Get data from dishes table */
-$sql = 'SELECT * FROM dishes';
+$sql = 'SELECT * FROM dishes LIMIT 6';
 $result = mysqli_query($conn, $sql);
 $dishes = mysqli_fetch_all($result, MYSQLI_ASSOC);
 ?>
@@ -11,6 +11,12 @@ $dishes = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
 <body>
     <section class="hero ">
+    <?php 
+    if(isset($_SESSION['userid'])){
+        $userId = $_SESSION["userid"];
+        include('./Components/whishlist_popup.php');
+    }
+    ;?>
         <?php include('./Components/navigation.php'); ?>
         <div class="content grid-2 container">
             <div class="hero-text">
@@ -19,8 +25,6 @@ $dishes = mysqli_fetch_all($result, MYSQLI_ASSOC);
                 <div class="btns-container">
                     <?php echo ' <a class="btn" href="menu.php" id="order-btn">Order Dilivery</a>' ?>
                     <?php echo '<a class="btn" href="menu.php" id="book-btn">Book a table</a>' ?>
-                    <!-- <a class="btn" href="" id="order-btn">Order Dilivery</a>
-                   <a class="btn" href="" id="book-btn">Book a table</a> -->
                 </div>
             </div>
             <div class="hero-img">

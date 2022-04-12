@@ -490,6 +490,9 @@ form{
     overflow-x: auto;
     height: 360px;
 }
+.hero .whishlist, .hero .alert-title {
+    color: #050505;
+}
 .whishlist-item{
     display: flex;
     justify-content: flex-end;
@@ -535,4 +538,13 @@ form.table input{
 }
 form.table .dish-price{
     width: 10rem;
+}
+form.table .btn-dark{
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+form.table .btns-container{
+    margin-top: 8rem;
+    align-items: center;
+    justify-content: center;
 }

@@ -46,11 +46,17 @@ $cart_dishes = getDishesFromDbTables($conn, 'cart', $userId); ?>
                     </div>
                 <?php endforeach; ?>
             <?php endfor; ?>
-
+            <div class="btns-container">
+                <button type="submit" href="" class="btn-dark ">Procced To Checkout</button >
+                <!-- <a href="" class="btn-dark">Continue Shopping</a> -->
+            </div>
 
 
         </form>
     </section>
+
+    
+    <!-- add a suggestion section basen of the categories in cart in a carossel or grid display but smaller than menue -->
 
 
 
