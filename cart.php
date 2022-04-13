@@ -21,7 +21,7 @@ $cart_dishes = getDishesFromDbTables($conn, 'cart', $userId); ?>
             $priceArray = [];
             for ($i = 0; $i < count($cart_dishes); $i++) : ?>
                 <?php foreach ($cart_dishes[$i] as $cartDish) : ?>
-                    <?php array_push($priceArray, $cartDish['price']);?>
+                    <?php array_push($priceArray, $cartDish['price']); ?>
                     <div class='table-row'>
                         <img class="meal-img" src=<?php echo '.' . $cartDish['img_link'] ?> alt="">
                         <div class="meal-title">
@@ -31,12 +31,15 @@ $cart_dishes = getDishesFromDbTables($conn, 'cart', $userId); ?>
                             <img src='Assets/icons/star.svg'>
                             <?php echo $cartDish['ratting'];; ?>
                         </div>
-                        <div>
-                            <label <?php echo "for'" . $cartDish['id']. "'" ;?>>Quantity:</label>
-                            <input type="number" max="10" min="1" onchange="" <?php echo "name'" . $cartDish['id'] . "'" ;?> value="1">
-                        </div>
-                        <div class="dish-price">
+                        <div class="">
                             <?php echo "$" . $cartDish['price']  . ".00";; ?>
+                            <input type="hidden" value="<?php echo $cartDish['price']; ?>" class="initial-price">
+                        </div>
+                        <div>
+                            <label <?php echo "for'" . $cartDish['id'] . "'"; ?>>Quantity:</label>
+                            <input class="dish-qnt" type="number" max="10" min="1" onchange="totlaDishPrice()" <?php echo "name'" . $cartDish['id'] . "'"; ?> value="1">
+                        </div>
+                        <div class="dish-price dish-total">
                         </div>
                         <div class="meal-actions">
                             <?php
@@ -47,20 +50,18 @@ $cart_dishes = getDishesFromDbTables($conn, 'cart', $userId); ?>
                         </div>
                     </div>
                 <?php endforeach; ?>
-                <?php endfor; ?>
+            <?php endfor; ?>
 
-                <?php $totalPrice = array_reduce($priceArray, function ($carry, $item){
-                    $carry += $item;
-                    return $carry;
-                }) ;?>
-                
-                
+            <?php $totalPrice = array_reduce($priceArray, function ($carry, $item) {
+                $carry += $item;
+                return $carry;
+            }); ?>
+
+
             <div class="btns-container">
-            <div class="total-Price">
-                    <P>Your Total Is: <?php 
-                     echo "<span class=''>". "$" . $totalPrice ."</span>" ;?> </P>
+                <div id="g-total" class="total-Price">
                 </div>
-                <button type="submit" href="" class="btn-dark ">Procced To Checkout</button >
+                <button type="submit" href="" class="btn-dark ">Procced To Checkout</button>
             </div>
 
 
@@ -74,7 +75,24 @@ $cart_dishes = getDishesFromDbTables($conn, 'cart', $userId); ?>
 
 
 
+    <script>
+        const dishQnt = document.getElementsByClassName('dish-qnt');
+        const initialPrice = document.getElementsByClassName('initial-price');
+        const dishTotal = document.getElementsByClassName('dish-total');
+        const gTotal = document.getElementById('g-total');
 
+        function totlaDishPrice() {
+            let gt = 0;
+            for (let i = 0; i < dishQnt.length; i++) {
+                qnt = parseInt(dishQnt[i].value);
+                dprice = parseInt(initialPrice[i].value);
+                dishTotal[i].innerText = `$${qnt * dprice}.00`;
+                gt += qnt * dprice;
+            }
+            gTotal.innerHTML = `<span>Your Total Is: </span><span class="dish-price">$${gt}.00</span>`;
+        }
+        totlaDishPrice();
+    </script>
 
     <?php include('Components/logout_alert.php'); ?>
     <?php include('Components/footer.php'); ?>

@@ -13,16 +13,29 @@ const filterBtns = document.getElementsByClassName('filter')
 const whishlistPopup = document.getElementById('whishlist-alert')
 const navWishlistBtn = document.getElementById('nav-wishlist');
 
+/*const dishQnt = document.getElementsByClassName('dish-qnt');
+const initialPrice = document.getElementsByClassName('initial-price');
+const dishTotal = document.getElementsByClassName('dish-total');
+function totlaDishPrice() {
+    for (let i = 0; i < dishQnt.length; i++) {
+        qnt = parseInt(dishQnt[i].value);
+        console.log(qnt);
+        dprice = parseInt(initialPrice[i].value);
+        console.log(dprice)
+        dishTotal[i].innerText = qnt * dprice;
+    }
+}*/
+
 let url = new URL(window.location.href);
 let strUrl = window.location.href;
 if (url.searchParams.get('category')) {
     let category = url.searchParams.get('category');
     for (const filter of filterBtns) {
-        if (category === filter.innerHTML){
+        if (category === filter.innerHTML) {
             filter.classList.add('active-filter')
-        } 
+        }
     }
-} else if(!url.searchParams.get('category') && strUrl.includes('menu.php')){
+} else if (!url.searchParams.get('category') && strUrl.includes('menu.php')) {
     filterBtns[0].classList.add('active-filter');
 }
 
@@ -70,7 +83,7 @@ if (signUpPopup) {
     }
 }
 
-if(logoutAlert){
+if (logoutAlert) {
     for (const close of formClose) {
         closePopup(close, whishlistPopup);
         closePopup(close, logoutAlert);
