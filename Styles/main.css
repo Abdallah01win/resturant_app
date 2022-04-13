@@ -273,16 +273,40 @@ nav li img{
     margin-top: 4.4rem;
 }
 .dish{
+    position: relative;
     background: white;
     font-weight: 700;
     color: var(--main-dark);
     border: solid 1px var(--main-dark);
     /* try display: table and table sell to fix height issue*/
 }
-.dish img{
+.img-con{
     width: 100%;
     height: 50%;
+}
+.img-con img{
+    width: 100%;
+    height: 100%;
+}
+.img-con:hover .dish-img{
+    filter: brightness(0.4);
+}
+.img-con:hover .add-to-cart{
+    visibility: visible;
+    opacity: 1;
+    pointer-events: all;
+}
+.img-con .add-to-cart{
+    position: absolute;
     cursor: pointer;
+    z-index: 1;
+    width: 60px;
+    top: 18%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
 }
 .dish-info{
     padding: 2.4rem;
@@ -542,9 +566,19 @@ form.table .dish-price{
 form.table .btn-dark{
     font-size: 1.8rem;
     font-weight: 500;
+    margin-right: 50%;
+    transform: translateX(50%);
 }
 form.table .btns-container{
     margin-top: 8rem;
     align-items: center;
     justify-content: center;
+}
+.total-Price{
+    font-weight: 600;
+    font-size: 2.2rem;
+    margin-right: auto;
+}
+.total-Price span{
+    color: var(--main-green);
 }

@@ -18,8 +18,10 @@ $cart_dishes = getDishesFromDbTables($conn, 'cart', $userId); ?>
         <form action="" method="post" class="table">
             <div class="title">Your Cart</div>
             <?php
+            $priceArray = [];
             for ($i = 0; $i < count($cart_dishes); $i++) : ?>
                 <?php foreach ($cart_dishes[$i] as $cartDish) : ?>
+                    <?php array_push($priceArray, $cartDish['price']);?>
                     <div class='table-row'>
                         <img class="meal-img" src=<?php echo '.' . $cartDish['img_link'] ?> alt="">
                         <div class="meal-title">
@@ -30,11 +32,11 @@ $cart_dishes = getDishesFromDbTables($conn, 'cart', $userId); ?>
                             <?php echo $cartDish['ratting'];; ?>
                         </div>
                         <div>
-                            <label for="qnt">Quantity:</label>
-                            <input type="number" max="10" min="1" name="qnt" value="1">
+                            <label <?php echo "for'" . $cartDish['id']. "'" ;?>>Quantity:</label>
+                            <input type="number" max="10" min="1" onchange="" <?php echo "name'" . $cartDish['id'] . "'" ;?> value="1">
                         </div>
                         <div class="dish-price">
-                            <?php echo "$" . $cartDish['price'] . ".00";; ?>
+                            <?php echo "$" . $cartDish['price']  . ".00";; ?>
                         </div>
                         <div class="meal-actions">
                             <?php
@@ -45,17 +47,27 @@ $cart_dishes = getDishesFromDbTables($conn, 'cart', $userId); ?>
                         </div>
                     </div>
                 <?php endforeach; ?>
-            <?php endfor; ?>
+                <?php endfor; ?>
+
+                <?php $totalPrice = array_reduce($priceArray, function ($carry, $item){
+                    $carry += $item;
+                    return $carry;
+                }) ;?>
+                
+                
             <div class="btns-container">
+            <div class="total-Price">
+                    <P>Your Total Is: <?php 
+                     echo "<span class=''>". "$" . $totalPrice ."</span>" ;?> </P>
+                </div>
                 <button type="submit" href="" class="btn-dark ">Procced To Checkout</button >
-                <!-- <a href="" class="btn-dark">Continue Shopping</a> -->
             </div>
 
 
         </form>
     </section>
 
-    
+
     <!-- add a suggestion section basen of the categories in cart in a carossel or grid display but smaller than menue -->
 
 

@@ -25,10 +25,7 @@ if (!isset($_GET['category'])) {
     $dishes = mysqli_stmt_get_result($stmt);
 };
 
-$wlids = getIdsinDbTable($conn, 'whishlist', $userId);
-
-
-;?>
+$wlids = getIdsinDbTable($conn, 'whishlist', $userId);; ?>
 
 <body>
     <?php include('./Components/whishlist_popup.php'); ?>
@@ -39,7 +36,13 @@ $wlids = getIdsinDbTable($conn, 'whishlist', $userId);
             <div class="dishes grid-3">
                 <?php foreach ($dishes as $dish) : ?>
                     <div class="dish">
+                        <div class="img-con">
                         <img class="dish-img" src=<?php echo '.' . $dish['img_link'] ?> alt="">
+                        <?php echo "<a class='add-to-cart' href='app/routes/add_to_cart.php?dishId=" . $dish['id'] . "'" . ">";
+                        echo "<img src='Assets/icons/tote.svg' alt=''>";
+                        echo "</a>";; ?>
+                        </div>
+                        
                         <div class="dish-info">
                             <div class="dish-title">
                                 <span>
@@ -55,8 +58,8 @@ $wlids = getIdsinDbTable($conn, 'whishlist', $userId);
                                 <span>
                                     <?php echo '$' . $dish['price'] . '.00' ?>
                                 </span>
-                                
-                                <?php                                
+
+                                <?php
                                 if (in_array($dish['id'], $wlids)) {
                                     echo "<img src='Assets/icons/heart-filled.svg' alt=''>";
                                 } else {
