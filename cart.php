@@ -51,19 +51,50 @@ $cart_dishes = getDishesFromDbTables($conn, 'cart', $userId); ?>
                     </div>
                 <?php endforeach; ?>
             <?php endfor; ?>
-
-            <?php $totalPrice = array_reduce($priceArray, function ($carry, $item) {
-                $carry += $item;
-                return $carry;
-            }); ?>
-
-
             <div class="btns-container">
                 <div id="g-total" class="total-Price">
                 </div>
-                <button type="submit" href="" class="btn-dark ">Procced To Checkout</button>
+                <button type="" href="" class="btn-dark ">Procced To Checkout</button>
             </div>
 
+            <div class="title">Checkout</div>
+            <div class="form-input">
+                <label for="email">
+                    Credit Card Number
+                </label>
+                <input type="tel" inputmode="numeric" pattern="[0-9\s]{13,19}" autocomplete="cc-number" maxlength="19" placeholder="xxxx xxxx xxxx xxxx" name="cc-num" required>
+            </div>
+            <div class="">
+            <div class="form-input">
+                <label for="name">
+                    Name on Card
+                </label>
+                <input type="text" name="name-on-card" required>
+            </div>
+            <div class="form-input">
+                <label for="name">
+                    CCV
+                </label>
+                <input type="number" name="ccv" required>
+            </div>
+            </div>
+            
+            <div class="form-input">
+                <label for="email">
+                    Dilivery Address
+                </label>
+                <input type="adress" name="cc-num" required>
+            </div>
+            <div class="form-input">
+                <label for="password">
+                    Password
+                </label>
+                <input type="password" name="password" required>
+            </div>
+            <div class="btns-container">
+                <button type="submit" name="sign_up_submit" class="btn-mid">Place Order</button>
+                <button class="btn-mid form-toggle">Login</button>
+            </div>
 
         </form>
     </section>
