@@ -1,7 +1,5 @@
 <?php
 
-use function PHPSTORM_META\type;
-
 include('../config/database.php');
 include('../config/functions.php');
 session_start();
@@ -16,14 +14,8 @@ if (!isset($_SESSION["userid"])){
     $name_on_card = $_POST['name-on-card'];
     $ccv = intval($_POST['ccv']);
     $delivery_adress = $_POST['adress'];
-    echo gettype($userId);
-    echo gettype($dishIds_array);
-    echo gettype($g_total);
-    echo gettype($cc_num);
-    echo gettype($ccv);
-    echo gettype($name_on_card);
-    echo gettype($delivery_adress);
-    /*echo  $g_total;
-    $decoded = json_decode($dishIds_array);
-    print_r($decoded[1])  ;*/
+
+    $qnt_array = json_encode($_POST['qnt']);
+    placeOrder($conn, $userId, $dishIds_array, $qnt_array, $g_total, $cc_num, $name_on_card, $delivery_adress);
+    
 }

@@ -192,6 +192,21 @@ function addDishToWhishlist($conn, $userId, $dishId)
         exit();
     }
 };
+function placeOrder($conn, $userId, $dishIds_array, $qnt_array, $g_total, $cc_num, $name_on_card, $delivery_adress){
+    // save data to orders table
+    $sql = "INSERT INTO orders (userId, dishIds_array, qnt_array, g_total, cc_num, card_name, adress ) VALUES (?, ?, ?, ?, ?, ?, ?)";
+        $stmt = mysqli_stmt_init($conn);
+        if (!mysqli_stmt_prepare($stmt, $sql)) {
+            header('location: ../../menu.php?error=stmtfaild');
+            exit();
+        }
+        mysqli_stmt_bind_param($stmt, "issiiss", $userId, $dishIds_array, $qnt_array, $g_total, $cc_num, $name_on_card, $delivery_adress);
+        mysqli_stmt_execute($stmt);
+        mysqli_stmt_close($stmt);
+        header('location: ../../cart.php');
+            exit();
+    // delete all dishes from cart and 
+}
 
 function loginUser($conn, $email, $password)
 {

@@ -36,7 +36,7 @@ $cart_dishes_ids = getIdsinDbTable($conn, 'cart', $userId);
                         </div>
                         <div>
                             <label <?php echo "for'" . $cartDish['id'] . "'"; ?>>Quantity:</label>
-                            <input class="dish-qnt" type="number" max="10" min="1" onchange="totlaDishPrice()" <?php echo "name'" . $cartDish['id'] . "'"; ?> value="1">
+                            <input class="dish-qnt" type="number" max="10" min="1" onchange="totlaDishPrice()" name="qnt[]" value="1">
                         </div>
                         <div class="dish-price dish-total">
                         </div>
@@ -83,12 +83,6 @@ $cart_dishes_ids = getIdsinDbTable($conn, 'cart', $userId);
                     Dilivery Address
                 </label>
                 <input type="adress" name="adress" required>
-            </div>
-            <div class="form-input">
-                <label for="password">
-                    Password
-                </label>
-                <input type="password" name="password" required>
             </div>
             <div class="btns-container">
                 <button type="submit" name="sign_up_submit" class="btn-mid">Place Order</button>

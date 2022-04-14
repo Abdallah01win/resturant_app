@@ -11,12 +11,11 @@ $dishes = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
 <body>
     <section class="hero ">
-    <?php 
-    if(isset($_SESSION['userid'])){
-        $userId = $_SESSION["userid"];
-        include('./Components/whishlist_popup.php');
-    }
-    ;?>
+        <?php
+        if (isset($_SESSION['userid'])) {
+            $userId = $_SESSION["userid"];
+            include('./Components/whishlist_popup.php');
+        }; ?>
         <?php include('./Components/navigation.php'); ?>
         <div class="content grid-2 container">
             <div class="hero-text">
@@ -77,7 +76,10 @@ $dishes = mysqli_fetch_all($result, MYSQLI_ASSOC);
             <div class="dishes grid-3">
                 <?php for ($i = 0; $i < 6; $i++) { ?>
                     <div class="dish">
-                        <img src=<?php echo '.' . $dishes[$i]['img_link'] ?> alt="">
+                        <div class="img-con">
+                            <img src=<?php echo '.' . $dishes[$i]['img_link'] ?> alt="">
+                        </div>
+
                         <div class="dish-info">
                             <div class="dish-title">
                                 <span>
