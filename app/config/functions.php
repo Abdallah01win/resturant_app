@@ -192,19 +192,20 @@ function addDishToWhishlist($conn, $userId, $dishId)
         exit();
     }
 };
-function placeOrder($conn, $userId, $dishIds_array, $qnt_array, $g_total, $cc_num, $name_on_card, $delivery_adress){
+function placeOrder($conn, $userId, $dishIds_array, $qnt_array, $g_total, $cc_num, $name_on_card, $delivery_adress)
+{
     // save data to orders table
     $sql = "INSERT INTO orders (userId, dishIds_array, qnt_array, g_total, cc_num, card_name, adress ) VALUES (?, ?, ?, ?, ?, ?, ?)";
-        $stmt = mysqli_stmt_init($conn);
-        if (!mysqli_stmt_prepare($stmt, $sql)) {
-            header('location: ../../menu.php?error=stmtfaild');
-            exit();
-        }
-        mysqli_stmt_bind_param($stmt, "issiiss", $userId, $dishIds_array, $qnt_array, $g_total, $cc_num, $name_on_card, $delivery_adress);
-        mysqli_stmt_execute($stmt);
-        mysqli_stmt_close($stmt);
-        header('location: ../../cart.php');
-            exit();
+    $stmt = mysqli_stmt_init($conn);
+    if (!mysqli_stmt_prepare($stmt, $sql)) {
+        header('location: ../../menu.php?error=stmtfaild');
+        exit();
+    }
+    mysqli_stmt_bind_param($stmt, "issiiss", $userId, $dishIds_array, $qnt_array, $g_total, $cc_num, $name_on_card, $delivery_adress);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_close($stmt);
+    header('location: ../../cart.php');
+    exit();
     // delete all dishes from cart and 
 }
 
@@ -273,4 +274,22 @@ function getDishesFromDbTables($conn, $dbTable, $userId)
         array_push($dishes, $temp_dishes);
     };
     return $dishes;
+}
+
+function getDishesDataFromOrders($conn, $dishIds_array)
+{
+    $dishes_in_order = [];
+    for ($i = 0; $i < count($dishIds_array); $i++) {
+        $sql2 = "SELECT * FROM dishes WHERE id = ?";
+        $stmt2 = mysqli_stmt_init($conn);
+        if (!mysqli_stmt_prepare($stmt2, $sql2)) {
+            header('location: index.php?error=stmtfaild');
+            exit();
+        }
+        mysqli_stmt_bind_param($stmt2, "i", $dishIds_array[$i]);
+        mysqli_stmt_execute($stmt2);
+        $temp_dishes = mysqli_fetch_all(mysqli_stmt_get_result($stmt2), MYSQLI_ASSOC);
+        array_push($dishes_in_order, $temp_dishes);
+    };
+    return $dishes_in_order;
 }

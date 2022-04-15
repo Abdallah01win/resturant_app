@@ -15,7 +15,9 @@ if (!isset($_SESSION["userid"])){
     $ccv = intval($_POST['ccv']);
     $delivery_adress = $_POST['adress'];
 
+    print_r( json_decode($dishIds_array));
     $qnt_array = json_encode($_POST['qnt']);
     placeOrder($conn, $userId, $dishIds_array, $qnt_array, $g_total, $cc_num, $name_on_card, $delivery_adress);
-    
+    header('location: cart.php?alert=orderplaced');
+    exit();
 }

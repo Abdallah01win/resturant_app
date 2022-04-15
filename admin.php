@@ -8,7 +8,11 @@ if ($_SESSION["type"] !== 1) {
 }
 $sql = 'SELECT * FROM dishes';
 $result = mysqli_query($conn, $sql);
-$dishes = mysqli_fetch_all($result, MYSQLI_ASSOC);; ?>
+$dishes = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+$sql = 'SELECT * FROM orders';
+$result = mysqli_query($conn, $sql);
+$orders = mysqli_fetch_all($result, MYSQLI_ASSOC);; ?>
 
 <body>
     <?php include('Components/navigation.php'); ?>
@@ -46,12 +50,9 @@ $dishes = mysqli_fetch_all($result, MYSQLI_ASSOC);; ?>
     </section>
     <section id="orders" class="table container">
         <div class="title">Customer Orders</div>
-            <div class="table-row">
-                <p>Lorem ipsum, dolor sit amet consectetur </p>
-                <p>Lorem ipsum, dolor sit amet consectetur </p>
-            </div>
-    </section>      
-    
+        <?php include('./Components/order_display.php'); ?>
+    </section>
+
 
     <?php include('./Components/logout_alert.php'); ?>
     <?php include('./Components/creat_dish_form.php'); ?>
