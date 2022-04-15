@@ -1,7 +1,4 @@
 <?php
-
-
-
 foreach ($orders as $order) : ?>
     <?php $order_dishes = json_decode($order['dishIds_array']);
     $dishes_in_order = getDishesDataFromOrders($conn, $order_dishes);
@@ -9,6 +6,7 @@ foreach ($orders as $order) : ?>
     $result = mysqli_query($conn, $sql);
     $user = mysqli_fetch_all($result, MYSQLI_ASSOC); ?>
     <div class="table-row">
+
         <?php if ($_SESSION["type"] === 1) : ?>
             <div class="orderName">
                 <?php echo $user[0]['user_name']; ?>
@@ -23,11 +21,7 @@ foreach ($orders as $order) : ?>
                     <?php echo json_decode($order['qnt_array'])[$i]; ?>
                 </div>
             </div>
-
         <?php endfor ?>
-        <?php //print_r(json_decode($order['qnt_array']));
-        ?>
-
 
         <div class="deliveryAdress">
             <?php echo $order['adress']; ?>

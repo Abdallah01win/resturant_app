@@ -204,9 +204,6 @@ function placeOrder($conn, $userId, $dishIds_array, $qnt_array, $g_total, $cc_nu
     mysqli_stmt_bind_param($stmt, "issiiss", $userId, $dishIds_array, $qnt_array, $g_total, $cc_num, $name_on_card, $delivery_adress);
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
-    header('location: ../../cart.php');
-    exit();
-    // delete all dishes from cart and 
 }
 
 function loginUser($conn, $email, $password)

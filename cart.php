@@ -11,11 +11,25 @@ if (!isset($_SESSION["userid"])) {
 $userId = $_SESSION["userid"];
 $cart_dishes = getDishesFromDbTables($conn, 'cart', $userId);
 $cart_dishes_ids = getIdsinDbTable($conn, 'cart', $userId);
-?>
+
+$sql = 'SELECT * FROM orders WHERE userId=' . $userId;
+$result = mysqli_query($conn, $sql);
+$orders = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+; ?>
+
 
 <body>
     <?php include('Components/navigation.php'); ?>
     <?php include('Components/whishlist_popup.php'); ?>
+    <?php 
+    if(count($orders)!== 0) :?>
+        <section id="orders" class="table container">
+        <div class="title">Your Orders</div>
+        <?php include('./Components/order_display.php'); ?>
+    </section>
+    
+    <?php endif;?>
     <section class="container">
         <form action="<?php echo htmlspecialchars('app/routes/place_order.php'); ?>" method="post" class="table">
             <div class="title">Your Cart</div>
