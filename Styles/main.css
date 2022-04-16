@@ -683,7 +683,7 @@ form.table .btns-container {
 
 .table .form-input {
     margin: 0 auto;
-    width: 75%;
+    /* width: 75%; */
 }
 
 .table .form-input input {
@@ -718,6 +718,6 @@ form.table .btns-container {
     bottom: 0%;
     right: 0%;
 }
-.orderDate{
+.deliveryAdress{
     margin-right: auto;
 }

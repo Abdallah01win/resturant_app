@@ -14,22 +14,21 @@ $cart_dishes_ids = getIdsinDbTable($conn, 'cart', $userId);
 
 $sql = 'SELECT * FROM orders WHERE userId=' . $userId;
 $result = mysqli_query($conn, $sql);
-$orders = mysqli_fetch_all($result, MYSQLI_ASSOC);
-
-; ?>
+$orders = mysqli_fetch_all($result, MYSQLI_ASSOC);; ?>
 
 
 <body>
     <?php include('Components/navigation.php'); ?>
     <?php include('Components/whishlist_popup.php'); ?>
-    <?php 
-    if(count($orders)!== 0) :?>
+    <?php
+    if (count($orders) !== 0) : ?>
         <section id="orders" class="table container">
-        <div class="title">Your Orders</div>
-        <?php include('./Components/order_display.php'); ?>
-    </section>
-    
-    <?php endif;?>
+            <div class="title">Your Orders</div>
+            <p class="dark-paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis, animi fugit? Culpa eaque dignissimos.</p>
+            <?php include('./Components/order_display.php'); ?>
+        </section>
+
+    <?php endif; ?>
     <section class="container">
         <form action="<?php echo htmlspecialchars('app/routes/place_order.php'); ?>" method="post" class="table">
             <div class="title">Your Cart</div>
@@ -68,42 +67,9 @@ $orders = mysqli_fetch_all($result, MYSQLI_ASSOC);
             <div id="g-total" class="total-Price">
             </div>
             <div class="btns-container ">
-                <button href="" class="btn-dark">Procced To Checkout</button>
+                <a class="btn-dark" id="checkout">Procced To Checkout</a>
             </div>
-            <div class="checkout">
-                <div class="title">Checkout</div>
-                <div class="form-input">
-                    <label for="cc-num">
-                        Credit Card Number
-                    </label>
-                    <input type="tel" inputmode="numeric" pattern="[0-9\s]{13,19}" autocomplete="cc-number" maxlength="19" placeholder="xxxx xxxx xxxx xxxx" name="cc-num" required>
-                </div>
-                <div class="">
-                    <div class="form-input">
-                        <label for="name-on-card">
-                            Name on Card
-                        </label>
-                        <input type="text" name="name-on-card" required>
-                    </div>
-                    <div class="form-input">
-                        <label for="ccv">
-                            CCV
-                        </label>
-                        <input type="number" name="ccv" required>
-                    </div>
-                </div>
-
-                <div class="form-input">
-                    <label for="adress">
-                        Dilivery Address
-                    </label>
-                    <input type="adress" name="adress" required>
-                </div>
-                <div class="btns-container">
-                    <button type="submit" name="sign_up_submit" class="btn-mid">Place Order</button>
-                    <button class="btn-mid form-toggle">Login</button>
-                </div>
-            </div>
+            <?php include('Components/checkout.php'); ?>
             <input name="hidden_gtotal" type="hidden" id="hidden_gtotal">
             <input name="hidden_ids" type="hidden" id="" value="<?php echo json_encode($cart_dishes_ids) ?>">
         </form>

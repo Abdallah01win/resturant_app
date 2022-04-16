@@ -13,6 +13,15 @@ const filterBtns = document.getElementsByClassName('filter')
 const whishlistPopup = document.getElementById('whishlist-alert')
 const navWishlistBtn = document.getElementById('nav-wishlist');
 
+
+const checkoutPopup = document.getElementById('checkout-popup');
+const checkoutBtn = document.getElementById('checkout');
+if(checkoutPopup){
+    checkoutBtn.addEventListener('click', ()=>{
+       checkoutPopup.classList.toggle('hide-popup')
+   })
+}
+
 /*const dishQnt = document.getElementsByClassName('dish-qnt');
 const initialPrice = document.getElementsByClassName('initial-price');
 const dishTotal = document.getElementsByClassName('dish-total');
@@ -82,18 +91,23 @@ if (signUpPopup) {
         closePopup(close, loginPopup);
     }
 }
+for (const button of formToggle) {
+    togglePopup(button, checkoutPopup);
+}
 
 if (logoutAlert) {
     for (const close of formClose) {
         closePopup(close, whishlistPopup);
         closePopup(close, logoutAlert);
         closePopup(close, newDishPopup);
+        closePopup(close, checkoutPopup);
     }
 }
 
-
 const addDishBtn = document.getElementById('add-btn');
-togglePopup(addDishBtn, newDishPopup);
+if (newDishPopup) {
+    togglePopup(addDishBtn, newDishPopup);
+}
 
 
 
