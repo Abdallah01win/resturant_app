@@ -81,7 +81,6 @@ p {
 
 .paragraph {
     font-size: 2.2rem;
-    line-height: 1.5;
     margin-bottom: 2.4rem;
     color: var(--main-gray);
 }
@@ -585,10 +584,6 @@ img {
     height: 24px;
 }
 
-
-
-
-
 /*---------- whish list popup ---------*/
 .whishlist {
     overflow-x: auto;
@@ -635,11 +630,12 @@ img {
 }
 
 /*--------- cart page -------*/
-
-form.table {
-    row-gap: 0rem;
+#cart{
+    margin-bottom: 12rem;
 }
-
+#cart form{
+    row-gap: 0;
+}
 form.table input {
     border: solid 1px var(--main-dark);
     outline: none;
@@ -648,17 +644,6 @@ form.table input {
     font-weight: 500;
     width: 6rem;
     margin-left: .8rem;
-}
-
-form.table .dish-price {
-    width: 10rem;
-}
-
-form.table .btn-dark {
-    font-size: 1.8rem;
-    font-weight: 500;
-    /*margin-right: 50%;
-    transform: translateX(50%);*/
 }
 
 form.table .btns-container {
@@ -680,20 +665,23 @@ form.table .btns-container {
 .total-Price .dish-price {
     margin: 0;
 }
-
-.table .form-input {
-    margin: 0 auto;
-    /* width: 75%; */
-}
-
 .table .form-input input {
     width: 100%;
     height: 4.2rem;
-    margin-bottom: 2.4rem;
+    margin:0 0 2.4rem 0;
 }
 
-
 /*-------- checkout --------*/
+
+#orders .dark-paragraph, #cart .dark-paragraph{
+    width: 70%;
+    line-height: 1.7;
+}
+#orders h4, #cart h4{
+    text-align: center;
+    font-size: 2.4rem;
+    margin: 4.4rem 0rem;
+}
 
 .checkout {
     margin-top: 6.2rem;
