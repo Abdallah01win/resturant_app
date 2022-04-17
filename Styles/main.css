@@ -158,9 +158,6 @@ p {
     justify-content: space-between;
 }
 
-/*.nav ul:last-child{
-    font-size: 2.6rem;
-}*/
 .nav li {
     padding: 0 1.6rem;
     display: grid;
@@ -186,6 +183,11 @@ nav li img {
     width: 28px;
     height: 28px;
     cursor: pointer;
+}
+
+#whishlist-alert .dark-paragraph{
+    text-align: center;
+    margin-top: 2.4rem;
 }
 
 .active-filter {

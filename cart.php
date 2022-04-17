@@ -24,7 +24,7 @@ $orders = mysqli_fetch_all($result, MYSQLI_ASSOC);; ?>
     <section id="orders" class="table container">
         <div class="title">Your Orders</div>
         <p class="dark-paragraph">Orders that have been verified and approved by our managers apear here and a recipit with further details will be sent to your email.</p>
-        <?php if (/*count($orders)*/0 !== 0) : ?>
+        <?php if (count($orders) !== 0) : ?>
             <?php include('./Components/order_display.php'); ?>
         <?php else : ?>
             <h4>You don't have any orders at the moment.</h4>
@@ -33,8 +33,7 @@ $orders = mysqli_fetch_all($result, MYSQLI_ASSOC);; ?>
 
     <section id="cart" class="container">
         <div class="title">Your Cart</div>
-        <p class="dark-paragraph"></p>
-        <?php if (count($cart_dishes)!== 0) : ?>
+        <?php if (count($cart_dishes) !== 0) : ?>
             <?php include('./Components/cart_form.php'); ?>
         <?php else : ?>
             <h4>Cart is empty for now, try adding dishes from our menu.</h4>
