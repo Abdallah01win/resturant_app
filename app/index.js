@@ -144,8 +144,13 @@ if (!getCookie('userId')) {
     for (const btn of logoutBtns) {
         toggleAlert(btn, logoutAlert)
     }
+}
+
+if(whishlistPopup){
     togglePopup(navWishlistBtn, whishlistPopup);
 }
+
+
 if (signUpPopup) {
     for (const button of formToggle) {
         togglePopup(button, signUpPopup);
@@ -154,27 +159,35 @@ if (signUpPopup) {
     for (const close of formClose) {
         closePopup(close, signUpPopup);
         closePopup(close, loginPopup);
-        closePopup(close, errorAlert);
     }
 }
-for (const button of formToggle) {
-    togglePopup(button, checkoutPopup);
+
+if(errorAlert){
+    for(const close of formClose){
+        closePopup(close, errorAlert);
+        closePopup(close, logoutAlert);
+    }
 }
 
-if (logoutAlert) {
-    for (const close of formClose) {
-        closePopup(close, whishlistPopup);
-        closePopup(close, logoutAlert);
-        closePopup(close, newDishPopup);
+if(checkoutPopup){
+    for (const button of formToggle) {
+        togglePopup(button, checkoutPopup);
+    }
+    for(const close of formClose){
         closePopup(close, checkoutPopup);
+    }
+}
+
+if(whishlistPopup){
+    for(const close of formClose){
+        closePopup(close, whishlistPopup);
     }
 }
 
 const addDishBtn = document.getElementById('add-btn');
 if (newDishPopup) {
     togglePopup(addDishBtn, newDishPopup);
+    for(const close of formClose){
+        closePopup(close, newDishPopup);
+    }
 }
-
-
-
-

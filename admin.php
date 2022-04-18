@@ -53,7 +53,7 @@ $orders = mysqli_fetch_all($result, MYSQLI_ASSOC);; ?>
         <?php include('./Components/order_display.php'); ?>
     </section>
 
-    <?php include('Components/error_alert.php'); ?>
+    <?php include('./Components/error_alert.php'); ?>
     <?php include('./Components/logout_alert.php'); ?>
     <?php include('./Components/creat_dish_form.php'); ?>
     <?php include('./Components/scripts.php'); ?>
