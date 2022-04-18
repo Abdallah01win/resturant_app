@@ -16,10 +16,10 @@ const navWishlistBtn = document.getElementById('nav-wishlist');
 
 const checkoutPopup = document.getElementById('checkout-popup');
 const checkoutBtn = document.getElementById('checkout');
-if(checkoutPopup){
-    checkoutBtn.addEventListener('click', ()=>{
-       checkoutPopup.classList.toggle('hide-popup')
-   })
+if (checkoutPopup) {
+    checkoutBtn.addEventListener('click', () => {
+        checkoutPopup.classList.toggle('hide-popup')
+    })
 }
 
 /*const dishQnt = document.getElementsByClassName('dish-qnt');
@@ -47,49 +47,69 @@ if (url.searchParams.get('category')) {
 } else if (!url.searchParams.get('category') && strUrl.includes('menu.php')) {
     filterBtns[0].classList.add('active-filter');
 }
+
 const errorAlert = document.getElementById('error-alert');
 const errorMsg = document.getElementById('error-msg');
 const error = url.searchParams.get('error');
-function showError(msg){
+function showError(msg) {
     errorAlert.classList.toggle('hide-popup');
     errorMsg.innerText = msg;
 }
 
-switch(error){
-    case 'stmtfaild': 
-    showError("Somthing went wrong! pleas try again.");
-    break;
-    case 'passwordsdontmatch': 
-    showError("Your passwords don't match! try again.");
-    break;
+switch (error) {
+    case 'stmtfaild':
+        showError("Somthing went wrong! pleas try again.");
+        break;
+    case 'passwordsdontmatch':
+        showError("Your passwords don't match! try again.");
+        break;
 
-    case 'wrongpassword': 
-    showError("Wrong password! try again.");
-    break;
+    case 'wrongpassword':
+        showError("Wrong password! try again.");
+        break;
 
-    case 'usernotfound': 
-    showError("Email not found! try signing up");
-    break;
+    case 'usernotfound':
+        showError("Email not found! try signing up");
+        break;
 
-    case 'emailtaken': 
-    showError("This email is already in use! try another.");
-    break;
+    case 'emailtaken':
+        showError("This email is already in use! try another.");
+        break;
 
-    case 'invaliduid': 
-    showError("Your User Name is invalid! try agaian.");
-    break;
+    case 'invaliduid':
+        showError("Your User Name is invalid! try agaian.");
+        break;
 
-    case 'dishalreadyincart': 
-    showError("Dish is already in your cart!");
-    break;
+    case 'dishalreadyincart':
+        showError("Dish is already in your cart!");
+        break;
 
-    case 'dishalreadyinwhishlist': 
-    showError("Dish is already in your wishlist!");
-    break;
+    case 'dishalreadyinwhishlist':
+        showError("Dish is already in your wishlist!");
+        break;
 
-    case 'accessdenied': 
-    showError("Access denied");
-    break;
+    case 'accessdenied':
+        showError("Access denied");
+        break;
+}
+
+const alertUser = url.searchParams.get('alert');
+switch (alertUser) {
+    case 'addedtocart':
+        showError("Dish added to your cart");
+        break;
+    case 'addedtowl':
+        showError("Dish added to your wishlist");
+        break;
+    case 'deletedfromcart':
+        showError("Dish deleted from your cart");
+        break;
+    case 'deletedfromwhishlist':
+        showError("Dish deleted from your wishlist");
+        break;
+    case 'orderplaced':
+        showError("Your order is placed.");
+        break;
 }
 
 

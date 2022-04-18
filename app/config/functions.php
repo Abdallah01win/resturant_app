@@ -25,7 +25,7 @@ function emailExists($conn, $sign_up_email)
     $sql = "SELECT * FROM users WHERE email =?";
     $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sql)) {
-        header('location: index.php?error=stmtfaild');
+        header('location: ../../index.php?error=stmtfaild');
         exit();
     }
     mysqli_stmt_bind_param($stmt, "s", $sign_up_email);
@@ -45,7 +45,7 @@ function createUser($conn, $user_name, $sign_up_email, $password)
     $sql = "INSERT INTO users (user_name, email, password) VALUES (?, ?, ?)";
     $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sql)) {
-        header('location: index.php?error=stmtfaild');
+        header('location: ../../index.php?error=stmtfaild');
         exit();
     }
     $hashedpwd = password_hash($password, PASSWORD_DEFAULT);
@@ -77,7 +77,7 @@ function checkIfItemInDbtable($conn, $dbTable, $userId, $dishId)
     $sql = "SELECT * FROM " . $dbTable . " WHERE dishId = ? AND userId = ?";
     $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sql)) {
-        header('location: index.php?error=stmtfaild');
+        header('location: ../../index.php?error=stmtfaild');
         exit();
     }
     mysqli_stmt_bind_param($stmt, "ii", $dishId, $userId);
@@ -101,8 +101,7 @@ function deleteItemFromDbTable($conn, $dbTable, $userId, $dishId, $redirect)
     mysqli_stmt_bind_param($stmt2, "ii", $userId, $dishId);
     mysqli_stmt_execute($stmt2);
     mysqli_stmt_close($stmt2);
-    header("location: ../../" . $redirect . ".php");
-    exit();
+    header("location: ../../" . $redirect . ".php?alert=deletedfrom" . $dbTable);
 };
 function deleteItemFromDishes($conn, $dishId)
 {
@@ -137,7 +136,7 @@ function addToCart($conn, $userId, $dishId)
             if (checkIfItemInDbtable($conn, 'whishlist', $userId, $dishId) === true) {
                 deleteItemFromDbTable($conn, 'whishlist', $userId, $dishId, 'menu');
             }
-            header("location: ../../menu.php");
+            header("location: ../../menu.php?alert=addedtocart");
             exit();
         }
     }
@@ -158,7 +157,7 @@ function addDishToWhishlist($conn, $userId, $dishId)
         mysqli_stmt_bind_param($stmt2, "ii", $userId, $dishId);
         mysqli_stmt_execute($stmt2);
         mysqli_stmt_close($stmt2);
-        header('location: ../../menu.php');
+        header('location: ../../menu.php?alert=addedtowl');
         exit();
     }
 };
@@ -210,7 +209,7 @@ function getIdsinDbTable($conn, $dbTable, $userId)
     $sql = "SELECT * FROM " . $dbTable . " WHERE userId = ?";
     $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sql)) {
-        header('location: index.php?error=stmtfaild');
+        header('location: ../../index.php?error=stmtfaild');
         exit();
     }
     mysqli_stmt_bind_param($stmt, "i", $userId);
@@ -232,7 +231,7 @@ function getDishesFromDbTables($conn, $dbTable, $userId)
         $sql2 = "SELECT * FROM dishes WHERE id = ?";
         $stmt2 = mysqli_stmt_init($conn);
         if (!mysqli_stmt_prepare($stmt2, $sql2)) {
-            header('location: index.php?error=stmtfaild');
+            header('location: ../../index.php?error=stmtfaild');
             exit();
         }
         mysqli_stmt_bind_param($stmt2, "i", $dishes_in_table[$i]);
@@ -250,7 +249,7 @@ function getDishesDataFromOrders($conn, $dishIds_array)
         $sql2 = "SELECT * FROM dishes WHERE id = ?";
         $stmt2 = mysqli_stmt_init($conn);
         if (!mysqli_stmt_prepare($stmt2, $sql2)) {
-            header('location: index.php?error=stmtfaild');
+            header('location: ../../index.php?error=stmtfaild');
             exit();
         }
         mysqli_stmt_bind_param($stmt2, "i", $dishIds_array[$i]);
