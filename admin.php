@@ -3,7 +3,7 @@
 <?php include('Components/head.php'); ?>
 <?php
 if ($_SESSION["type"] !== 1) {
-    header('location: index.php');
+    header('location: index.php?error=accessdenied');
     exit();
 }
 $sql = 'SELECT * FROM dishes';
@@ -53,7 +53,7 @@ $orders = mysqli_fetch_all($result, MYSQLI_ASSOC);; ?>
         <?php include('./Components/order_display.php'); ?>
     </section>
 
-
+    <?php include('Components/error_alert.php'); ?>
     <?php include('./Components/logout_alert.php'); ?>
     <?php include('./Components/creat_dish_form.php'); ?>
     <?php include('./Components/scripts.php'); ?>

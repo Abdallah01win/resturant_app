@@ -1,39 +1,9 @@
 <?php
 
-function emptyInputSignup($user_name, $sign_up_email, $password)
-{
-    $result = "";
-    if (empty($user_name) || empty($sign_up_email) || empty($password)) {
-        $result = true;
-    } else {
-        $result = false;
-    }
-    return $result;
-};
-function emptyInputLogin($email, $password, $c_password)
-{
-    $result = "";
-    if (empty($email) || empty($c_password) || empty($password)) {
-        $result = true;
-    } else {
-        $result = false;
-    }
-    return $result;
-};
 function invalidUid($user_name)
 {
     $result = "";
     if (!preg_match("/^[a-zA-Z0-9]*$/", $user_name)) {
-        $result = true;
-    } else {
-        $result = false;
-    }
-    return $result;
-};
-function invalidEmail($email)
-{
-    $result = "";
-    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $result = true;
     } else {
         $result = false;
@@ -152,7 +122,7 @@ function deleteItemFromDishes($conn, $dishId)
 function addToCart($conn, $userId, $dishId)
 {
     if (checkIfItemInDbtable($conn, 'cart', $userId, $dishId) === true) {
-        header('location: ../../menu.php?error=dishalreadyinwhishlist');
+        header('location: ../../menu.php?error=dishalreadyincart');
         exit();
     } else {
         $sql = "INSERT INTO cart (userId, dishId) VALUES (?, ?)";
@@ -210,7 +180,7 @@ function loginUser($conn, $email, $password)
 {
     $userExists = emailExists($conn, $email);
     if ($userExists === false) {
-        header('location: index.php?error=usernotfound');
+        header('location: ../../index.php?error=usernotfound');
         exit();
     } else {
         $pwdHashed = $userExists["password"];

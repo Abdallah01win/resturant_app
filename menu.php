@@ -4,7 +4,7 @@
 
 <?php
 if (!isset($_SESSION["userid"])) {
-    header('location: index.php?error=backfrommenuepage');
+    header('location: index.php?error=accessdenied');
     exit();
 }
 $userId = $_SESSION["userid"];
@@ -74,6 +74,7 @@ $wlids = getIdsinDbTable($conn, 'whishlist', $userId);; ?>
             </div>
         </div>
     </section>
+    <?php include('Components/error_alert.php'); ?>
     <?php include('./Components/logout_alert.php'); ?>
     <?php include('./Components/footer.php'); ?>
     <?php include('./Components/scripts.php'); ?>

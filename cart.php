@@ -5,7 +5,7 @@
 <?php include('Components/head.php'); ?>
 <?php
 if (!isset($_SESSION["userid"])) {
-    header('location: index.php?error=backfromcartepage');
+    header('location: index.php?error=accessdenied');
     exit();
 }
 $userId = $_SESSION["userid"];
@@ -67,7 +67,7 @@ $orders = mysqli_fetch_all($result, MYSQLI_ASSOC);; ?>
         }
         totlaDishPrice();
     </script>
-
+    <?php include('Components/error_alert.php'); ?>
     <?php include('Components/logout_alert.php'); ?>
     <?php include('Components/footer.php'); ?>
     <?php include('Components/scripts.php'); ?>

@@ -8,7 +8,7 @@ $whishlist_dishes = getDishesFromDbTables($conn, 'whishlist', $userId); ?>
         <div class="logo">Malibu's</div>
         <h3 class="alert-title">Your Wishlist</h3>
         <div class="whishlist">
-            <?php if (/*count($whishlist_dishes)*/ 0 === 0) : ?>
+            <?php if (count($whishlist_dishes) === 0) : ?>
                 <p class="dark-paragraph">
                     No Items in Wishlist
                 </p>

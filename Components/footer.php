@@ -17,7 +17,6 @@
                 <li>Home</li>
                 <li>About</li>
                 <li>Menu</li>
-                <li>Reviews</li>
             </ul>
         </div>
         <div class="contact">
