@@ -692,6 +692,25 @@ form.table .btns-container {
 .order-dishes {
     position: relative;
 }
+.orderDate{
+    margin-left: auto;
+}
+.orderStatus{
+    font-weight: 600;
+    padding: 0.6rem 1.2rem;
+}
+.pending{
+    background: #51d2ea;
+    text-transform: capitalize;
+}
+.denied{
+    background: #ef333a;
+    text-transform: capitalize;
+}
+.confirmed{
+    background: var(--main-green);
+    text-transform: capitalize;
+}
 .orderName{
     font-weight: 600;
 }
@@ -707,7 +726,4 @@ form.table .btns-container {
     border-radius: 50%;
     bottom: 0%;
     right: 0%;
-}
-.deliveryAdress{
-    margin-right: auto;
 }

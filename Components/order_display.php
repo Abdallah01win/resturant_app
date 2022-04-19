@@ -23,11 +23,11 @@ foreach ($orders as $order) : ?>
             </div>
         <?php endfor ?>
 
-        <div class="deliveryAdress">
-            <?php echo $order['adress']; ?>
-        </div>
         <div class="orderDate">
             <?php echo $order['order_date']; ?>
+        </div>
+        <div class="orderStatus">
+            <?php echo $order['status']; ?>
         </div>
         <div class="dish-price"><?php echo '$' . $order['g_total'] . '.00' ?>
         </div>

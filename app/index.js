@@ -22,19 +22,6 @@ if (checkoutPopup) {
     })
 }
 
-/*const dishQnt = document.getElementsByClassName('dish-qnt');
-const initialPrice = document.getElementsByClassName('initial-price');
-const dishTotal = document.getElementsByClassName('dish-total');
-function totlaDishPrice() {
-    for (let i = 0; i < dishQnt.length; i++) {
-        qnt = parseInt(dishQnt[i].value);
-        console.log(qnt);
-        dprice = parseInt(initialPrice[i].value);
-        console.log(dprice)
-        dishTotal[i].innerText = qnt * dprice;
-    }
-}*/
-
 let url = new URL(window.location.href);
 let strUrl = window.location.href;
 if (url.searchParams.get('category')) {
@@ -189,5 +176,23 @@ if (newDishPopup) {
     togglePopup(addDishBtn, newDishPopup);
     for(const close of formClose){
         closePopup(close, newDishPopup);
+    }
+}
+
+
+const orderStatus = document.getElementsByClassName('orderStatus');
+console.log(orderStatus)
+if(orderStatus){
+    for(stat of orderStatus){
+        console.log(stat)
+        let text = stat.innerText;
+        switch(text){
+            case 'pending': stat.classList.add('pending')
+            break;
+            case 'denied': stat.classList.add('denied')
+            break;
+            case 'confirmed': stat.classList.add('confirmed')
+            break;
+        }
     }
 }

@@ -13,6 +13,7 @@
                 </label>
                 <input type="tel" inputmode="numeric" pattern="[0-9\s]{13,19}" autocomplete="cc-number" maxlength="19" placeholder="xxxx xxxx xxxx xxxx" name="cc-num" required>
             </div>
+            <div class="form-double">
             <div class="form-input">
                 <label for="name-on-card">
                     Name on Card
@@ -23,8 +24,10 @@
                 <label for="ccv">
                     CCV
                 </label>
-                <input type="number" name="ccv" required>
+                <input type="tel" name="ccv" maxlength="4" required>
             </div>
+            </div>
+            
             <div class="form-input">
                 <label for="adress">
                     Dilivery Address
