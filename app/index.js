@@ -99,7 +99,6 @@ switch (alertUser) {
         break;
 }
 
-
 function getCookie(name) {
     return (document.cookie.match('(^|;) *' + name + '=([^;]*)') || [])[2];
 }

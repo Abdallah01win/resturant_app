@@ -259,3 +259,16 @@ function getDishesDataFromOrders($conn, $dishIds_array)
     };
     return $dishes_in_order;
 }
+function changeOrderStatus($conn, $stat, $order)
+{
+    $sql = "UPDATE orders SET status= ? WHERE id= ?";
+    $stmt =  mysqli_stmt_init($conn);
+    if (!mysqli_stmt_prepare($stmt, $sql)) {
+        header('location: ../../admin.php?error=stmtfaild');
+        exit();
+    }
+    mysqli_stmt_bind_param($stmt, "si", $stat, $order);
+    mysqli_stmt_execute($stmt);
+    header('location: ../../admin.php?');
+    exit();
+}

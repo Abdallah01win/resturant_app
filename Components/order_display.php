@@ -33,8 +33,8 @@ foreach ($orders as $order) : ?>
         </div>
         <?php if ($_SESSION["type"] === 1) : ?>
             <ul class="meal-actions">
-                <li><img src='Assets/icons/close.svg' alt=''></li>
-                <li><img src='Assets/icons/check.svg' alt=''></li>
+                <a <?php echo "href='app/routes/order_status.php?deny=" . $order['id']. "'"?>><img src='Assets/icons/close.svg' alt=''></a>
+                <a <?php echo "href='app/routes/order_status.php?confirm=" . $order['id']. "'"?>><img src='Assets/icons/check.svg' alt=''></a>
             </ul>
         <?php endif; ?>
     </div>

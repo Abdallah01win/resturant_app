@@ -540,7 +540,7 @@ form {
 .table-row {
     display: flex;
     align-items: center;
-    column-gap: 1.6rem;
+    column-gap: 2.4rem;
     padding: 1.2rem 2.4rem;
 }
 
@@ -570,8 +570,9 @@ form {
 
 .table-row .dish-price {
     margin: 0;
-    margin-left: 2.4rem;
     font-weight: 700;
+    width: 120px;
+    text-align: left;
 }
 
 .meal-actions {
@@ -698,6 +699,8 @@ form.table .btns-container {
 .orderStatus{
     font-weight: 600;
     padding: 0.6rem 1.2rem;
+    width: 128px;
+    text-align: center;
 }
 .pending{
     background: #51d2ea;
