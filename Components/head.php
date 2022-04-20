@@ -13,5 +13,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="./Styles/main.css">
+    <link rel="stylesheet" href="./Styles/media_querries.css">
     <title>Resturant Website</title>
 </head>

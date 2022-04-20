@@ -178,12 +178,13 @@ if (newDishPopup) {
     }
 }
 
+if (url.searchParams.get('mode') === 'edit') {
+    newDishPopup.classList.toggle('hide-popup');
+}
 
 const orderStatus = document.getElementsByClassName('orderStatus');
-console.log(orderStatus)
 if(orderStatus){
     for(stat of orderStatus){
-        console.log(stat)
         let text = stat.innerText;
         switch(text){
             case 'pending': stat.classList.add('pending')

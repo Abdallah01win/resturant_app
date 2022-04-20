@@ -32,7 +32,14 @@ $orders = mysqli_fetch_all($result, MYSQLI_ASSOC);; ?>
                 <div class="dish-price"><?php echo '$' . $dish['price'] . '.00' ?>
                 </div>
                 <ul class="meal-actions">
-                    <li><img src='Assets/icons/pencil.svg' alt=''></li>
+                    <li>
+                    <?php
+                        echo "<a href='admin.php?dishId=";
+                        echo $dish['id'];
+                        echo "&mode=edit";
+                        echo "'>";
+                        echo "<img src='Assets/icons/pencil.svg' alt=''>";
+                        echo "</a>";; ?>
                     <li>
                         <?php
                         echo "<a href='app/routes/delete_from_dishes.php?dishId=";

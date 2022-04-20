@@ -272,3 +272,14 @@ function changeOrderStatus($conn, $stat, $order)
     header('location: ../../admin.php?');
     exit();
 }
+function getDishDataUsingId($conn, $dishId){
+    $sql = "SELECT * FROM dishes WHERE id = ?";
+    $stmt = mysqli_stmt_init($conn);
+    if (!mysqli_stmt_prepare($stmt, $sql)) {
+        header('location: ../../admin.php?error=stmtfaild');
+        exit();
+    }
+    mysqli_stmt_bind_param($stmt, "i", $dishId);
+    mysqli_stmt_execute($stmt);
+    return mysqli_fetch_all(mysqli_stmt_get_result($stmt), MYSQLI_ASSOC);
+}

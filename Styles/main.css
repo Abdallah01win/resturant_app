@@ -180,8 +180,8 @@ footer .pages li:hover {
 }
 
 nav li img {
-    width: 28px;
-    height: 28px;
+    width: 2.8rem;
+    height: 2.8rem;
     cursor: pointer;
 }
 
@@ -232,8 +232,8 @@ nav li img {
 }
 
 .options-btn img {
-    width: 34px;
-    height: 34px;
+    width: 3.4rem;
+    height: 3.4rem;
 }
 
 /* ------ Hero Section ------ */
@@ -250,8 +250,6 @@ nav li img {
 
 .img-container {
     border: solid 1px var(--main-gray);
-    margin-top: 2.4rem;
-    transition: all 200ms ease-in;
 }
 
 .img-container img {
@@ -348,7 +346,7 @@ nav li img {
     position: absolute;
     cursor: pointer;
     z-index: 1;
-    width: 60px;
+    width: 6rem;
     top: 18%;
     left: 50%;
     transform: translateX(-50%);
@@ -393,8 +391,8 @@ nav li img {
 }
 
 .dish-price img {
-    width: 25px;
-    height: 25px;
+    width: 2.5rem;
+    height: 2.5rem;
 }
 
 .menu .btns-container:last-of-type {
@@ -473,8 +471,8 @@ footer .element-title {
 }
 
 .close-form img {
-    width: 32px;
-    height: 32px;
+    width: 3.2rem;
+    height: 3.2rem;
 }
 
 form {
@@ -532,7 +530,7 @@ form {
 
 /*-------- admin page ----------*/
 .table {
-    margin-top: 6.4rem;
+    margin-top: 4.4rem;
     margin-bottom: 8rem;
     column-gap: 3.2rem;
 }
@@ -549,8 +547,8 @@ form {
 }
 
 .meal-img {
-    width: 50px;
-    height: 50px;
+    width: 5rem;
+    height: 5rem;
     border-radius: 1000rem;
 }
 
@@ -571,26 +569,25 @@ form {
 .table-row .dish-price {
     margin: 0;
     font-weight: 700;
-    width: 120px;
+    width: 12rem;
     text-align: left;
 }
 
 .meal-actions {
     display: flex;
     column-gap: 1.6rem;
-    margin-left: 2.4rem;
 }
 
 .meal-actions img,
 img {
-    width: 24px;
-    height: 24px;
+    width: 2.4rem;
+    height: 2.4rem;
 }
 
 /*---------- whish list popup ---------*/
 .whishlist {
     overflow-x: auto;
-    height: 360px;
+    height: 36rem;
 }
 
 .hero .whishlist,
@@ -613,8 +610,8 @@ img {
 
 .item-img {
     border-radius: 50%;
-    width: 50px;
-    height: 50px;
+    width: 5rem;
+    height: 5rem;
 }
 
 .item-title {
@@ -628,13 +625,14 @@ img {
 }
 
 .wl-action {
-    width: 24px;
+    width: 2.4rem;
     cursor: pointer;
 }
 
 /*--------- cart page -------*/
 #cart{
-    margin-bottom: 12rem;
+    margin-top: 8rem;
+    margin-bottom: 8rem;
 }
 #cart form{
     row-gap: 0;
@@ -699,7 +697,7 @@ form.table .btns-container {
 .orderStatus{
     font-weight: 600;
     padding: 0.6rem 1.2rem;
-    width: 128px;
+    width: 12.8rem;
     text-align: center;
 }
 .pending{
@@ -723,8 +721,8 @@ form.table .btns-container {
     display: grid;
     place-content: center;
     position: absolute;
-    width: 20px;
-    height: 20px;
+    width: 2rem;
+    height: 2rem;
     background: var(--main-green);
     border-radius: 50%;
     bottom: 0%;

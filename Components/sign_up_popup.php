@@ -10,7 +10,7 @@
                     <label for="name">
                         User Name
                     </label>
-                    <input type="text" name="name" id="name" required>
+                    <input type="text" name="name" maxlength="10" id="name" required>
                 </div>
                 <div class="form-input">
                     <label for="email">
