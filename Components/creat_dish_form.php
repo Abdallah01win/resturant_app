@@ -1,6 +1,15 @@
 <?php
-$dishId = intval($_GET['dishId']);
-$mode = $_GET['mode'];
+if(isset($_GET['dishId'])){
+    $dishId = intval($_GET['dishId']);
+}else{
+    $dishId = "";
+}
+if(isset($_GET['mode'])){
+    $mode = $_GET['mode'];
+}else{
+    $mode = "";
+}
+
 $dishData = getDishDataUsingId($conn, $dishId);
  ; ?>
 <div class="popup hide-popup" id="new-dish-popup">

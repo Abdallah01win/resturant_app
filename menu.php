@@ -37,12 +37,12 @@ $wlids = getIdsinDbTable($conn, 'whishlist', $userId);; ?>
                 <?php foreach ($dishes as $dish) : ?>
                     <div class="dish">
                         <div class="img-con">
-                        <img class="dish-img" src=<?php echo '.' . $dish['img_link'] ?> alt="">
-                        <?php echo "<a class='add-to-cart' href='app/routes/add_to_cart.php?dishId=" . $dish['id'] . "'" . ">";
-                        echo "<img src='Assets/icons/tote.svg' alt=''>";
-                        echo "</a>";; ?>
+                            <img class="dish-img" src=<?php echo '.' . $dish['img_link'] ?> alt="">
+                            <?php echo "<a class='add-to-cart' href='app/routes/add_to_cart.php?dishId=" . $dish['id'] . "'" . ">";
+                            echo "<img src='Assets/icons/tote.svg' alt=''>";
+                            echo "</a>";; ?>
                         </div>
-                        
+
                         <div class="dish-info">
                             <div class="dish-title">
                                 <span>
