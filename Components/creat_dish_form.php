@@ -10,7 +10,11 @@ $dishData = getDishDataUsingId($conn, $dishId);
         </div>
         <div class="logo">Malibu's</div>
         <h3 class="title">Creat New Dish</h3>
-        <form action="<?php echo htmlspecialchars('app/routes/creat_dish.php'); ?>" method="POST">
+        <form action="<?php if($mode === 'edit'){
+            echo htmlspecialchars('app/routes/update_dish.php');
+        } else{
+            echo htmlspecialchars('app/routes/creat_dish.php');
+        }; ?>" method="POST">
             <div class="form-input">
                 <label for="dish-name">
                     Name
@@ -65,11 +69,19 @@ $dishData = getDishDataUsingId($conn, $dishId);
                 </label>
                 <input type="text" name="dish-img-url" id="dish-img-url" required <?php if ($mode === 'edit') {
                     echo "value='";
-                    echo substr($dishData[0]['img_link'], 15,-1 ) ."'";
+                    echo substr($dishData[0]['img_link'], 15 ) ."'";
                     }; ?>>
             </div>
+            <?php if ($mode === 'edit') :?>
+                    <input type="hidden" name='id' value="<?php echo $dishData[0]['id'];?>">
+                    <?php endif ?>
             <div class="btns-container">
-                <button type="submit" name="submit-meal" class="btn-mid">Creat dish</button>
+                <button type="submit" name="submit-meal" class="btn-mid">
+                <?php if ($mode === 'edit') :?>
+                    Update dish
+                    <?php else:?>
+                    Creat dish
+                    <?php endif ?></button>
                 <button class="btn-mid close-form">cancal</button>
             </div>
         </form>

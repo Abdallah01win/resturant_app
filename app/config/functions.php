@@ -70,6 +70,20 @@ function addDish($conn, $dish_img_link, $dish_name, $ratting, $discription, $dis
     header('location: ../../admin.php');
     exit();
 };
+function updateDish($conn, $dish_img_link, $dish_name, $ratting, $discription, $dish_price, $dish_category, $dishId)
+{
+    $sql = "UPDATE dishes SET img_link= ?, name= ?, ratting= ?, discription= ?, price= ?, category= ? WHERE id = ?";
+    $stmt = mysqli_stmt_init($conn);
+    if (!mysqli_stmt_prepare($stmt, $sql)) {
+        header('location: ../../admin.php?error=stmtfaild');
+        exit();
+    }
+    mysqli_stmt_bind_param($stmt, "ssisisi", $dish_img_link, $dish_name, $ratting, $discription, $dish_price, $dish_category, $dishId);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_close($stmt);
+    header('location: ../../admin.php');
+    exit();
+};
 
 function checkIfItemInDbtable($conn, $dbTable, $userId, $dishId)
 {
