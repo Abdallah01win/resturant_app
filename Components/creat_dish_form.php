@@ -37,10 +37,9 @@ $dishData = getDishDataUsingId($conn, $dishId);
                 <label for="dish-discription">
                     Discription
                 </label>
-                <input type="text" name="dish-discription" id="dish-discription" required <?php if ($mode === 'edit') {
-                    echo "value='";
-                    echo $dishData[0]['discription']."'";
-                    }; ?>>
+                <input type="text" name="dish-discription" id="dish-discription" required <?php if ($mode === 'edit') :?>
+                    value="<?php echo $dishData[0]['discription']?>"
+                    <?php endif ?>>
             </div>
             <div class="form-double">
                 <div class="form-input">
