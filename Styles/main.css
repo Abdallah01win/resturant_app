@@ -19,6 +19,19 @@ a {
 html {
     font-size: 62.5%;
 }
+::-webkit-scrollbar{
+    background: #a7a8a5;
+    width: 8px;
+    color: red;
+
+}
+::-webkit-scrollbar-thumb{
+    background: rgb(5, 5, 5);
+}
+.order-dishes-container::-webkit-scrollbar{
+    height: 4px;
+}
+
 
 :root {
     --main-dark: #050505;
@@ -551,7 +564,7 @@ form {
     padding: 1.2rem 2.4rem;
 }
 
-.table .table-row:nth-child(even) {
+.table .table-row:nth-child(odd) {
     background: #f3f5ef;
 }
 
@@ -597,6 +610,7 @@ img {
 .whishlist {
     overflow-x: auto;
     height: 36rem;
+    padding-right: 1.2rem;
 }
 
 .hero .whishlist,
@@ -695,6 +709,15 @@ form.table .btns-container {
 
 .checkout {
     margin-top: 6.2rem;
+}
+
+.order-dishes-container{
+    display: flex;
+    column-gap: 1.8rem;
+    width: 19rem;
+    overflow: hidden;
+    overflow-x:auto;
+    padding-bottom: .4rem;
 }
 
 .order-dishes {

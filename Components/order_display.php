@@ -13,16 +13,17 @@ foreach ($orders as $order) : ?>
             </div>
         <?php endif; ?>
 
-        <?php
-        for ($i = 0; $i < count($dishes_in_order); $i++) : ?>
-            <div class="order-dishes">
-                <img class="meal-img" src=<?php echo '.' . $dishes_in_order[$i][0]['img_link'] ?> alt="">
-                <div class="qnt">
-                    <?php echo json_decode($order['qnt_array'])[$i]; ?>
-                </div>
-            </div>
-        <?php endfor ?>
 
+        <div class="order-dishes-container">
+            <?php for ($i = 0; $i < count($dishes_in_order); $i++) : ?>
+                <div class="order-dishes">
+                    <img class="meal-img" src=<?php echo '.' . $dishes_in_order[$i][0]['img_link'] ?> alt="">
+                    <div class="qnt">
+                        <?php echo json_decode($order['qnt_array'])[$i]; ?>
+                    </div>
+                </div>
+            <?php endfor ?>
+        </div>
         <div class="orderDate">
             <?php echo $order['order_date']; ?>
         </div>
@@ -33,8 +34,8 @@ foreach ($orders as $order) : ?>
         </div>
         <?php if ($_SESSION["type"] === 1) : ?>
             <ul class="meal-actions">
-                <a <?php echo "href='app/routes/order_status.php?deny=" . $order['id']. "'"?>><img src='Assets/icons/close.svg' alt=''></a>
-                <a <?php echo "href='app/routes/order_status.php?confirm=" . $order['id']. "'"?>><img src='Assets/icons/check.svg' alt=''></a>
+                <a <?php echo "href='app/routes/order_status.php?deny=" . $order['id'] . "'" ?>><img src='Assets/icons/close.svg' alt=''></a>
+                <a <?php echo "href='app/routes/order_status.php?confirm=" . $order['id'] . "'" ?>><img src='Assets/icons/check.svg' alt=''></a>
             </ul>
         <?php endif; ?>
     </div>
