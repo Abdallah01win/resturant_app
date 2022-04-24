@@ -205,7 +205,7 @@ function loginUser($conn, $email, $password)
             session_start();
             $_SESSION["userid"] = $userExists["id"];
             $_SESSION["username"] = $userExists["user_name"];
-            setcookie('userId', $userExists["id"], time() + 86400 * 1, '/');
+            setcookie('userId', $userExists["id"], time() + 21600 * 1, '/');
             if ($userExists['type'] === 1) {
                 $_SESSION["type"] = 1;
                 header('location: ../../admin.php');

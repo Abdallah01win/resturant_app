@@ -126,6 +126,9 @@ if (!getCookie('userId')) {
     togglePopup(orderBtn, signUpPopup);
     togglePopup(bookBtn, signUpPopup);
     togglePopup(fullMenuBtn, signUpPopup);
+    for (const btn of logoutBtns) {
+        togglePopup(btn, signUpPopup);
+    }
 } else {
     for (const btn of logoutBtns) {
         toggleAlert(btn, logoutAlert)
