@@ -1,10 +1,67 @@
-@media screen, (max-width:1200px) {
-    html{
-        /* font-size: 60%; */
+/* 1100px */
+@media (max-width:68.75em) {
+    .header {
+        font-size: 4.4rem;
+        margin-bottom: 2.4rem;
+    }
+
+    .paragraph {
+        font-size: 2rem;
+    }
+
+    .grid-3 {
+        column-gap: 2.4rem;
+        row-gap: 2.4rem;
     }
 }
-@media screen, (max-width:1040px) {
-    html{
-        /* font-size: 55%; */
+
+/* 1022px */
+@media 
+(max-width:64em) {
+    html {
+        font-size: 60%;
     }
+    .container{
+        margin: 0 6%;
+    }
+    .dish-discription{
+        height: 16rem;
+    }
+}
+
+
+/* 940px */
+@media (max-width:58.75em){
+    .logo{
+        font-size: 3rem;
+    }
+    .hero .btn{
+        font-size: 1.6rem;
+        padding: 0.8rem 1.6rem ;
+    }
+    .header {
+        font-size: 3.6rem;
+        margin-bottom: 2.4rem;
+    }
+    .paragraph {
+        font-size: 1.8rem;
+    }
+    .img-container img {
+        transform: translate(28px, 28px);
+    }
+
+
+    .container{
+        margin: 0 8%;
+    }
+    .dish-discription{
+        height: 10rem;
+    }
+    .menu .grid-3{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width:850px){
+   /* fix header btns without fontsize */
 }

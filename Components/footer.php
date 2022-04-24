@@ -14,9 +14,15 @@
         <div class="pages">
             <div class="element-title">Pages</div>
             <ul class="elements-list">
-                <li>Home</li>
-                <li>About</li>
-                <li>Menu</li>
+                <li>
+                    <a href="index.php">Home</a>
+                </li>
+                <li>
+                    <a href="about.php">About</a>
+                </li>
+                <li>
+                    <a href="menu.php">Menu</a>
+                </li>
             </ul>
         </div>
         <div class="contact">
