@@ -199,3 +199,18 @@ if(orderStatus){
         }
     }
 }
+
+const navOpen = document.getElementById('nav-open');
+const navClose = document.getElementById('nav-close');
+const navList = document.getElementById('nav-list');
+
+navOpen.addEventListener('click',()=>{
+    navOpen.classList.toggle('nav-switch')
+    navClose.classList.toggle('nav-switch')
+    navList.classList.toggle('hide-nav')
+})
+navClose.addEventListener('click',()=>{
+    navOpen.classList.toggle('nav-switch')
+    navClose.classList.toggle('nav-switch')
+    navList.classList.toggle('hide-nav')
+})

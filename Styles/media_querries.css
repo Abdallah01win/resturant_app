@@ -16,52 +16,128 @@
 }
 
 /* 1022px */
-@media 
-(max-width:64em) {
+@media (max-width:64em) {
     html {
         font-size: 60%;
     }
-    .container{
+
+    .container {
         margin: 0 6%;
     }
-    .dish-discription{
+
+    .dish-discription {
         height: 16rem;
     }
 }
 
 
 /* 940px */
-@media (max-width:58.75em){
-    .logo{
+@media (max-width:58.75em) {
+    .logo {
         font-size: 3rem;
     }
-    .hero .btn{
+
+    .hero .btn {
         font-size: 1.6rem;
-        padding: 0.8rem 1.6rem ;
+        padding: 0.8rem 1.6rem;
     }
+
     .header {
         font-size: 3.6rem;
         margin-bottom: 2.4rem;
     }
+
     .paragraph {
         font-size: 1.8rem;
     }
+
     .img-container img {
         transform: translate(28px, 28px);
     }
 
 
-    .container{
+    .container {
         margin: 0 8%;
     }
-    .dish-discription{
+
+    .dish-discription {
         height: 10rem;
     }
-    .menu .grid-3{
+
+    .menu .grid-3 {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
-@media (max-width:850px){
-   /* fix header btns without fontsize */
+@media (max-width:860px) {
+
+    .header {
+        font-size: 3.2rem;
+        margin-bottom: 2.4rem;
+    }
+
+    .paragraph {
+        font-size: 1.6rem;
+    }
+
+    .hero .content {
+        margin-top: 4.8rem;
+    }
+
+    .hero .btns-container {
+        flex-direction: column;
+        row-gap: 2rem;
+    }
+
+    .hero .btns-container .btn {
+        width: 100%;
+        text-align: center;
+
+    }
+
+    @media (min-height:700px) {
+        .hero {
+            height: 550px;
+        }
+    }
+}
+
+@media (max-width:660px) {
+    html {
+        font-size: 55%;
+    }
+    .logo,
+    #nav-open,
+    #nav-close {
+        z-index: 2;
+
+    }
+
+    .nav-links {
+        visibility: hidden;
+        opacity: 0;
+        pointer-events: none;
+
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        flex-direction: column;
+        z-index: 1;
+        background: #050505;
+        padding: calc(9.6rem + 5.326rem) 0rem 9.6rem 0rem;
+    }
+
+    .hide-nav {
+        visibility: visible;
+        opacity: 1;
+        pointer-events: all;
+        overflow-y: hidden;
+    }
+
+
+    .dish-discription {
+        height: 14rem;
+    }
 }
