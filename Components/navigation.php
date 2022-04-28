@@ -1,4 +1,4 @@
-<nav class="nav">
+<nav class="nav" id="nav">
     <div class="container">
         <div class="logo">
             <a href='index.php'>Malibu's</a>
@@ -17,7 +17,7 @@
                 <li><a class='logout btn-mid btn-green' style='font-size: 1.6rem;'>Log Out</a></li>
             <?php endif; ?>
         </ul>
-        <li class="place-center" id="nav-open">
+        <li class="nav-switch place-center nav-active" id="nav-open">
             <img src="Assets/icons/list.svg" alt="" >
         </li>
         <li class="nav-switch place-center" id="nav-close">

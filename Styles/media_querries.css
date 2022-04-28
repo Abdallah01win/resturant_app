@@ -68,8 +68,8 @@
         grid-template-columns: repeat(2, 1fr);
     }
 }
-
-@media (max-width:860px) {
+/* 860px */
+@media (max-width:53.75em) {
 
     .header {
         font-size: 3.2rem;
@@ -102,31 +102,32 @@
     }
 }
 
-@media (max-width:660px) {
-    html {
-        font-size: 55%;
+/* 760px  */
+@media (max-width: 47.5em) {
+    .nav-active {
+        display: grid !important;
     }
-    .logo,
-    #nav-open,
-    #nav-close {
-        z-index: 2;
 
+    .full-nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        height: 100vh;
+        width: 100%;
     }
 
     .nav-links {
         visibility: hidden;
         opacity: 0;
         pointer-events: none;
-
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100vh;
+        transform: translate(-50%, -50%);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        height: 100%;
         flex-direction: column;
-        z-index: 1;
-        background: #050505;
-        padding: calc(9.6rem + 5.326rem) 0rem 9.6rem 0rem;
+        padding: 9.6rem 0rem;
     }
 
     .hide-nav {
@@ -135,7 +136,12 @@
         pointer-events: all;
         overflow-y: hidden;
     }
-
+}
+/* 660px */
+@media (max-width:660px) {
+    html {
+        font-size: 55%;
+    }
 
     .dish-discription {
         height: 14rem;

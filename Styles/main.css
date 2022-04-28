@@ -180,9 +180,6 @@ p {
 footer .pages li {
     transition: all 200ms ease-in;
 }
-.nav-switch{
-    display: none !important;
-}
 .nav li a:hover,
 footer .pages li a:hover {
     cursor: pointer;
@@ -198,7 +195,9 @@ nav li img {
     height: 2.8rem;
     cursor: pointer;
 }
-
+.nav-switch{
+    display: none !important;
+}
 #whishlist-alert .dark-paragraph{
     text-align: center;
     margin-top: 2.4rem;
