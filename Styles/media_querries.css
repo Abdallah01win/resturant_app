@@ -32,6 +32,9 @@
     .dish-discription {
         height: 16rem;
     }
+    .table-row .dish-price{
+        width: 10rem;
+    }
 }
 
 

@@ -736,22 +736,17 @@ form.table .btns-container {
     margin-left: auto;
 }
 .orderStatus{
-    font-weight: 600;
-    padding: 0.6rem 1.2rem;
-    width: 12.8rem;
-    text-align: center;
+    padding: 3.2rem 0rem;
+    width: 0.8rem;
 }
 .pending{
     background: #51d2ea;
-    text-transform: capitalize;
 }
 .denied{
     background: #ef333a;
-    text-transform: capitalize;
 }
 .confirmed{
     background: var(--main-green);
-    text-transform: capitalize;
 }
 .orderName{
     font-weight: 600;

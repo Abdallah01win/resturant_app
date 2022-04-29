@@ -185,20 +185,6 @@ if (url.searchParams.get('mode') === 'edit') {
     newDishPopup.classList.toggle('hide-popup');
 }
 
-const orderStatus = document.getElementsByClassName('orderStatus');
-if(orderStatus){
-    for(stat of orderStatus){
-        let text = stat.innerText;
-        switch(text){
-            case 'pending': stat.classList.add('pending')
-            break;
-            case 'denied': stat.classList.add('denied')
-            break;
-            case 'confirmed': stat.classList.add('confirmed')
-            break;
-        }
-    }
-}
 const nav = document.getElementById('nav')
 const navOpen = document.getElementById('nav-open');
 const navClose = document.getElementById('nav-close');

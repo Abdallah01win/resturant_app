@@ -44,9 +44,6 @@ foreach ($orders as $order) : ?>
         <div class="orderDate">
             <?php echo substr($order['order_date'], 2, -3); ?>
         </div>
-        <div class="orderStatus">
-            <?php echo $order['status']; ?>
-        </div>
         <div class="dish-price"><?php echo '$' . $order['g_total'] . '.00' ?>
         </div>
         <?php if ($_SESSION["type"] === 1) : ?>
@@ -55,5 +52,8 @@ foreach ($orders as $order) : ?>
                 <a <?php echo "href='app/routes/order_status.php?confirm=" . $order['id'] . "'" ?>><img src='Assets/icons/check.svg' alt=''></a>
             </ul>
         <?php endif; ?>
+        <div class="orderStatus <?php echo $order['status']; ?>">
+            <?php //echo $order['status']; ?>
+        </div>
     </div>
 <?php endforeach ?>
