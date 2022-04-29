@@ -15,17 +15,34 @@ foreach ($orders as $order) : ?>
 
 
         <div class="order-dishes-container">
-            <?php for ($i = 0; $i < count($dishes_in_order); $i++) : ?>
+            <?php if (count($dishes_in_order) <= 3) : ?>
+                <?php for ($i = 0; $i < count($dishes_in_order); $i++) : ?>
+                    <div class="order-dishes">
+                        <img class="meal-img" src=<?php echo '.' . $dishes_in_order[$i][0]['img_link'] ?> alt="">
+                        <div class="qnt">
+                            <?php echo json_decode($order['qnt_array'])[$i]; ?>
+                        </div>
+                    </div>
+                <?php endfor ?>
+            <?php else : ?>
+                <?php for ($i = 0; $i < 2; $i++) : ?>
+                    <div class="order-dishes">
+                        <img class="meal-img" src=<?php echo '.' . $dishes_in_order[$i][0]['img_link'] ?> alt="">
+                        <div class="qnt">
+                            <?php echo json_decode($order['qnt_array'])[$i]; ?>
+                        </div>
+                    </div>
+                <?php endfor ?>
                 <div class="order-dishes">
-                    <img class="meal-img" src=<?php echo '.' . $dishes_in_order[$i][0]['img_link'] ?> alt="">
-                    <div class="qnt">
-                        <?php echo json_decode($order['qnt_array'])[$i]; ?>
+                    <div class="extra-dishes place-center">
+                        <span><?php echo "+" . count($dishes_in_order) - 2 ?></span>
                     </div>
                 </div>
-            <?php endfor ?>
+            <?php endif ?>
+
         </div>
         <div class="orderDate">
-            <?php echo $order['order_date']; ?>
+            <?php echo substr($order['order_date'], 2, -3); ?>
         </div>
         <div class="orderStatus">
             <?php echo $order['status']; ?>

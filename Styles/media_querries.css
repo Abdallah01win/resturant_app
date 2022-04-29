@@ -22,7 +22,11 @@
     }
 
     .container {
-        margin: 0 6%;
+        margin: 0rem 6%;
+    }
+    .table{
+        margin-top: 4.4rem;
+        margin-bottom: 8rem;
     }
 
     .dish-discription {
@@ -58,6 +62,10 @@
 
     .container {
         margin: 0 8%;
+    }
+    .table{
+        margin-top: 4.4rem;
+        margin-bottom: 8rem;
     }
 
     .dish-discription {
@@ -135,6 +143,44 @@
         opacity: 1;
         pointer-events: all;
         overflow-y: hidden;
+    }
+
+
+
+    /* Admin page dish-list */
+    .table-row {
+        column-gap: 1.6rem;
+        padding: 1rem 2rem;
+    }
+    
+    .meal-img {
+        width: 5rem;
+        height: 5rem;
+    }
+    
+    .meal-title {
+        font-weight: 500;
+        text-transform: capitalize;
+        margin-right: auto;
+    }
+    
+    .meal-ratting {
+        column-gap: 1.2rem;
+        font-size: 2rem;
+    }
+    
+    .table-row .dish-price {
+        width: 8rem;
+        font-size: 2.2rem;
+    }
+    
+    .meal-actions {
+        column-gap: 1.2rem;
+    }
+    .meal-actions img,
+    img {
+        width: 2.4rem;
+        height: 2.4rem;
     }
 }
 /* 660px */

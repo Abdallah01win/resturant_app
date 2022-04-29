@@ -716,11 +716,17 @@ form.table .btns-container {
 
 .order-dishes-container{
     display: flex;
-    column-gap: 1.8rem;
-    width: 19rem;
-    overflow: hidden;
-    overflow-x:auto;
+    column-gap: 1.6rem;
     padding-bottom: .4rem;
+}
+.extra-dishes{
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    font-weight: 600;
+    background: #a7a8a5;
+    display: grid;
+    place-content: center;
 }
 
 .order-dishes {
