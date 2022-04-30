@@ -7,13 +7,6 @@ foreach ($orders as $order) : ?>
     $user = mysqli_fetch_all($result, MYSQLI_ASSOC); ?>
     <div class="table-row">
 
-        <?php if ($_SESSION["type"] === 1) : ?>
-            <div class="orderName">
-                <?php echo $user[0]['user_name']; ?>
-            </div>
-        <?php endif; ?>
-
-
         <div class="order-dishes-container">
             <?php if (count($dishes_in_order) <= 3) : ?>
                 <?php for ($i = 0; $i < count($dishes_in_order); $i++) : ?>
@@ -41,19 +34,23 @@ foreach ($orders as $order) : ?>
             <?php endif ?>
 
         </div>
-        <div class="orderDate">
-            <?php echo substr($order['order_date'], 2, -3); ?>
-        </div>
+        <?php if ($_SESSION["type"] !== 1) : ?>
+            <div class="orderDate">
+                <?php echo substr($order['order_date'], 5, -3);
+                ?>
+            </div>
+        <?php endif; ?>
+
         <div class="dish-price"><?php echo '$' . $order['g_total'] . '.00' ?>
         </div>
         <?php if ($_SESSION["type"] === 1) : ?>
             <ul class="meal-actions">
+                <a <?php echo "href='admin.php?orderId=" . $order['id'] . "'" ?>><img src='Assets/icons/chat-centered.svg' alt=''></a>
                 <a <?php echo "href='app/routes/order_status.php?deny=" . $order['id'] . "'" ?>><img src='Assets/icons/close.svg' alt=''></a>
                 <a <?php echo "href='app/routes/order_status.php?confirm=" . $order['id'] . "'" ?>><img src='Assets/icons/check.svg' alt=''></a>
             </ul>
         <?php endif; ?>
         <div class="orderStatus <?php echo $order['status']; ?>">
-            <?php //echo $order['status']; ?>
         </div>
     </div>
 <?php endforeach ?>

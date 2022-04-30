@@ -718,6 +718,7 @@ form.table .btns-container {
     display: flex;
     column-gap: 1.6rem;
     padding-bottom: .4rem;
+    margin-right: auto;
 }
 .extra-dishes{
     width: 5rem;

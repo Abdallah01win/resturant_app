@@ -63,6 +63,7 @@ $orders = mysqli_fetch_all($result, MYSQLI_ASSOC);; ?>
     <?php include('./Components/error_alert.php'); ?>
     <?php include('./Components/logout_alert.php'); ?>
     <?php include('./Components/creat_dish_form.php'); ?>
+    <?php include('./Components/order_info_popup.php'); ?>
     <?php include('./Components/scripts.php'); ?>
 </body>
 

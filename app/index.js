@@ -12,6 +12,7 @@ const logoutBtns = document.getElementsByClassName('logout');
 const filterBtns = document.getElementsByClassName('filter')
 const whishlistPopup = document.getElementById('whishlist-alert')
 const navWishlistBtn = document.getElementById('nav-wishlist');
+const dishInfoPopup = document.getElementById('order_info_popup')
 
 
 const checkoutPopup = document.getElementById('checkout-popup');
@@ -135,10 +136,9 @@ if (!getCookie('userId')) {
     }
 }
 
-if(whishlistPopup){
+if (whishlistPopup) {
     togglePopup(navWishlistBtn, whishlistPopup);
 }
-
 
 if (signUpPopup) {
     for (const button of formToggle) {
@@ -151,24 +151,25 @@ if (signUpPopup) {
     }
 }
 
-if(errorAlert){
-    for(const close of formClose){
+if (errorAlert) {
+    for (const close of formClose) {
         closePopup(close, errorAlert);
         closePopup(close, logoutAlert);
+        closePopup(close, dishInfoPopup);
     }
 }
 
-if(checkoutPopup){
+if (checkoutPopup) {
     for (const button of formToggle) {
         togglePopup(button, checkoutPopup);
     }
-    for(const close of formClose){
+    for (const close of formClose) {
         closePopup(close, checkoutPopup);
     }
 }
 
-if(whishlistPopup){
-    for(const close of formClose){
+if (whishlistPopup) {
+    for (const close of formClose) {
         closePopup(close, whishlistPopup);
     }
 }
@@ -176,8 +177,9 @@ if(whishlistPopup){
 const addDishBtn = document.getElementById('add-btn');
 if (newDishPopup) {
     togglePopup(addDishBtn, newDishPopup);
-    for(const close of formClose){
+    for (const close of formClose) {
         closePopup(close, newDishPopup);
+
     }
 }
 
@@ -190,13 +192,13 @@ const navOpen = document.getElementById('nav-open');
 const navClose = document.getElementById('nav-close');
 const navList = document.getElementById('nav-list');
 
-navOpen.addEventListener('click',()=>{
+navOpen.addEventListener('click', () => {
     nav.classList.toggle('full-nav')
     navOpen.classList.toggle('nav-active')
     navClose.classList.toggle('nav-active')
     navList.classList.toggle('hide-nav')
 })
-navClose.addEventListener('click',()=>{
+navClose.addEventListener('click', () => {
     nav.classList.toggle('full-nav')
     navOpen.classList.toggle('nav-active')
     navClose.classList.toggle('nav-active')
