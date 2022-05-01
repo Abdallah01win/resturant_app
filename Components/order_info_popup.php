@@ -1,28 +1,43 @@
-<?php
-if (isset($_GET['orderId'])) {
-    $orderId = $_GET['orderId'];
-}
-?>
-<div class="popup" id="order_info_popup">
-    <div class="login-form form">
-        <div class="close-form">
-            <img src="./Assets/icons/close.svg" alt="">
-        </div>
-        <div class="logo">Malibu's</div>
-        <h3 class="alert-title">Order Info</h3>
-        <div class="info">
-            <!-- User name -->
-            <!-- all dishes in order -->
-            <!-- date order placed -->
-            <!-- total price -->
-            <!-- adress to diliver to -->
-            <!-- order actions to confirm or deny -->
-            <?php foreach ($orders as $order) : ?>
-                <?php if ($order['id'] === $orderId) : ?>
-                    <div><?php echo $order["adress"]?></div>
-                    <div><?php echo $order["g_total"]?></div>
-                <?php endif ?>
-            <?php endforeach ?>
+<?php if (isset($_GET['orderId'])) : ?>
+    <?php $orderId = $_GET['orderId']; ?>
+    <div class="popup" id="order_info_popup">
+        <div class="login-form form">
+            <div class="close-form">
+                <img src="./Assets/icons/close.svg" alt="">
+            </div>
+            <div class="logo">Malibu's</div>
+            <h3 class="alert-title">Order Info</h3>
+            <div class="info">
+                <?php foreach ($orders as $order) : ?>
+                    <?php if ($order['id'] === $orderId) : ?>
+                        <?php
+                        $order_dishes = json_decode($order['dishIds_array']);
+                        $dishes_in_order = getDishesDataFromOrders($conn, $order_dishes);
+                        $sql = 'SELECT user_name FROM users WHERE id=' . $order['userId'];
+                        $result = mysqli_query($conn, $sql);
+                        $user = mysqli_fetch_all($result, MYSQLI_ASSOC); ?>
+                        <?php for ($i = 0; $i < count($dishes_in_order); $i++) : ?>
+                            <div class="order-dishes">
+                                <img class="meal-img" src=<?php echo '.' . $dishes_in_order[$i][0]['img_link'] ?> alt="">
+                                <div class="qnt">
+                                    <?php echo json_decode($order['qnt_array'])[$i]; ?>
+                                </div>
+                                <div>
+                                    <?php echo $dishes_in_order[$i][0]['name'] ?>
+                                </div>
+                            </div>
+                        <?php endfor ?>
+                        <?php echo $order['adress'] ?>
+                        <?php echo $order['g_total'] ?>
+                        <?php echo $order['order_date'] ?>
+                        <?php echo $user[0]['user_name'] ?>
+                        <div class="btns-container">
+                            <a class="btn-dark" <?php echo "href='app/routes/order_status.php?confirm=" . $order['id'] . "'" ?>>Confirm</a>
+                            <a class="btn-dark" <?php echo "href='app/routes/order_status.php?deny=" . $order['id'] . "'" ?>>Deny</a>
+                        </div>
+                    <?php endif ?>
+                <?php endforeach ?>
+            </div>
         </div>
     </div>
-</div>
+<?php endif ?>

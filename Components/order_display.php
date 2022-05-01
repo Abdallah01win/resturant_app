@@ -1,10 +1,7 @@
 <?php
 foreach ($orders as $order) : ?>
     <?php $order_dishes = json_decode($order['dishIds_array']);
-    $dishes_in_order = getDishesDataFromOrders($conn, $order_dishes);
-    $sql = 'SELECT * FROM users WHERE id=' . $order['userId'];
-    $result = mysqli_query($conn, $sql);
-    $user = mysqli_fetch_all($result, MYSQLI_ASSOC); ?>
+    $dishes_in_order = getDishesDataFromOrders($conn, $order_dishes);?>
     <div class="table-row">
 
         <div class="order-dishes-container">
