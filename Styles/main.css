@@ -322,6 +322,11 @@ nav li img {
     width: 65%;
 }
 
+.fillters{
+    flex-wrap: wrap;
+    row-gap: 2.4rem;
+}
+
 .dishes {
     margin-top: 4.4rem;
 }
@@ -394,6 +399,7 @@ nav li img {
 }
 .dish-title span:last-of-type {
     font-size: 2.4rem;
+    flex-wrap: nowrap;
 }
 
 .dish-discription {

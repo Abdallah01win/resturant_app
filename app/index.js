@@ -4,7 +4,7 @@ const orderBtn = document.getElementById('order-btn')
 const bookBtn = document.getElementById('book-btn')
 const fullMenuBtn = document.getElementById('full-menu')
 const formToggle = document.getElementsByClassName('form-toggle')
-const formClose = document.getElementsByClassName('close-form')
+const formClose = document.querySelectorAll('.close-form')
 const adminLogout = document.getElementsByClassName('admin-logout')
 const logoutAlert = document.getElementById('logout-alert')
 const newDishPopup = document.getElementById('new-dish-popup')
@@ -113,7 +113,9 @@ function togglePopup(btn, popup) {
 function closePopup(btn, popup) {
     btn.addEventListener('click', (e) => {
         e.preventDefault();
-        popup.classList.add('hide-popup');
+        if (!popup.classList.contains('hide-popup')) {
+            popup.classList.add('hide-popup');
+        }
     })
 }
 function toggleAlert(btn, alert) {
@@ -134,10 +136,6 @@ if (!getCookie('userId')) {
     for (const btn of logoutBtns) {
         toggleAlert(btn, logoutAlert)
     }
-}
-
-if (whishlistPopup) {
-    togglePopup(navWishlistBtn, whishlistPopup);
 }
 
 if (signUpPopup) {
@@ -169,6 +167,7 @@ if (checkoutPopup) {
 }
 
 if (whishlistPopup) {
+    togglePopup(navWishlistBtn, whishlistPopup);
     for (const close of formClose) {
         closePopup(close, whishlistPopup);
     }
@@ -179,7 +178,6 @@ if (newDishPopup) {
     togglePopup(addDishBtn, newDishPopup);
     for (const close of formClose) {
         closePopup(close, newDishPopup);
-
     }
 }
 
