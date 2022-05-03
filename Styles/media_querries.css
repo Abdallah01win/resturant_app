@@ -226,10 +226,19 @@
     .sm-links {
         margin-top: 2.6rem;
     }
+    .dish-info{
+        padding-bottom: 1.2rem;
+    }
+    .dish-title{
+        flex-direction: column;
+    }
+    .dish-price{
+        margin-top: 1.2rem ;
+    }
 }
 
-/* 520px */
-@media (max-width: 32.5em){
+/* 550px */
+@media (max-width: 34.375em){
    
     .table-row{
         column-gap: 1.2rem;
@@ -239,12 +248,58 @@
     .menu .dark-paragraph, #orders .dark-paragraph{
         width: 100%;
     }
-    .menu .grid-3{
+    /**/
+    .img-con{
+        height: 45%;
+    }
+    .dish-info{
+        height: 55%;
+    }
+    
+    .dish-discription{
+        height: 18rem;
+    }
+    footer .grid-3 {
         grid-template-columns: 1fr;
+    }
+    footer .grid-3 .contact{
+        grid-column: initial;
+        grid-row: initial;
+    }
+    footer .grid-3 .pages{
+        grid-column: initial;
+        margin-top: 2rem;
     }
 }
 
-/* 435px */
-@media (max-width: 27.2em){
-    
+/* 440px */
+@media (max-width: 27.5em){
+    .logo{
+        font-size: 2.4rem;
+    }
+    .container{
+        margin-left: 8%;
+        margin-right: 8%;
+    }
+    .menu .grid-3{
+        grid-template-columns: 1fr;
+    }
+    .img-con, .dish-info{
+        height: 50%;
+    }
+    .dish-info{
+        padding-bottom: 2.4rem;
+    }
+    .dish-title{
+        flex-direction: row;
+    }
+    .dish-discription{
+        height: 10rem;
+    }
+
+    .fillters.btns-container{
+        row-gap: 1.8rem;
+        column-gap: 1.8rem;
+    }
+
 }
