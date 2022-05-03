@@ -235,6 +235,23 @@
     .dish-price{
         margin-top: 1.2rem ;
     }
+
+    #cart{
+        margin-top: 6.4rem;
+        margin-bottom: 6.4rem;
+    }
+    #cart .table-row{
+        padding: 0.8rem 1.6rem;
+        column-gap: 1.2rem;
+    }
+    #cart .table-row input{
+       margin-left: 0;
+       font-size: 1.8rem;
+       width: 4rem;
+    }
+    .meal-ratting{
+        column-gap: 0.8rem;
+    }
 }
 
 /* 550px */

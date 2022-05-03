@@ -27,26 +27,27 @@
                             <?php endfor ?>
                         </div>
                         <div class="info-item">
-                        <img  src="Assets/icons/map-pin-line.svg" alt="">
+                            <img src="Assets/icons/map-pin-line.svg" alt="">
                             <?php echo $order['adress'] ?>
                         </div>
                         <div class="info-item">
-                        <img  src="Assets/icons/currency-dollar.svg" alt="">
+                            <img src="Assets/icons/currency-dollar.svg" alt="">
                             <?php echo $order['g_total'] . ".00" ?>
                         </div>
                         <div class="info-item">
-                            <img  src="Assets/icons/user-dark.svg" alt="">
+                            <img src="Assets/icons/user-dark.svg" alt="">
                             <?php echo $user[0]['user_name'] ?>
                         </div>
                         <div class="info-item">
-                        <img  src="Assets/icons/calendar.svg" alt="">
+                            <img src="Assets/icons/calendar.svg" alt="">
                             <?php echo substr($order['order_date'], 2, -3)  ?>
                         </div>
-
-                        <div class="btns-container">
-                            <a class="btn-mid" <?php echo "href='app/routes/order_status.php?confirm=" . $order['id'] . "'" ?>>Confirm</a>
-                            <a class="btn-mid" <?php echo "href='app/routes/order_status.php?deny=" . $order['id'] . "'" ?>>Deny</a>
-                        </div>
+                        <?php if ($_SESSION["type"] === 1) : ?>
+                            <div class="btns-container">
+                                <a class="btn-mid" <?php echo "href='app/routes/order_status.php?confirm=" . $order['id'] . "'" ?>>Confirm</a>
+                                <a class="btn-mid" <?php echo "href='app/routes/order_status.php?deny=" . $order['id'] . "'" ?>>Deny</a>
+                            </div>
+                        <?php endif ?>
                     <?php endif ?>
                 <?php endforeach ?>
             </div>

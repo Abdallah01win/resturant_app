@@ -11,12 +11,9 @@
                     <img src='Assets/icons/star.svg'>
                     <?php echo $cartDish['ratting'];; ?>
                 </div>
-                <div class="">
-                    <?php echo "$" . $cartDish['price']  . ".00";; ?>
                     <input type="hidden" value="<?php echo $cartDish['price']; ?>" class="initial-price">
-                </div>
                 <div>
-                    <label <?php echo "for'" . $cartDish['id'] . "'"; ?>>Quantity:</label>
+                    <label <?php echo "for'" . $cartDish['id'] . "'"; ?>>Qnt:</label>
                     <input class="dish-qnt" type="number" max="10" min="1" onchange="totlaDishPrice()" name="qnt[]" value="1">
                 </div>
                 <div class="dish-price dish-total">
