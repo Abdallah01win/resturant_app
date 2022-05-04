@@ -138,7 +138,7 @@
         left: 50%;
         height: 100%;
         flex-direction: column;
-        padding: 9.6rem 0rem;
+        padding: 12rem 0rem;
     }
 
     .hide-nav {
@@ -196,6 +196,13 @@
     html {
         font-size: 55%;
     }
+    .title{
+        font-size: 3rem;
+        margin-bottom: 2rem;
+    }
+    #cart .table{
+        margin-bottom: 6.4rem;
+    }
     .dish-discription {
         height: 14rem;
     }
@@ -227,7 +234,7 @@
         margin-top: 2.6rem;
     }
     .dish-info{
-        padding-bottom: 1.2rem;
+       padding-bottom: 1.2rem;
     }
     .dish-title{
         flex-direction: column;
@@ -256,10 +263,19 @@
 
 /* 550px */
 @media (max-width: 34.375em){
-   
     .table-row{
         column-gap: 1.2rem;
         padding: 00.8rem 1.6rem;
+    }
+    #cart .table-row{
+        padding: 0.8rem;
+        column-gap: 0.8rem;
+    }
+    #cart .meal-title{
+        display: none;
+    }
+    #cart .meal-img{
+        margin-right: auto;
     }
     
     .menu .dark-paragraph, #orders .dark-paragraph{
@@ -318,5 +334,20 @@
         row-gap: 1.8rem;
         column-gap: 1.8rem;
     }
-
+    #orders .meal-img, .extra-dishes{
+        width: 4.5rem;
+        height: 4.5rem;
+    }
+    #orders .table-row{
+        padding-left: 0.8rem;
+        column-gap: 0.8rem;
+    }
+    #orders .dish-price{
+        font-size: 2rem;
+    }
+}
+@media (max-width: 360px){
+    html{
+        font-size: 51%;
+    }
 }

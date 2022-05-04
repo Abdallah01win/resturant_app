@@ -61,7 +61,9 @@ $wlids = getIdsinDbTable($conn, 'whishlist', $userId);; ?>
 
                                 <?php
                                 if (in_array($dish['id'], $wlids)) {
+                                    echo "<a href='app/routes/delete_from_wl.php?dishId=" . $dish['id'] . "'" . ">";
                                     echo "<img src='Assets/icons/heart-filled.svg' alt=''>";
+                                    echo "</a>";
                                 } else {
                                     echo "<a href='app/routes/add_to_whishlist.php?dishId=" . $dish['id'] . "'" . ">";
                                     echo "<img src='Assets/icons/heart.svg' alt=''>";
