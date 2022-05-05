@@ -78,7 +78,7 @@ p {
 }
 
 .header {
-    font-size: 5.2rem;
+    font-size: 4.4rem;
     margin-bottom: 3.2rem;
     font-weight: 800;
     font-family: 'Josefin Sans', sans-serif;
@@ -92,7 +92,7 @@ p {
 }
 
 .paragraph {
-    font-size: 2.2rem;
+    font-size: 2rem;
     margin-bottom: 2.4rem;
     color: var(--main-gray);
 }
@@ -142,14 +142,6 @@ p {
 
 .btn-green {
     background: var(--main-green);
-    font-weight: 500;
-    border: none;
-    color: var(--main-dark);
-    cursor: pointer;
-}
-
-.btn-red {
-    background: #fa2222;
     font-weight: 500;
     border: none;
     color: var(--main-dark);
@@ -255,21 +247,26 @@ nav li img {
 .hero {
     background: var(--main-dark);
     color: var(--main-white);
-    height: 100vh;
+    height: 90vh;
+    position: relative;
 }
 
-.hero .content {
-    margin-top: 8rem;
+.content {
+    margin-left: 8%;
+    column-gap: 0rem;
+}
+.hero-text{
+    margin-top: 6.4rem;
 }
 
 .img-container {
-    border: solid 1px var(--main-gray);
+    height: 100%;
 }
 
 .img-container img {
     width: 100%;
-    height: 100%;
-    transform: translate(35px, 35px);
+    height:calc(90vh - 84px);
+    filter: brightness(0.5);
 }
 
 .hero .btns-container :first-child {
@@ -279,10 +276,16 @@ nav li img {
 }
 
 /* -------- Partners Section -------- */
-/*.partners{
-    height: 100vh;
+.partners{
     background: var(--main-white);
     color: var(--main-dark);
+    width: 75%;
+    margin: 0 auto;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, -8%);
+    padding: 4.4rem;
 }
 
 .partner-list {
@@ -294,10 +297,11 @@ nav li img {
     row-gap: 2.4rem; 
 }
 .partner-list li img {
-    max-height: 4rem;
+    max-height: 7rem;
     filter: brightness(0);
-    opacity: 50%;
-}*/
+    width: auto;
+    height: 3rem;
+}
 
 /*---------- About section ---------*/
 /* .about{
