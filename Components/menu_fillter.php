@@ -1,6 +1,6 @@
 <h2 class="title">Our Menu</h2>
 <div class="dark-paragraph">
-    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ducimus totam possimus numquam ab quam quisquam mollitia est dolorem iusto reiciendis!
+Explore our mouth-watering range of dishes, beuverages, and desserts that is guarenteed to meet your tast and blow your expectations away.
 </div>
 <div class="fillters btns-container">
     <a class="btn-mid filter" href="menu.php">all</a>

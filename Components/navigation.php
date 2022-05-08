@@ -7,7 +7,7 @@
             <li><a href='index.php'>Home</a></li>
             <li><a href='menu.php'>Menu</a></li>
             <?php if (!isset($_SESSION["type"]) || $_SESSION["type"] !== 1) : ?>
-                <li>About</li>
+                <li><a href='about.php'>About</a></li>
                 <li id='nav-wishlist'><img src='Assets/icons/heart-white.svg' alt=''></li>
                 <li><a href='cart.php'><img src='Assets/icons/tote.svg' alt=''></a></li>
                 <li class='logout'><img src='Assets/icons/user.svg' alt=''></li>

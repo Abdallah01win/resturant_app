@@ -19,11 +19,11 @@ $dishes = mysqli_fetch_all($result, MYSQLI_ASSOC);
         <?php include('./Components/navigation.php'); ?>
         <div class="content container">
             <div class="hero-text">
-                <h1 class="header">Bringing class to cuisine with a pinch of passion in every dish.</h1>
-                <p class="paragraph">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam vitae obcaecati placeat at voluptate, molestias non dolorum.</p>
+                <h1 class="header">A pinch of passion in every dish.</h1>
+                <p class="paragraph">And we're delivering it right to your home at any time. Order now and get free delivery on the first 3 tackouts.</p>
                 <div class="btns-container">
-                    <?php echo ' <a class="btn" href="menu.php" id="order-btn">Order Dilivery</a>' ?>
-                    <?php echo '<a class="btn" href="menu.php" id="book-btn">Book a table</a>' ?>
+                    <?php echo ' <a class="btn" href="menu.php" id="order-btn">Order Takeout</a>' ?>
+                    <?php echo '<a class="btn" href="about.php" id="book-btn">Learn More</a>' ?>
                 </div>
             </div>
         </div>
@@ -51,7 +51,7 @@ $dishes = mysqli_fetch_all($result, MYSQLI_ASSOC);
         <div class="container">
             <h2 class="title">Our Menu</h2>
             <div class="dark-paragraph">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ducimus totam possimus numquam ab quam quisquam mollitia est dolorem iusto reiciendis!
+                Explore our mouth-watering range of dishes, beuverages, and desserts that is guarenteed to meet your tast and blow your expectations away.
             </div>
             <div class="dishes grid-3">
                 <?php for ($i = 0; $i < 6; $i++) { ?>
