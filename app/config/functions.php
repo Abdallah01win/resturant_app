@@ -150,7 +150,7 @@ function addToCart($conn, $userId, $dishId)
             if (checkIfItemInDbtable($conn, 'whishlist', $userId, $dishId) === true) {
                 deleteItemFromDbTable($conn, 'whishlist', $userId, $dishId, 'menu');
             }
-            header("location: ../../menu.php?alert=addedtocart");
+            header("location: ../../cart.php?alert=addedtocart");
             exit();
         }
     }

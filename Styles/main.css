@@ -78,8 +78,9 @@ p {
 }
 
 .header {
-    font-size: 4.4rem;
-    margin-bottom: 3.2rem;
+    font-size: 5.2rem;
+    margin-bottom: 2.8rem;
+    line-height: 1.2;
     font-weight: 800;
     font-family: 'Josefin Sans', sans-serif;
 }
@@ -245,63 +246,41 @@ nav li img {
 /* ------ Hero Section ------ */
 
 .hero {
-    background: var(--main-dark);
+    background: rgba(0, 0, 0, .75) url('../Assets/pexels-waldemar-brandt-2290070.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-blend-mode:darken ;
     color: var(--main-white);
-    height: 90vh;
+    height: 100vh;
     position: relative;
 }
 
 .content {
-    margin-left: 8%;
-    column-gap: 0rem;
+    text-align: center;
+    margin-top: 12rem;
 }
-.hero-text{
-    margin-top: 6.4rem;
-}
-
-.img-container {
-    height: 100%;
-}
-
-.img-container img {
-    width: 100%;
-    height:calc(90vh - 84px);
-    filter: brightness(0.5);
+.hero-text .paragraph{
+    color: var(--main-white);
+    font-size: 2.4rem;
+    max-width: 80%;
+    margin: 0 auto;
+    margin-bottom: 3rem;
 }
 
+.hero .btns-container{
+    justify-content: center;
+}
 .hero .btns-container :first-child {
     background: var(--main-green);
     border: none;
     color: var(--main-dark);
 }
-
-/* -------- Partners Section -------- */
-.partners{
-    background: var(--main-white);
-    color: var(--main-dark);
-    width: 75%;
-    margin: 0 auto;
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translate(-50%, -8%);
-    padding: 4.4rem;
+.hero .btns-container :last-child {
+    background: var(--main-dark);
+    color:var(--main-white)
 }
 
-.partner-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
-    column-gap: 2.4rem;
-    row-gap: 2.4rem; 
-}
-.partner-list li img {
-    max-height: 7rem;
-    filter: brightness(0);
-    width: auto;
-    height: 3rem;
-}
 
 /*---------- About section ---------*/
 /* .about{
