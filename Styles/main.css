@@ -20,14 +20,17 @@ html {
     font-size: 62.5%;
     scroll-behavior: smooth;
 }
-::-webkit-scrollbar{
+
+::-webkit-scrollbar {
     background: #a7a8a5;
     width: 8px;
 }
-::-webkit-scrollbar-thumb{
+
+::-webkit-scrollbar-thumb {
     background: rgb(5, 5, 5);
 }
-.order-dishes-container::-webkit-scrollbar{
+
+.order-dishes-container::-webkit-scrollbar {
     height: 4px;
 }
 
@@ -174,6 +177,7 @@ p {
 footer .pages li {
     transition: all 200ms ease-in;
 }
+
 .nav li a:hover,
 footer .pages li a:hover {
     cursor: pointer;
@@ -189,10 +193,12 @@ nav li img {
     height: 2.8rem;
     cursor: pointer;
 }
-.nav-switch{
+
+.nav-switch {
     display: none !important;
 }
-#whishlist-alert .dark-paragraph{
+
+#whishlist-alert .dark-paragraph {
     text-align: center;
     margin-top: 2.4rem;
 }
@@ -250,7 +256,7 @@ nav li img {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: bottom;
-    background-blend-mode:darken ;
+    background-blend-mode: darken;
     color: var(--main-white);
     height: 100vh;
     position: relative;
@@ -260,7 +266,8 @@ nav li img {
     text-align: center;
     margin-top: 12rem;
 }
-.hero-text .paragraph{
+
+.hero-text .paragraph {
     color: var(--main-white);
     font-size: 2.4rem;
     max-width: 80%;
@@ -268,17 +275,19 @@ nav li img {
     margin-bottom: 3rem;
 }
 
-.hero .btns-container{
+.hero .btns-container {
     justify-content: center;
 }
+
 .hero .btns-container :first-child {
     background: var(--main-green);
     border: none;
     color: var(--main-dark);
 }
+
 .hero .btns-container :last-child {
     background: var(--main-dark);
-    color:var(--main-white)
+    color: var(--main-white)
 }
 
 
@@ -306,7 +315,7 @@ nav li img {
     width: 65%;
 }
 
-.fillters{
+.fillters {
     flex-wrap: wrap;
     row-gap: 2.4rem;
 }
@@ -322,8 +331,9 @@ nav li img {
     color: var(--main-dark);
     border: solid 1px var(--main-dark);
 }
-.dish-discription::-webkit-scrollbar{
-   display: none;
+
+.dish-discription::-webkit-scrollbar {
+    display: none;
 }
 
 .img-con {
@@ -360,7 +370,7 @@ nav li img {
 }
 
 .dish-info {
-    padding:2.4rem;
+    padding: 2.4rem;
     height: 50%;
     display: flex;
     flex-direction: column;
@@ -377,10 +387,11 @@ nav li img {
     margin-bottom: 1.2rem;
 }
 
-.dish-title span{
+.dish-title span {
     display: flex;
     align-items: center;
 }
+
 .dish-title span:last-of-type {
     font-size: 2.4rem;
     flex-wrap: nowrap;
@@ -401,7 +412,9 @@ nav li img {
     margin-top: 2.4rem;
 }
 
-.dish-price a, .dish-price span, .dish-price img {
+.dish-price a,
+.dish-price span,
+.dish-price img {
     display: grid;
     place-content: center;
 }
@@ -594,21 +607,23 @@ form {
 }
 
 .meal-actions img,
-img {
+.meal-ratting img {
     width: 2.4rem;
     height: 2.4rem;
 }
 
-.order-info{
+.order-info {
     display: flex;
     flex-direction: column;
     row-gap: 1.6rem;
 }
-.info-item{
+
+.info-item {
     display: flex;
     align-items: center;
     column-gap: 1.2rem;
 }
+
 /*---------- whish list popup ---------*/
 .whishlist {
     overflow-x: auto;
@@ -656,13 +671,15 @@ img {
 }
 
 /*--------- cart page -------*/
-#cart{
+#cart {
     margin-top: 8rem;
     margin-bottom: 8rem;
 }
-#cart form{
+
+#cart form {
     row-gap: 0;
 }
+
 form.table input {
     border: solid 1px var(--main-dark);
     outline: none;
@@ -692,19 +709,23 @@ form.table .btns-container {
 .total-Price .dish-price {
     margin: 0;
 }
+
 .table .form-input input {
     width: 100%;
     height: 4.2rem;
-    margin:0 0 2.4rem 0;
+    margin: 0 0 2.4rem 0;
 }
 
 /*-------- checkout --------*/
 
-#orders .dark-paragraph, #cart .dark-paragraph{
+#orders .dark-paragraph,
+#cart .dark-paragraph {
     width: 70%;
     line-height: 1.7;
 }
-#orders h4, #cart h4{
+
+#orders h4,
+#cart h4 {
     text-align: center;
     font-size: 2.4rem;
     margin: 4.4rem 0rem;
@@ -714,13 +735,14 @@ form.table .btns-container {
     margin-top: 6.2rem;
 }
 
-.order-dishes-container{
+.order-dishes-container {
     display: flex;
     column-gap: 1.6rem;
     padding-bottom: .4rem;
     margin-right: auto;
 }
-.extra-dishes{
+
+.extra-dishes {
     width: 5rem;
     height: 5rem;
     border-radius: 50%;
@@ -733,25 +755,32 @@ form.table .btns-container {
 .order-dishes {
     position: relative;
 }
-.orderDate{
+
+.orderDate {
     margin-left: auto;
 }
-.orderStatus{
+
+.orderStatus {
     padding: 3.2rem 0rem;
     width: 0.8rem;
 }
-.pending{
+
+.pending {
     background: #51d2ea;
 }
-.denied{
+
+.denied {
     background: #ef333a;
 }
-.confirmed{
+
+.confirmed {
     background: var(--main-green);
 }
-.orderName{
+
+.orderName {
     font-weight: 600;
 }
+
 .order-dishes .qnt {
     font-size: 1.4rem;
     font-weight: 600;
@@ -764,4 +793,73 @@ form.table .btns-container {
     border-radius: 50%;
     bottom: 0%;
     right: 0%;
+}
+
+
+/* About page */
+
+.about-hero {
+    height: calc(100vh - 84px);
+    background: rgba(0, 0, 0, .75) url('../Assets/resturant-3.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+}
+.about-text {
+    background: var(--main-white);
+    width: 40%;
+    padding: 3.2rem;
+    margin-left: 8%;
+    margin-top: 10rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.stats {
+    padding: 6rem 0rem;
+}
+.stat {
+    font-size: 3.2rem;
+    font-weight: 600;
+    color: var(--main-green);
+    margin-bottom: 1.4rem;
+    border-left: solid 3px var(--main-green);
+    padding-left: 1.2rem;
+}
+.stat-title {
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 1.2rem;
+}
+
+.chefs{
+    background: var(--main-dark);
+    color: var(--main-white);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100vh;
+}
+.chefs .grid-3{
+    column-gap: 6.2rem;
+    row-gap: 4.4rem;
+}
+.chefs .title{
+    text-align: center;
+
+}
+.chef{
+    width: 100%;
+    height: 100%;
+}
+.chef img{
+    width: 100%;
+}
+.chef-name{
+    text-align: center;
+    font-size: 2.4rem;
+    font-weight: 600;
+    padding-top: 2.4rem;
 }

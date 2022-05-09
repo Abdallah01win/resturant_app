@@ -11,6 +11,7 @@
                 <li id='nav-wishlist'><img src='Assets/icons/heart-white.svg' alt=''></li>
                 <li><a href='cart.php'><img src='Assets/icons/tote.svg' alt=''></a></li>
                 <li class='logout'><img src='Assets/icons/user.svg' alt=''></li>
+           
             <?php else : ?>
                 <li><a href='admin.php'>Dashboared</a></li>
                 <li><a href=''>Orders</a></li>
