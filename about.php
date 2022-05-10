@@ -10,32 +10,30 @@
             <div class="about-text">
                 <div class="title">About Malibu's</div>
                 <div class="dark-paragraph">
-                    Out of love for the art of cuisne, our goal is to bring the joy and tast of food into the life of our comunity of costumers.
+                    At each and every one of our resturants,
+                    our goal is to bring the joy and delicious tast of food into the life of our comunity of costumers.
                 </div>
                 <div class="dark-paragraph">
-
-                    
-
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis enim autem iure dignissimos possimus eos ab molestiae rerum minus voluptate?
+                    Our love for the art of cuisine drives us to make sure each dish is made with enough care, love, and creativity inorder to share our passion with the world.
                 </div>
             </div>
     </section>
     <section class="container stats">
         <div class="grid-3">
             <div>
-                <div class="stat">+45k</div>
+                <div class="stat">+15k</div>
                 <div class="stat-title">Meals searved</div>
-                <div class="dark-paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam, eligendi.</div>
+                <div class="dark-paragraph">Over the span of 3 years and 2 contenants, our meals remain our best advertisment.</div>
             </div>
             <div>
-                <div class="stat">+1000</div>
+                <div class="stat">+3000</div>
                 <div class="stat-title">5 Star reviews</div>
-                <div class="dark-paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam, eligendi.</div>
+                <div class="dark-paragraph">In a place where quality is priority, customer satisfaction is a guarentee.</div>
             </div>
             <div>
-                <div class="stat">17</div>
+                <div class="stat">25</div>
                 <div class="stat-title">Cretics' choise awards</div>
-                <div class="dark-paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam, eligendi.</div>
+                <div class="dark-paragraph">Including best resturant, service, and creative cusine, our passion won us everyything.</div>
             </div>
         </div>
     </section>
@@ -44,24 +42,24 @@
         <div class="container grid-3">
             <div class="chef">
                 <img class="chef-img" src="Assets/chef-1.jpg" alt="">
-                <div class="chef-name">Chrestina Bale</div>
+                <div class="chef-name">Chrestina Cline</div>
             </div>
             <div class="chef">
                 <img class="chef-img" src="Assets/chef-2.jpg" alt="">
-                <div class="chef-name">Christopher Nolan</div>
+                <div class="chef-name">Bradlee Franco</div>
             </div>
             <div class="chef">
                 <img class="chef-img" src="Assets/chef-3.jpg" alt="">
-                <div class="chef-name">Tom Harrdy</div>
+                <div class="chef-name">Bob Brandt</div>
             </div>
         </div>
     </section>
 
-    <section>
-        <div></div>
-        <div>fbsdgfnbfdgnh</div>
-        <div></div>
-        <div></div>
+    <section class="container about-cta">
+        <div class="btns-container">
+            <?php echo ' <a class="btn-green btn" href="menu.php" id="order-btn">Order Takeout</a>' ?>
+            <?php echo '<a class="btn btn-dark" href="menu.php" id="book-btn">View Menu</a>' ?>
+        </div>
     </section>
 
     </div>

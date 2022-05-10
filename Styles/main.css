@@ -864,3 +864,11 @@ form.table .btns-container {
     font-weight: 600;
     padding-top: 1.8rem;
 }
+
+
+.about-cta{
+    padding: 6.2rem 0rem;
+}
+.about-cta .btns-container{
+    justify-content: center;
+}
