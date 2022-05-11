@@ -32,7 +32,7 @@
             </div>
             <div>
                 <div class="stat">25</div>
-                <div class="stat-title">Cretics' choise awards</div>
+                <div class="stat-title">Cretics' awards</div>
                 <div class="dark-paragraph">Including best resturant, service, and creative cusine, our passion won us everyything.</div>
             </div>
         </div>
@@ -64,7 +64,9 @@
 
     </div>
     <?php include('./Components/footer.php'); ?>
-    <?php include('Components/error_alert.php'); ?>
+    <?php include('./Components/sign_up_popup.php'); ?>
+    <?php include('./Components/login_popup.php'); ?>
+    <?php include('./Components/error_alert.php'); ?>
     <?php include('./Components/logout_alert.php'); ?>
     <?php include('./Components/scripts.php'); ?>
 </body>

@@ -844,7 +844,6 @@ form.table .btns-container {
 }
 .chefs .grid-3{
     column-gap: 4.4rem;
-    row-gap: 4.4rem;
     justify-content: space-around;
 }
 .chefs .title{

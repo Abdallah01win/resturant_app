@@ -127,7 +127,9 @@ function toggleAlert(btn, alert) {
 
 if (!getCookie('userId')) {
     togglePopup(orderBtn, signUpPopup);
-    togglePopup(fullMenuBtn, signUpPopup);
+    if(fullMenuBtn){
+        togglePopup(fullMenuBtn, signUpPopup);
+    }
     for (const btn of logoutBtns) {
         togglePopup(btn, signUpPopup);
     }
