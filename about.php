@@ -64,6 +64,11 @@
 
     </div>
     <?php include('./Components/footer.php'); ?>
+    <?php
+    if (isset($_SESSION['userid'])) {
+        $userId = $_SESSION["userid"];
+        include('./Components/whishlist_popup.php');
+    }; ?>
     <?php include('./Components/sign_up_popup.php'); ?>
     <?php include('./Components/login_popup.php'); ?>
     <?php include('./Components/error_alert.php'); ?>

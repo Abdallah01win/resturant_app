@@ -29,24 +29,6 @@ $dishes = mysqli_fetch_all($result, MYSQLI_ASSOC);
         </div>
     </section>
 
-    <!-- <section class="about">
-        <div class="grid-2 container">
-            <div class="about-text">
-                <h2 class="title">About Us</h2>
-                <p class="dark-paragraph">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident ducimus minus velit aliquam ea eveniet, expedita recusandae molestiae esse at.
-                </p>
-                <p class="dark-paragraph">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident ducimus minus velit aliquam ea eveniet, expedita recusandae molestiae esse at.
-                </p>
-            </div>
-            <div class="about-gallery">
-                <img src="./Assets/resto-pic.jpg" alt="">
-                <img class="img-2" src="./Assets/kitchen.jpg" alt="">
-            </div>
-        </div>
-    </section> -->
-
     <section class="menu">
         <div class="container">
             <h2 class="title">Our Menu</h2>

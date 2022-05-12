@@ -5,7 +5,7 @@
 <?php include('Components/head.php'); ?>
 <?php
 if (!isset($_SESSION["userid"])) {
-    header('location: index.php?error=accessdenied');
+    header('location: index.php?error=notloggedin');
     exit();
 }
 $userId = $_SESSION["userid"];

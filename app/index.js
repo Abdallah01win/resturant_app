@@ -57,7 +57,7 @@ switch (error) {
         break;
 
     case 'usernotfound':
-        showError("Email not found! try signing up");
+        showError("Email not found! try signing up.");
         break;
 
     case 'emailtaken':
@@ -76,8 +76,11 @@ switch (error) {
         showError("Dish is already in your wishlist!");
         break;
 
+    case 'notloggedin':
+        showError("You're not logged in!");
+        break;
     case 'accessdenied':
-        showError("Access denied");
+        showError("Access denied.");
         break;
 }
 
@@ -114,7 +117,7 @@ function closePopup(btn, popup) {
     btn.addEventListener('click', (e) => {
         e.preventDefault();
         if (!popup.classList.contains('hide-popup')) {
-            popup.classList.add('hide-popup');
+            popup.classList.toggle('hide-popup');
         }
     })
 }
@@ -154,7 +157,9 @@ if (errorAlert) {
     for (const close of formClose) {
         closePopup(close, errorAlert);
         closePopup(close, logoutAlert);
-        closePopup(close, dishInfoPopup);
+        if(dishInfoPopup){
+            closePopup(close, dishInfoPopup);
+        }
     }
 }
 
