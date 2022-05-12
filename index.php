@@ -39,7 +39,7 @@ $dishes = mysqli_fetch_all($result, MYSQLI_ASSOC);
                 <?php for ($i = 0; $i < 6; $i++) { ?>
                     <div class="dish">
                         <div class="img-con">
-                            <img src=<?php echo '.' . $dishes[$i]['img_link'] ?> alt="">
+                            <img src=<?php echo '.' . $dishes[$i]['img_link'] ?> alt=<?php echo substr( $dishes[$i]['img_link'],15 , -5) ?>>
                         </div>
 
                         <div class="dish-info">

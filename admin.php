@@ -20,7 +20,7 @@ $orders = mysqli_fetch_all($result, MYSQLI_ASSOC);; ?>
         <div class="title">Dishes in Our Menu</div>
         <?php foreach ($dishes as $dish) : ?>
             <div class="table-row">
-                <img class="meal-img" src=<?php echo '.' . $dish['img_link'] ?> alt="">
+                <img class="meal-img" src=<?php echo '.' . $dish['img_link'] ?> alt=<?php echo substr( $dish['img_link'],15 , -5) ?>>
                 <div class="meal-title">
                     <?php echo $dish['name'] ?>
                 </div>

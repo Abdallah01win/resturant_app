@@ -8,7 +8,7 @@ foreach ($orders as $order) : ?>
             <?php if (count($dishes_in_order) <= 3) : ?>
                 <?php for ($i = 0; $i < count($dishes_in_order); $i++) : ?>
                     <div class="order-dishes">
-                        <img class="meal-img" src=<?php echo '.' . $dishes_in_order[$i][0]['img_link'] ?> alt="">
+                        <img class="meal-img" src=<?php echo '.' . $dishes_in_order[$i][0]['img_link'] ?> alt=<?php echo substr( $dishes_in_order[$i][0]['img_link'],15 , -5) ?>>
                         <div class="qnt">
                             <?php echo json_decode($order['qnt_array'])[$i]; ?>
                         </div>
@@ -17,7 +17,7 @@ foreach ($orders as $order) : ?>
             <?php else : ?>
                 <?php for ($i = 0; $i < 2; $i++) : ?>
                     <div class="order-dishes">
-                        <img class="meal-img" src=<?php echo '.' . $dishes_in_order[$i][0]['img_link'] ?> alt="">
+                        <img class="meal-img" src=<?php echo '.' . $dishes_in_order[$i][0]['img_link'] ?> alt=<?php echo substr( $dishes_in_order[$i][0]['img_link'],15 , -5) ?>>
                         <div class="qnt">
                             <?php echo json_decode($order['qnt_array'])[$i]; ?>
                         </div>

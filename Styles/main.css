@@ -252,7 +252,7 @@ nav li img {
 /* ------ Hero Section ------ */
 
 .hero {
-    background: rgba(0, 0, 0, .75) url('../Assets/pexels-waldemar-brandt-2290070.jpg');
+    background: rgba(0, 0, 0, .75) url('../Assets/hero-main.webp');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: bottom;
@@ -804,7 +804,7 @@ form.table .btns-container {
 
 .about-hero {
     height: calc(100vh - 84px);
-    background: rgba(0, 0, 0, .75) url('../Assets/resturant-3.jpg');
+    background: rgba(0, 0, 0, .75) url('../Assets/hero-about.webp');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;

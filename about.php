@@ -41,15 +41,15 @@
         <div class="title container">Our world-class Chefs need no introduction.</div>
         <div class="container grid-3">
             <div class="chef">
-                <img class="chef-img" src="Assets/chef-1.jpg" alt="">
+                <img class="chef-img" src="Assets/chef-1.webp" alt="chef-1">
                 <div class="chef-name">Chrestina Cline</div>
             </div>
             <div class="chef">
-                <img class="chef-img" src="Assets/chef-2.jpg" alt="">
+                <img class="chef-img" src="Assets/chef-2.webp" alt="chef-2">
                 <div class="chef-name">Bradlee Franco</div>
             </div>
             <div class="chef">
-                <img class="chef-img" src="Assets/chef-3.jpg" alt="">
+                <img class="chef-img" src="Assets/chef-3.webp" alt="chef-3">
                 <div class="chef-name">Bob Brandt</div>
             </div>
         </div>
