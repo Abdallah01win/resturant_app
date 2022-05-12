@@ -7,5 +7,5 @@ Explore our mouth-watering range of dishes, beuverages, and desserts that is gua
     <a class="btn-mid filter" href="menu.php?category=breakfast">breakfast</a>
     <a class="btn-mid filter" href="menu.php?category=dinner">dinner</a>
     <a class="btn-mid filter" href="menu.php?category=beuverage">beuverage</a>
-    <a class="btn-mid filter" href="menu.php?category=desserts">desserts</a>
+    <a class="btn-mid filter" href="menu.php?category=dessert">dessert</a>
 </div>

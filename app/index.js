@@ -171,7 +171,6 @@ if (checkoutPopup) {
         closePopup(close, checkoutPopup);
     }
 }
-
 if (whishlistPopup) {
     togglePopup(navWishlistBtn, whishlistPopup);
     for (const close of formClose) {

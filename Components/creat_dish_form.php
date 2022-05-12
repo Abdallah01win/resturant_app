@@ -66,10 +66,15 @@ $dishData = getDishDataUsingId($conn, $dishId);
                 <label for="dish-category">
                     Category
                 </label>
-                <input type="text" name="dish-category" id="dish-category" required <?php if ($mode === 'edit') {
+                <select type="" name="dish-category" id="dish-category" required <?php if ($mode === 'edit') {
                     echo "value='";
                     echo $dishData[0]['category']."'";
                     }; ?>>
+                    <option value="Dinner">Dinner</option>
+                    <option value="Breakfast">Breakfast</option>
+                    <option value="Beuverage">Beuverage</option>
+                    <option value="Dessert">Dessert</option>
+                </select>
             </div>
             <div class="form-input">
                 <label for="dish-img-url">
