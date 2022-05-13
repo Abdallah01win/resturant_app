@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php include('Components/head.php'); ?>
+<?php
+
+ include('Components/head.php'); ?>
 <?php
 if ($_SESSION["type"] !== 1) {
     header('location: index.php?error=accessdenied');
@@ -12,7 +14,9 @@ $dishes = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
 $sql = 'SELECT * FROM orders';
 $result = mysqli_query($conn, $sql);
-$orders = mysqli_fetch_all($result, MYSQLI_ASSOC);; ?>
+$orders = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+; ?>
 
 <body>
     <?php include('Components/navigation.php'); ?>
