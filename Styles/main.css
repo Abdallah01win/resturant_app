@@ -290,21 +290,6 @@ nav li img {
     color: var(--main-white)
 }
 
-
-/*---------- About section ---------*/
-/* .about{
-    margin: 8rem 0rem;
-}
-.about-gallery{
-    display: flex;
-    column-gap: 3.2rem;
-    overflow: hidden;
-}
-.about-gallery img{
-    height: 100%;
-    width: 45%;
-} */
-
 /* ------ Menu Section -------- */
 
 .menu {
@@ -627,7 +612,23 @@ form {
     width: 2.4rem;
     height: 2.4rem;
 }
-
+.order-stats{
+    display: flex;
+    column-gap: 2.4rem;
+    row-gap: 2.4rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 3.2rem 0rem;
+}
+.order-stat{
+    flex-grow: 1;
+    text-align: center;
+    padding: 2.2rem;
+    background: #f1f3ef;
+}
+span{
+   font-weight: 600;
+}
 /*---------- whish list popup ---------*/
 .whishlist {
     overflow-x: auto;

@@ -27,13 +27,13 @@
             </div>
             <div>
                 <div class="stat">+3000</div>
-                <div class="stat-title">5 Star reviews</div>
+                <div class="stat-title">5-Star reviews</div>
                 <div class="dark-paragraph">In a place where quality is priority, customer satisfaction is a guarentee.</div>
             </div>
             <div>
                 <div class="stat">25</div>
                 <div class="stat-title">Cretics' awards</div>
-                <div class="dark-paragraph">Including best resturant, service, and creative cusine, our passion won us everyything.</div>
+                <div class="dark-paragraph">Including best resturant, service, and creative cusine, our passion won us everything.</div>
             </div>
         </div>
     </section>

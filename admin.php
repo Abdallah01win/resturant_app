@@ -2,7 +2,7 @@
 <html lang="en">
 <?php
 
- include('Components/head.php'); ?>
+include('Components/head.php'); ?>
 <?php
 if ($_SESSION["type"] !== 1) {
     header('location: index.php?error=accessdenied');
@@ -14,9 +14,7 @@ $dishes = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
 $sql = 'SELECT * FROM orders';
 $result = mysqli_query($conn, $sql);
-$orders = mysqli_fetch_all($result, MYSQLI_ASSOC);
-
-; ?>
+$orders = mysqli_fetch_all($result, MYSQLI_ASSOC);; ?>
 
 <body>
     <?php include('Components/navigation.php'); ?>
@@ -24,7 +22,7 @@ $orders = mysqli_fetch_all($result, MYSQLI_ASSOC);
         <div class="title">Dishes in Our Menu</div>
         <?php foreach ($dishes as $dish) : ?>
             <div class="table-row">
-                <img class="meal-img" src=<?php echo '.' . $dish['img_link'] ?> alt=<?php echo substr( $dish['img_link'],15 , -5) ?>>
+                <img class="meal-img" src=<?php echo '.' . $dish['img_link'] ?> alt=<?php echo substr($dish['img_link'], 15, -5) ?>>
                 <div class="meal-title">
                     <?php echo $dish['name'] ?>
                 </div>
@@ -37,7 +35,7 @@ $orders = mysqli_fetch_all($result, MYSQLI_ASSOC);
                 </div>
                 <ul class="meal-actions">
                     <li>
-                    <?php
+                        <?php
                         echo "<a href='admin.php?dishId=";
                         echo $dish['id'];
                         echo "&mode=edit";
@@ -60,7 +58,8 @@ $orders = mysqli_fetch_all($result, MYSQLI_ASSOC);
         </div>
     </section>
     <section id="orders" class="table container">
-        <div class="title">Customer Orders</div>
+        <div class="title">Customer Orders</div>    
+        <?php include('./Components/order_stats.php'); ?>
         <?php include('./Components/order_display.php'); ?>
     </section>
 

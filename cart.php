@@ -34,16 +34,12 @@ $orders = mysqli_fetch_all($result, MYSQLI_ASSOC);; ?>
         <div class="title">Your Orders</div>
         <p class="dark-paragraph">Orders that have been verified and approved by our managers apear here and a recipit with further details will be sent to your email.</p>
         <?php if (count($orders) !== 0) : ?>
+            <?php include('./Components/order_stats.php'); ?>
             <?php include('./Components/order_display.php'); ?>
         <?php else : ?>
             <h4>You don't have any orders at the moment.</h4>
         <?php endif ?>
     </section>
-
-    <!-- add a suggestion section basen of the categories in cart in a carossel or grid display but smaller than menue -->
-
-
-
 
 
     <script>
