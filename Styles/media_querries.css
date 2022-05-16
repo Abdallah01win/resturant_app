@@ -1,9 +1,5 @@
 /* 1100px */
 @media (max-width:68.75em) {
-    .header {
-        font-size: 4.4rem;
-        margin-bottom: 2.4rem;
-    }
 
     .paragraph {
         font-size: 2rem;
@@ -57,11 +53,6 @@
     .hero .btn {
         font-size: 1.6rem;
         padding: 0.8rem 1.6rem;
-    }
-
-    .header {
-        font-size: 3.6rem;
-        margin-bottom: 2.4rem;
     }
 
     .paragraph {
@@ -159,6 +150,20 @@
         overflow-y: hidden;
     }
 
+    .hero{
+        background-position: initial;
+    }
+    .hero .btns-container{
+        display: flex;
+        flex-direction: column;
+        row-gap: 1.8rem;
+    }
+    .hero .btns-container .btn{
+       display: grid;
+       place-content: center;
+       font-weight: 500;
+    }
+
     .menu .dark-paragraph {
         width: 85%;
     }
@@ -216,18 +221,8 @@
 /* 660px */
 @media (max-width:660px) {
 
-    .header {
-        /* font-size: 3.2rem; */
-        margin-bottom: 2.4rem;
-    }
-
     .paragraph {
         font-size: 1.6rem;
-    }
-    .hero .btns-container .btn {
-        font-size: 2.4rem;
-        padding: 1rem 2rem;
-        font-weight: 500;
     }
 
     html {

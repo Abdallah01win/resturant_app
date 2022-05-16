@@ -17,13 +17,14 @@ $dishes = mysqli_fetch_all($result, MYSQLI_ASSOC);
             include('./Components/whishlist_popup.php');
         }; ?>
         <?php include('./Components/navigation.php'); ?>
-        <div class="content container">
+        <div class="about-text container">
             <div class="hero-text">
-                <h1 class="header">A pinch of passion in every dish.</h1>
-                <p class="paragraph">And we're delivering it right to your home at any time. Order now and get free delivery on the first 3 tackouts.</p>
+                <h1 class="title">Bringing class to cuisine.</h1>
+                <p class="dark-paragraph">With a pinch of passion in every dish, and we're delivering it right to your home at any time. Order now and get free delivery on your first 3 tackouts.
+                </p>
                 <div class="btns-container">
                     <?php echo ' <a class="btn" href="menu.php" id="order-btn">Order Takeout</a>' ?>
-                    <?php echo '<a class="btn" href="about.php" id="book-btn">Learn More</a>' ?>
+                    <?php echo '<a class="btn btn-dark" href="about.php" id="book-btn">Learn More</a>' ?>
                 </div>
             </div>
         </div>

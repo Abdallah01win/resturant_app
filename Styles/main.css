@@ -80,14 +80,6 @@ p {
     font-weight: 800;
 }
 
-.header {
-    font-size: 5.2rem;
-    margin-bottom: 2.8rem;
-    line-height: 1.2;
-    font-weight: 800;
-    font-family: 'Josefin Sans', sans-serif;
-}
-
 .title {
     font-family: 'Josefin Sans', sans-serif;
     font-size: 3.6rem;
@@ -252,42 +244,35 @@ nav li img {
 /* ------ Hero Section ------ */
 
 .hero {
-    background: rgba(0, 0, 0, .75) url('../Assets/hero-main.webp');
+    background: url('../Assets/hero-main.webp');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: bottom;
     background-blend-mode: darken;
-    color: var(--main-white);
     height: 100vh;
     position: relative;
 }
-
-.content {
-    text-align: center;
-    margin-top: 12rem;
+.about-text {
+    background: var(--main-white);
+    width: 40%;
+    padding: 3.2rem;
+    margin-left: 8%;
+    margin-top: 10rem;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
-
-.hero-text .paragraph {
-    color: var(--main-white);
-    font-size: 2.4rem;
-    max-width: 80%;
-    margin: 0 auto;
-    margin-bottom: 3rem;
+.hero .about-text{
+    margin-top: 18rem;
 }
-
-.hero .btns-container {
-    justify-content: center;
+.hero .about-text .dark-paragraph{
+    margin-bottom: 3.2rem;
 }
 
 .hero .btns-container :first-child {
     background: var(--main-green);
     border: none;
     color: var(--main-dark);
-}
-
-.hero .btns-container :last-child {
-    background: var(--main-dark);
-    color: var(--main-white)
 }
 
 /* ------ Menu Section -------- */
@@ -810,16 +795,6 @@ form.table .btns-container {
     background-repeat: no-repeat;
     background-position: center;
     position: relative;
-}
-.about-text {
-    background: var(--main-white);
-    width: 40%;
-    padding: 3.2rem;
-    margin-left: 8%;
-    margin-top: 10rem;
-    position: absolute;
-    top: 0;
-    left: 0;
 }
 
 .stats {
