@@ -94,12 +94,6 @@
 
 /* 860px */
 @media (max-width:53.75em) {
-
-    @media (min-height:700px) {
-        .hero {
-            height: 650px;
-        }
-    }
     .about-text{
         width: 55%;
     }
@@ -407,11 +401,6 @@
     }
     .logo {
         font-size: 2.4rem;
-    }
-
-    .container {
-        margin-left: 8%;
-        margin-right: 8%;
     }
 
     .menu .grid-3,  .stats .grid-3{
